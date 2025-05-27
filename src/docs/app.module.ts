@@ -14,7 +14,7 @@ import { FlexLayoutModule } from '@ngbracket/ngx-layout';
 import { RouterModule } from '@angular/router';
 
 //brightlayer-ui modules
-import { DrawerModule, EmptyStateModule } from 'src/lib/core';
+import { DrawerModule, EmptyStateModule } from '@brightlayer-ui/angular-components/core';
 
 //material modules
 import { MatToolbarModule } from '@angular/material/toolbar';

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ChannelValueModule, HeroModule } from 'src/lib/core';
+import { ChannelValueModule, HeroModule } from '@brightlayer-ui/angular-components/core';
 import { SharedCompDocsModule } from '../../shared/shared-comp-docs.module';
 import { MatIconModule } from '@angular/material/icon';
 import { HeroDocComponent } from './hero-doc.component';

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { DrawerModule } from 'src/lib/core';
+import { DrawerModule } from '@brightlayer-ui/angular-components/core';
 import { SharedCompDocsModule } from '../../../shared/shared-comp-docs.module';
 import { DrawerNavItemDocComponent } from './drawer-nav-item-doc.component';
 import { BasicExampleComponent } from './examples/basic.component';

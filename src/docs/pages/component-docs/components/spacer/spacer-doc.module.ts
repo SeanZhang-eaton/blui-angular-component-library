@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { SpacerModule } from 'src/lib/core';
+import { SpacerModule } from '@brightlayer-ui/angular-components/core';
 import { SharedCompDocsModule } from '../../shared/shared-comp-docs.module';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
