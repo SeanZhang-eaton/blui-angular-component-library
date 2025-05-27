@@ -28,10 +28,11 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ComponentDocsModule } from './pages/component-docs/component-docs.module';
 import { MatLegacyChipsModule as MatChipsModule } from '@angular/material/legacy-chips';
 import { environment } from '../environments/environment';
-import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { NgxGoogleAnalyticsModule, provideGoogleAnalytics } from '@hakimio/ngx-google-analytics';
 
 @NgModule({
     declarations: [AppComponent, NavigationComponent],
+    providers: [provideGoogleAnalytics(environment.ga)],
     imports: [
         AppRoutingModule,
         BrowserAnimationsModule,
@@ -47,8 +48,7 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-go
         MatIconModule,
         RouterModule,
         MatChipsModule,
-        NgxGoogleAnalyticsModule.forRoot(environment.ga),
-        NgxGoogleAnalyticsRouterModule,
+        NgxGoogleAnalyticsModule,
     ],
     bootstrap: [AppComponent],
 })
