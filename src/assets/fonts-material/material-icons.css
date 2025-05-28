@@ -1,0 +1,40 @@
+/**
+ * Copyright © 2024 Eaton
+ *
+ * This software is confidential and licensed under Eaton Proprietary License
+ * (EPL or EULA).
+ * This software is not authorized to be used, duplicated or disclosed to
+ * anyone without the prior written permission of Eaton.
+ * Limitations, restrictions and exclusions of the Eaton applicable standard
+ * terms and conditions, such as its EPL and EULA, apply.
+ */
+
+/**
+    The Material Icons font is required to use <mat-icon>SOME_ICON</mat-icon>
+    https://material.angular.io/components/icon/overview
+    The content of this file comes from https://fonts.googleapis.com/icon?family=Material+Icons
+*/
+
+@font-face {
+    font-weight: 400;
+    font-family: 'Material Icons';
+    font-style: normal;
+    src: url(MaterialIcons-Regular.woff2) format('woff2');
+}
+
+.material-icons {
+    display: inline-block;
+
+    font-weight: normal;
+    font-size: 24px;
+    font-family: 'Material Icons';
+    font-style: normal;
+    line-height: 1;
+    direction: ltr;
+    letter-spacing: normal;
+    white-space: nowrap;
+    text-transform: none;
+    word-wrap: normal;
+    font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}

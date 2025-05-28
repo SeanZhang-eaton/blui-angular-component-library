@@ -24,3 +24,6 @@ coverage
 /showcase/src/lib/
 
 build
+
+.nx/cache
+.nx/workspace-data

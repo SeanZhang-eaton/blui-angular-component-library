@@ -14,9 +14,6 @@
         "@blui-lab/angular": [
           "src/lab"
         ],
-        "@brightlayer-ui/angular-components": [
-          "projects/component-library/src/lib"
-        ],
         "@brightlayer-ui/angular-components/*": [
           "projects/component-library/src/lib/*"
         ]
