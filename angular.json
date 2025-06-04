@@ -162,7 +162,7 @@
             }
         },
         "defaultProject": "demo",
-        "component-library": {
+        "@brightlayer-ui/angular-components": {
             "projectType": "library",
             "root": "projects/component-library",
             "sourceRoot": "projects/component-library/src",
