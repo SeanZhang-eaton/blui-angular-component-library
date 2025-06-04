@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BASIC } from './examples/basic.component';
-import { COMPONENT_NAV_ITEMS } from 'src/docs/navigation/nav-items';
+import { COMPONENT_NAV_ITEMS } from '@blui-apps/demo/docs/navigation/nav-items';
 import { FROM_LIST } from './examples/from-list.component';
 import { NON_TEXT_AVATAR } from './examples/non-text-avatar.component';
 import { MENU_HEADER } from './examples/menu-header.component';

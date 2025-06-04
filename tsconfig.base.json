@@ -1,32 +1,23 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": ".",
-    "sourceMap": true,
-    "declaration": false,
-    "target": "ES2022",
-    "module": "es2020",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "paths": {
-      "@blui-lab/angular": [
-        "src/lab"
-      ],
-      "@brightlayer-ui/angular-components/*": [
-        "projects/component-library/src/lib/*"
-      ]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": ".",
+        "sourceMap": true,
+        "declaration": false,
+        "target": "ES2022",
+        "module": "es2020",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "paths": {
+            "@blui-lab/angular": ["src/lab"],
+            "@blui-apps/demo/*": ["apps/demo/src/*"],
+            "@brightlayer-ui/angular-components/*": ["libs/@brightlayer-ui/angular-components/src/lib/*"]
+        },
+        "lib": ["es2018", "dom"],
+        "useDefineForClassFields": false,
+        "rootDir": "."
     },
-    "lib": [
-      "es2018",
-      "dom"
-    ],
-    "useDefineForClassFields": false,
-    "rootDir": "."
-  },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+    "exclude": ["node_modules", "tmp"]
 }

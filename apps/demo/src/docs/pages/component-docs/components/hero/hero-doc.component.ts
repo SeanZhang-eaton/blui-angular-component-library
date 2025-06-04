@@ -4,7 +4,7 @@ import { VALUE_AND_UNITS } from './examples/value-units.component';
 import { CV_CHILDREN } from './examples/channel-value-children.component';
 import { ICON_DIFFS } from './examples/icon-diffs.component';
 import { WITH_BANNER } from './examples/within-banner.component';
-import { COMPONENT_NAV_ITEMS } from 'src/docs/navigation/nav-items';
+import { COMPONENT_NAV_ITEMS } from '@blui-apps/demo/docs/navigation/nav-items';
 import { Tab } from '../../shared/scaffold/scaffold.component';
 import { WITH_ICON } from './examples/with-icon.component';
 import { HeroPlaygroundKnobs } from './examples/playground.component';

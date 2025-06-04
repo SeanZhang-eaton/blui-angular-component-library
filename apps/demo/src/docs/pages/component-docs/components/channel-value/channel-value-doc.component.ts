@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { COMPONENT_NAV_ITEMS } from 'src/docs/navigation/nav-items';
+import { COMPONENT_NAV_ITEMS } from '@blui-apps/demo/docs/navigation/nav-items';
 import { BASIC } from './examples/basic.component';
 import { WITH_ICON } from './examples/icon.component';
 import { PREFIX } from './examples/prefix.component';
