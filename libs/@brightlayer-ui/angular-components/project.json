@@ -1,34 +1,31 @@
 {
-  "name": "@brightlayer-ui/angular-components",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "library",
-  "sourceRoot": "libs/@brightlayer-ui/angular-components/src",
-  "prefix": "lib",
-  "targets": {
-    "build": {
-      "executor": "@nx/angular:package",
-      "options": {
-        "project": "libs/@brightlayer-ui/angular-components/ng-package.json"
-      },
-      "configurations": {
-        "production": {
-          "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.prod.json"
+    "name": "@brightlayer-ui/angular-components",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/@brightlayer-ui/angular-components/src",
+    "prefix": "lib",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:package",
+            "options": {
+                "project": "libs/@brightlayer-ui/angular-components/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.json"
+                }
+            },
+            "defaultConfiguration": "production"
         },
-        "development": {
-          "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.json"
+        "test": {
+            "executor": "@angular-devkit/build-angular:karma",
+            "options": {
+                "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.spec.json",
+                "polyfills": ["zone.js", "zone.js/testing"]
+            }
         }
-      },
-      "defaultConfiguration": "production"
-    },
-    "test": {
-      "executor": "@angular-devkit/build-angular:karma",
-      "options": {
-        "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.spec.json",
-        "polyfills": [
-          "zone.js",
-          "zone.js/testing"
-        ]
-      }
     }
-  }
 }
