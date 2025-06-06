@@ -1,0 +1,29 @@
+/**
+Copyright (c) 2021-present, Eaton
+
+All rights reserved.
+
+This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
+**/
+
+@use '@angular/material' as mat;
+@use '@brightlayer-ui/colors/palette.scss' as blui;
+
+@use './theme-bases';
+
+$blui-blue-primary: theme-bases.$blui-blue-primary;
+$blui-blue-accent: theme-bases.$blui-blue-accent;
+$blui-blue-warn: theme-bases.$blui-blue-warn;
+
+.blui-blue {
+    @include theme-bases.blue();
+}
+
+$blui-blue-dark-primary: theme-bases.$blui-blue-dark-primary;
+$blui-blue-dark-accent: theme-bases.$blui-blue-dark-accent;
+$blui-blue-dark-warn: theme-bases.$blui-blue-dark-warn;
+
+// Blue Dark Theme
+.blui-blue-dark {
+    @include theme-bases.blueDark();
+}

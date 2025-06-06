@@ -1,0 +1,39 @@
+@mixin blui-mat-tab($text, $background, $activeText, $activeBackground, $underline) {
+    .mat-mdc-tab-group {
+        /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+        /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+        .mat-tab-label {
+            color: $text;
+            font-weight: 400;
+            background-color: $background;
+            /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+            &:not(.mat-tab-disabled) {
+                opacity: 1;
+            }
+        }
+        /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+        .mat-tab-label-active {
+            font-weight: 600;
+            color: $activeText;
+            background-color: $activeBackground;
+        }
+    }
+    .mat-mdc-tab-group.mat-primary,
+    .mat-mdc-tab-nav-bar.mat-primary {
+        .mat-ink-bar {
+            background-color: $underline;
+        }
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+    .mat-tab-header-pagination-chevron {
+        border-color: $text;
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+    .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
+        opacity: 0.28;
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+    .mat-tab-header-pagination {
+        background-color: $background;
+    }
+}

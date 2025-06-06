@@ -1,0 +1,121 @@
+@use '../utility' as util;
+
+@mixin blui-mat-buttons($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
+    .mat-mdc-icon-button {
+        @include icon-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette);
+    }
+    .mat-mdc-button,
+    .mat-mdc-outlined-button {
+        @include default-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette);
+    }
+    .mat-mdc-outlined-button {
+        @include stroked-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette);
+    }
+    .mat-mdc-fab,
+    .mat-mdc-mini-fab,
+    .mat-mdc-raised-button,
+    .mat-mdc-unelevated-button {
+        @include filled-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette);
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    .mat-button-toggle {
+        @include button-toggle-helper($defaultPalette);
+    }
+}
+
+@mixin icon-colors($palette) {
+    color: util.map-deep-get($palette, icon, text);
+}
+@mixin icon-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
+    &.mat-primary {
+        @include icon-colors($primaryPalette);
+    }
+    &.mat-accent {
+        @include icon-colors($accentPalette);
+    }
+    &.mat-warn {
+        @include icon-colors($warnPalette);
+    }
+    &:not([color]) {
+        @include icon-colors($defaultPalette);
+    }
+}
+
+@mixin default-colors($palette) {
+    color: util.map-deep-get($palette, outline, text);
+    background-color: util.map-deep-get($palette, outline, background);
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    &:hover:not(.mat-button-disabled) {
+        background-color: util.map-deep-get($palette, outline, backgroundHover);
+    }
+}
+@mixin default-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
+    &.mat-primary {
+        @include default-colors($primaryPalette);
+    }
+    &.mat-accent {
+        @include default-colors($accentPalette);
+    }
+    &.mat-warn {
+        @include default-colors($warnPalette);
+    }
+    &:not([color]) {
+        @include default-colors($defaultPalette);
+    }
+}
+
+@mixin stroked-colors($palette) {
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    &:not(.mat-button-disabled) {
+        color: util.map-deep-get($palette, outline, text);
+        border-color: util.map-deep-get($palette, outline, border);
+    }
+}
+@mixin stroked-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
+    &.mat-primary {
+        @include stroked-colors($primaryPalette);
+    }
+    &.mat-accent {
+        @include stroked-colors($accentPalette);
+    }
+    &.mat-warn {
+        @include stroked-colors($warnPalette);
+    }
+    &:not([color]) {
+        @include stroked-colors($defaultPalette);
+    }
+}
+
+@mixin raised-colors($palette) {
+    color: util.map-deep-get($palette, fill, text);
+    background-color: util.map-deep-get($palette, fill, background);
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    &:hover:not(.mat-button-disabled) {
+        background-color: util.map-deep-get($palette, fill, backgroundHover);
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    &.mat-button-disabled {
+        color: util.map-deep-get($palette, fill, disabled, text);
+        background-color: util.map-deep-get($palette, fill, disabled, background);
+        border: none;
+    }
+}
+@mixin filled-button-helper($primaryPalette, $accentPalette, $warnPalette, $defaultPalette) {
+    &.mat-primary {
+        @include raised-colors($primaryPalette);
+    }
+    &.mat-accent {
+        @include raised-colors($accentPalette);
+    }
+    &.mat-warn {
+        @include raised-colors($warnPalette);
+    }
+    &:not([color]) {
+        @include raised-colors($defaultPalette);
+    }
+}
+
+@mixin button-toggle-helper($palette) {
+    border-left: 0 !important;
+    border-right: 0 !important;
+}

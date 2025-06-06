@@ -43,8 +43,8 @@
                     "node_modules/prismjs/themes/prism-tomorrow.css",
                     "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css",
                     "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
-                    "node_modules/@brightlayer-ui/angular-themes/theme.scss",
-                    "node_modules/@brightlayer-ui/angular-themes/open-sans.scss"
+                    "libs/@brightlayer-ui/angular-themes/src/lib/theme.scss",
+                    "libs/@brightlayer-ui/angular-themes/src/lib/open-sans.scss"
                 ],
                 "scripts": [
                     "node_modules/marked/marked.min.js",
@@ -149,8 +149,8 @@
                 "styles": [
                     "apps/demo/src/styles.scss",
                     "apps/demo/src/assets/fonts-material/material-icons.css",
-                    "node_modules/@brightlayer-ui/angular-themes/theme.scss",
-                    "node_modules/@brightlayer-ui/angular-themes/open-sans.scss"
+                    "libs/@brightlayer-ui/angular-themes/src/lib/theme.scss",
+                    "libs/@brightlayer-ui/angular-themes/src/lib/open-sans.scss"
                 ],
                 "scripts": []
             }

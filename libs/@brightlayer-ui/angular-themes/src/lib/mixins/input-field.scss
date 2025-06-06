@@ -1,0 +1,209 @@
+@use '../utility' as util;
+
+@mixin blui-mat-form-field($primaryPalette, $accentPalette, $warnPalette, $disablePalette) {
+    input {
+        font-family: 'Open Sans';
+    }
+    input::-ms-reveal {
+        display: none;
+    }
+    .mat-mdc-form-field {
+        &.mat-primary {
+            @include colored-input-styles($primaryPalette);
+        }
+
+        &.mat-accent {
+            @include colored-input-styles($accentPalette);
+        }
+
+        &.mat-warn {
+            @include colored-input-styles($warnPalette);
+        }
+
+        &.mat-form-field-invalid {
+            @include colored-input-styles($warnPalette);
+        }
+
+        /* Disabled */
+        &.mat-form-field-disabled {
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-mdc-form-field-hint,
+            .mat-form-field-label,
+            .mat-form-field-underline,
+            .mat-form-field-outline-thick,
+            .mat-form-field-suffix,
+            .mat-form-field-prefix,
+            input::-webkit-input-placeholder {
+                color: map-get($disablePalette, text);
+            }
+
+            &.mat-form-field-appearance-legacy,
+            &.mat-form-field-appearance-standard {
+                /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+                .mat-form-field-underline {
+                    background-image: none;
+                    background-color: map-get($disablePalette, text);
+                }
+            }
+
+            &.mat-form-field-appearance-fill {
+                /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+                .mat-form-field-underline::before {
+                    background-color: map-get($disablePalette, text);
+                }
+                /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+                .mat-form-field-flex {
+                    background-color: map-get($disablePalette, filledBackgroundColor);
+                }
+            }
+        }
+    }
+}
+
+@mixin colored-input-styles($palette) {
+    &:not(.mat-form-field-disabled) {
+        /* Underline */
+        &.mat-form-field-appearance-legacy,
+        &.mat-form-field-appearance-standard,
+        &.mat-form-field-appearance-fill {
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-underline,
+            .mat-form-field-underline::before {
+                background-color: util.map-deep-get($palette, underline, default);
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-flex:hover + .mat-form-field-underline {
+                background-color: util.map-deep-get($palette, underline, onHover);
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-flex + .mat-form-field-underline .mat-form-field-ripple {
+                height: 1px;
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-flex:focus-within + .mat-form-field-underline .mat-form-field-ripple {
+                height: 2px;
+            }
+        }
+
+        /* Label */
+        /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+        .mat-form-field-label {
+            color: util.map-deep-get($palette, label, withoutValue);
+        }
+
+        /* Filled Label */
+        /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+        &.mat-form-field-should-float .mat-form-field-label {
+            color: util.map-deep-get($palette, label, withValue);
+        }
+
+        /* Label Focus */
+        /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+        /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+        .mat-form-field-flex:focus-within {
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-label {
+                color: util.map-deep-get($palette, label, onFocus);
+            }
+        }
+
+        /* Icon */
+        /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+        .mat-form-field-suffix,
+        .mat-form-field-prefix {
+            color: map-get($palette, icon);
+        }
+
+        /* Input Placeholders */
+        input::-webkit-input-placeholder {
+            color: map-get($palette, placeholder);
+        }
+
+        /* Hint */
+        .mat-mdc-form-field-hint {
+            color: map-get($palette, hint);
+        }
+
+        /* User Input Text */
+        &.mat-form-field-invalid {
+            .mat-mdc-input-element::selection {
+                background-color: map-get($palette, highlightColor);
+            }
+            .mat-mdc-input-element::-moz-selection {
+                background-color: map-get($palette, highlightColor);
+            }
+        }
+
+        /* Standard / Legacy Variant */
+        &.mat-form-field-appearance-legacy,
+        &.mat-form-field-appearance-standard,
+        &.mat-form-field-appearance-fill {
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-flex + .mat-form-field-underline .mat-form-field-ripple {
+                background-color: util.map-deep-get($palette, underline, default);
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-flex:hover + .mat-form-field-underline .mat-form-field-ripple {
+                background-color: util.map-deep-get($palette, underline, onHover);
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-flex:focus-within + .mat-form-field-underline .mat-form-field-ripple {
+                background-color: util.map-deep-get($palette, underline, onFocus);
+            }
+        }
+
+        /* Fill Variant */
+        &.mat-form-field-appearance-fill {
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-flex {
+                background-color: map-get($palette, filledBackgroundColor);
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-outline-thick {
+                color: util.map-deep-get($palette, underline, default);
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-flex:hover .mat-form-field-outline-thick {
+                color: util.map-deep-get($palette, underline, onHover);
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
+                color: util.map-deep-get($palette, underline, onFocus);
+            }
+        }
+
+        /* Outline Variant */
+        &.mat-form-field-appearance-outline {
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-outline {
+                color: util.map-deep-get($palette, underline, default);
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-outline-thick {
+                /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+                .mat-form-field-outline-start,
+                .mat-form-field-outline-end,
+                .mat-form-field-outline-gap {
+                    border-width: 1px;
+                }
+                color: util.map-deep-get($palette, underline, default);
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-flex:hover .mat-form-field-outline-thick {
+                color: util.map-deep-get($palette, underline, onHover);
+            }
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+            .mat-form-field-flex:focus-within .mat-form-field-outline-thick {
+                color: util.map-deep-get($palette, underline, onFocus);
+                /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+                .mat-form-field-outline-start,
+                .mat-form-field-outline-end,
+                .mat-form-field-outline-gap {
+                    border-width: 2px;
+                }
+            }
+        }
+    }
+}

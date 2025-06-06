@@ -13,7 +13,8 @@
         "paths": {
             "@blui-lab/angular": ["src/lab"],
             "@blui-apps/demo/*": ["apps/demo/src/*"],
-            "@brightlayer-ui/angular-components/*": ["libs/@brightlayer-ui/angular-components/src/lib/*"]
+            "@brightlayer-ui/angular-components/*": ["libs/@brightlayer-ui/angular-components/src/lib/*"],
+            "@brightlayer-ui/angular-themes/*": ["libs/@brightlayer-ui/angular-themes/src/lib/*"]
         },
         "lib": ["es2018", "dom"],
         "useDefineForClassFields": false,

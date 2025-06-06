@@ -1,0 +1,152 @@
+@mixin blui-mat-chip-default($primary, $accent, $warn, $unselected) {
+    .mat-mdc-chip:not([variant='outline']):not([variant='stroked']) {
+        /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+        &.mat-chip-selected {
+            &.mat-primary {
+                @include chips-filled($primary);
+            }
+            &.mat-accent {
+                @include chips-filled($accent);
+            }
+            &.mat-warn {
+                @include chips-filled($warn);
+            }
+        }
+        /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+        &:not(.mat-chip-selected) {
+            @include chips-filled($unselected);
+        }
+    }
+}
+@mixin blui-mat-chip-outline($primary, $accent, $warn, $unselected, $disabled) {
+    .mat-mdc-chip[variant='outline'],
+    .mat-chip[variant='stroked'] {
+        /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+        &.mat-chip-selected {
+            &.mat-primary {
+                @include chips-outline($primary);
+            }
+
+            &.mat-accent {
+                @include chips-outline($accent);
+            }
+
+            &.mat-warn {
+                @include chips-outline($warn);
+            }
+        }
+
+        /* Mat chips that aren't selected will all use the same $unselected styles regardless of color. */
+        /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+        /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+        &:not(.mat-chip-selected),
+        &:not(.mat-chip-selected).mat-primary,
+        &:not(.mat-chip-selected).mat-accent,
+        &:not(.mat-chip-selected).mat-warn {
+            @include chips-outline($unselected);
+            /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+            &:not(.mat-chip-disabled) {
+                border-color: map-get($unselected, borderColor);
+            }
+        }
+
+        /* Outlined chips all default to the same disabled styles regardless of color. */
+        /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+        /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+        &.mat-chip-disabled,
+        &.mat-chip-disabled.mat-primary,
+        &.mat-chip-disabled.mat-accent,
+        &.mat-chip-disabled.mat-warn {
+            color: map-get($disabled, color);
+            border-color: map-get($disabled, borderColor);
+            /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+            .mat-chip-remove {
+                color: map-get($disabled, removeIconColor);
+            }
+        }
+    }
+}
+
+@mixin chips-filled($palette) {
+    color: map-get($palette, color);
+    background-color: map-get($palette, background);
+    /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+    &:hover:not(.mat-chip-disabled) {
+        color: map-get($palette, hoverColor);
+        background-color: map-get($palette, hoverBackground);
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+    .mat-chip-remove {
+        opacity: 1;
+        color: map-get($palette, removeIconColor);
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+    &:not(.mat-chip-disabled) .mat-chip-remove:hover {
+        color: map-get($palette, removeIconHoverColor);
+        opacity: 1;
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+    .mat-chip-avatar:not(.mat-icon) {
+        color: map-get($palette, avatarColor);
+        background-color: map-get($palette, avatarBackground);
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+    /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+    &.mat-chip-disabled {
+        opacity: 1;
+        color: map-get($palette, disabledColor);
+        background: map-get($palette, disabledBackground);
+        /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+        .mat-chip-avatar:not(.mat-icon) {
+            color: map-get($palette, avatarDisabledColor);
+        }
+        /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+        .mat-chip-remove {
+            color: map-get($palette, removeIconDisabledColor);
+        }
+    }
+}
+
+@mixin chips-outline($palette) {
+    border: solid 1px;
+    /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+    /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+    &:not(.mat-chip-disabled) {
+        color: map-get($palette, color);
+        border-color: map-get($palette, color);
+        background-color: map-get($palette, background);
+        /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+        .mat-chip-remove {
+            opacity: 1;
+            color: map-get($palette, removeIconColor);
+            &:hover {
+                color: map-get($palette, removeIconHoverColor);
+                opacity: 1;
+            }
+        }
+        &:hover {
+            color: map-get($palette, hoverColor);
+            background-color: map-get($palette, hoverBackground);
+        }
+        /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+        .mat-chip-avatar:not(.mat-icon) {
+            color: map-get($palette, avatarColor);
+            background-color: map-get($palette, avatarBackground);
+        }
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+    /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+    &.mat-chip-disabled {
+        opacity: 1;
+        background: transparent;
+        /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+        .mat-chip-avatar:not(.mat-icon) {
+            color: map-get($palette, avatarDisabledColor);
+            background-color: map-get($palette, avatarDisabledBackground);
+        }
+        /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+        .mat-chip-remove {
+            color: map-get($palette, removeIconDisabledColor);
+        }
+    }
+}

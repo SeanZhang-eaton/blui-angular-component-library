@@ -1,0 +1,82 @@
+@mixin blui-mat-button-toggle($default, $outline, $filled) {
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    .mat-button-toggle-standalone.mat-button-toggle-appearance-standard:not([variant='outline']):not(
+            [variant='filled']
+        ),
+    .mat-button-toggle-group-appearance-standard:not([variant='outline']):not([variant='filled']) {
+        @include blui-mat-button-toggle-shared($default);
+        @include blui-mat-button-toggle-default($default);
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    .mat-button-toggle-standalone.mat-button-toggle-appearance-standard[variant='outline'],
+    .mat-button-toggle-group-appearance-standard[variant='outline'] {
+        @include blui-mat-button-toggle-shared($outline);
+        @include blui-mat-button-toggle-outline($outline);
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    .mat-button-toggle-standalone.mat-button-toggle-appearance-standard[variant='filled'],
+    .mat-button-toggle-group-appearance-standard[variant='filled'] {
+        @include blui-mat-button-toggle-shared($filled);
+        @include blui-mat-button-toggle-filled($filled);
+    }
+}
+
+@mixin blui-mat-button-toggle-shared($palette) {
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    .mat-button-toggle-appearance-standard {
+        /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+        .mat-button-toggle-button {
+            border: 1px solid map-get($palette, unselectedBorderColor);
+            color: map-get($palette, inactiveTextColor);
+            background-color: transparent;
+        }
+        &.checked {
+            /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+            .mat-button-toggle-button {
+                background-color: map-get($palette, activeBackgroundColor);
+                color: map-get($palette, activeTextColor);
+            }
+        }
+    }
+}
+
+@mixin blui-mat-button-toggle-default($palette) {
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    .mat-button-toggle.mat-button-toggle-checked .mat-button-toggle-button:hover:not(.mat-button-disabled) {
+        background-color: map-get($palette, activeBackgroundColor);
+        color: map-get($palette, activeTextColor);
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    .mat-button-toggle.mat-button-toggle-checked .mat-button-toggle-button:not(.mat-button-disabled) {
+        background-color: map-get($palette, activeBackgroundColor);
+        color: map-get($palette, activeTextColor);
+    }
+}
+
+@mixin blui-mat-button-toggle-outline($palette) {
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    .mat-button-toggle.mat-button-toggle-checked .mat-button-toggle-button:hover:not(.mat-button-disabled) {
+        background-color: map-get($palette, activeBackgroundColor);
+        color: map-get($palette, activeTextColor);
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    .mat-button-toggle.mat-button-toggle-checked .mat-button-toggle-button:not(.mat-button-disabled) {
+        background-color: map-get($palette, activeBackgroundColor);
+        color: map-get($palette, activeTextColor);
+        border-color: map-get($palette, selectedBorderColor);
+    }
+}
+
+@mixin blui-mat-button-toggle-filled($palette) {
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    .mat-button-toggle.mat-button-toggle-checked .mat-button-toggle-button:hover:not(.mat-button-disabled) {
+        background-color: map-get($palette, activeBackgroundColor);
+        color: map-get($palette, activeTextColor);
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
+    .mat-button-toggle.mat-button-toggle-checked .mat-button-toggle-button:not(.mat-button-disabled) {
+        background-color: map-get($palette, activeBackgroundColor);
+        color: map-get($palette, activeTextColor);
+    }
+}
