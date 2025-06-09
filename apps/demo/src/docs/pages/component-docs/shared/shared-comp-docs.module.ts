@@ -41,8 +41,8 @@ import { OverlayModule } from '@angular/cdk/overlay';
         KnobNumberComponent,
     ],
     imports: [
-        AppCommonComponentsModule,
         CommonModule,
+        AppCommonComponentsModule,
         ColorPickerModule,
         MatIconModule,
         MatCheckboxModule,
