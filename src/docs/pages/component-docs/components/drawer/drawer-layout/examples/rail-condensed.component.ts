@@ -27,11 +27,11 @@ export const RAIL_CONDENSED = `<blui-drawer-layout variant="rail" class="condens
     template: RAIL_CONDENSED,
     styles: [
         `
-            :host {
-                display: flex;
-                width: 100%;
-            }
-        `,
+                    :host {
+                        display: flex;
+                        width: 100%;
+                    }
+                `,
     ],
 })
 export class RailCondensedVariantExampleComponent {}

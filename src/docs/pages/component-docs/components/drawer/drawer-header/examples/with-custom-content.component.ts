@@ -18,10 +18,10 @@ export const WITH_CUSTOM_CONTENT = `<blui-drawer style="width: 250px" class="dra
     template: WITH_CUSTOM_CONTENT,
     styles: [
         `
-            ::ng-deep .drawer-header-with-custom-content .blui-drawer-header-background {
-                background-image: url('../../../../../../../assets/topology_40.png');
-            }
-        `,
+                    ::ng-deep .drawer-header-with-custom-content .blui-drawer-header-background {
+                        background-image: url('../../../../../../../assets/topology_40.png');
+                    }
+                `,
     ],
 })
 export class WithCustomContentComponent {}

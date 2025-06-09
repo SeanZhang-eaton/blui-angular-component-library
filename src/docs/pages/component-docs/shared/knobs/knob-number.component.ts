@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MatLegacySliderChange as MatSliderChange } from '@angular/material/legacy-slider';
+import { MatSliderChange } from '@angular/material/slider';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -33,33 +33,32 @@ import { FormControl, Validators } from '@angular/forms';
         >
             <div style="padding-top: 12px">
                 <div style="margin-left: -16px; padding: 0 8px" class="slider-knob-overlay divider-border">
+                    <!-- TODO: The 'tickInterval' property no longer exists -->
                     <mat-slider
                         style="width: 332px"
                         [(ngModel)]="value"
                         [min]="min"
                         [max]="max"
-                        [tickInterval]="tickInterval"
                         [step]="step"
-                        (input)="updateValue($event)"
-                    ></mat-slider>
+                     #ngSlider><input matSliderThumb (input)="updateValue({source: ngSliderThumb, parent: ngSlider, value: ngSliderThumb.value})" #ngSliderThumb="matSliderThumb" /></mat-slider>
                 </div>
             </div>
         </ng-template>
     `,
     styles: [
         `
-            /* Chrome, Safari, Edge, Opera */
-            .hiddenArrows::-webkit-outer-spin-button,
-            .hiddenArrows::-webkit-inner-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
-
-            /* Firefox */
-            .hiddenArrows[type='number'] {
-                -moz-appearance: textfield;
-            }
-        `,
+                    /* Chrome, Safari, Edge, Opera */
+                    .hiddenArrows::-webkit-outer-spin-button,
+                    .hiddenArrows::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+        
+                    /* Firefox */
+                    .hiddenArrows[type='number'] {
+                        -moz-appearance: textfield;
+                    }
+                `,
     ],
 })
 export class KnobNumberComponent {

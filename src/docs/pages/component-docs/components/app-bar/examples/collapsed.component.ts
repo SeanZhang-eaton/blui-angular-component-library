@@ -14,18 +14,18 @@ export const COLLAPSED = `<div class="scroll-container">
     template: COLLAPSED,
     styles: [
         `
-            .scroll-container {
-                width: 100%;
-                max-width: 450px;
-                max-height: 200px;
-                overflow: auto;
-                position: relative;
-            }
-            .content-body {
-                padding: 16px;
-                background: white;
-            }
-        `,
+                    .scroll-container {
+                        width: 100%;
+                        max-width: 450px;
+                        max-height: 200px;
+                        overflow: auto;
+                        position: relative;
+                    }
+                    .content-body {
+                        padding: 16px;
+                        background: white;
+                    }
+                `,
     ],
 })
 export class CollapsedComponent {

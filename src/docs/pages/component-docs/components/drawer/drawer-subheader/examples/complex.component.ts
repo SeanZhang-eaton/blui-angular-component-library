@@ -32,14 +32,14 @@ export const COMPLEX = `<blui-drawer style="width: 250px" [openOnHover]="false">
     encapsulation: ViewEncapsulation.None,
     styles: [
         `
-            .drawer-complex-subheader-demo {
-                max-width: 218px !important;
-            }
-            drawer-complex-subheader-demo .mat-select-panel {
-                box-sizing: content-box;
-                max-width: 250px !important;
-            }
-        `,
+                    .drawer-complex-subheader-demo {
+                        max-width: 218px !important;
+                    }
+                    drawer-complex-subheader-demo .mat-mdc-select-panel {
+                        box-sizing: content-box;
+                        max-width: 250px !important;
+                    }
+                `,
     ],
 })
 export class ComplexComponent {

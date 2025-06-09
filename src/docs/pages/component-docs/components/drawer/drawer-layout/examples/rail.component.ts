@@ -27,11 +27,11 @@ export const RAIL = `<blui-drawer-layout variant="rail" class="rail-example">
     template: RAIL,
     styles: [
         `
-            :host {
-                display: flex;
-                width: 100%;
-            }
-        `,
+                    :host {
+                        display: flex;
+                        width: 100%;
+                    }
+                `,
     ],
 })
 export class RailVariantExampleComponent {}

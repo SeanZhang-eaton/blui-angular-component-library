@@ -34,11 +34,11 @@ export const TEMPORARY = `<blui-drawer-layout variant="temporary" (backdropClick
     template: TEMPORARY,
     styles: [
         `
-            :host {
-                display: flex;
-                width: 100%;
-            }
-        `,
+                    :host {
+                        display: flex;
+                        width: 100%;
+                    }
+                `,
     ],
 })
 export class TemporaryVariantExampleComponent {

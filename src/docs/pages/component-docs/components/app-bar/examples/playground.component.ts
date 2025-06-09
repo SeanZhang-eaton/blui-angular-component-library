@@ -15,18 +15,18 @@ export type AppBarPlaygroundKnobs = {
     selector: 'app-app-bar-playground',
     styles: [
         `
-            .scroll-container {
-                width: 100%;
-                max-width: 450px;
-                max-height: 400px;
-                overflow: auto;
-                position: relative;
-            }
-            .content-body {
-                padding: 16px;
-                background: white;
-            }
-        `,
+                    .scroll-container {
+                        width: 100%;
+                        max-width: 450px;
+                        max-height: 400px;
+                        overflow: auto;
+                        position: relative;
+                    }
+                    .content-body {
+                        padding: 16px;
+                        background: white;
+                    }
+                `,
     ],
     template: `<div class="scroll-container" id="app-bar-playground-example">
         <blui-app-bar

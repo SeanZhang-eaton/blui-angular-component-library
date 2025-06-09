@@ -12,6 +12,7 @@
         padding-left: 0;
         padding-right: 32px;
     }
+    /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
     blui-info-list-item.blui-drawer-nav-item-no-icon-closed .blui-info-list-item .mat-list-item-content {
         padding-right: 16px;
         padding-left: 24px;
@@ -20,7 +21,7 @@
 
 blui-drawer-nav-item {
     outline: none;
-    .blui-drawer-nav-item-active .mat-list-item:hover {
+    .blui-drawer-nav-item-active .mat-mdc-list-item:hover {
         background: unset;
     }
 }
@@ -41,6 +42,7 @@ blui-drawer-nav-item {
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
         .blui-info-list-item-content {
+            /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
             &.blui-info-list-item-dense,
             .mat-list-item-content {
                 height: 2.5rem !important;
@@ -56,14 +58,15 @@ blui-drawer-nav-item {
     .blui-drawer-nav-item-depth-3 {
         padding-left: 32px;
     }
-
-    .blui-info-list-item .mat-list-item.blui-info-list-item-content .mat-list-text .blui-info-list-item-title-wrapper {
+    /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
+    .blui-info-list-item .mat-mdc-list-item.blui-info-list-item-content .mat-list-text .blui-info-list-item-title-wrapper {
         font-weight: 400; // Default font-weight for nav items.
     }
     &.blui-drawer-nav-item-active,
     &.blui-drawer-nav-item-active-tree {
+        /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
         .blui-info-list-item
-            .mat-list-item.blui-info-list-item-content
+            .mat-mdc-list-item.blui-info-list-item-content
             .mat-list-text
             .blui-info-list-item-title-wrapper {
             font-weight: 600; // Default font-weight for active nav item parents.
@@ -73,11 +76,13 @@ blui-drawer-nav-item {
     blui-info-list-item {
         display: flex;
         flex-direction: column;
+        /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
         mat-list-item {
             z-index: 1; // Used to keep text and icon above on-select highlight.
         }
 
         // This class is used to hide a nav-item's clipped title when collapsed with no icon.
+        /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
         &.blui-drawer-nav-item-no-icon-closed .blui-info-list-item .mat-list-item-content {
             padding-right: 24px;
         }
@@ -144,6 +149,7 @@ blui-drawer-nav-item {
 }
 
 .blui-drawer-nested-nav-item {
+    /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
     .blui-info-list-item .mat-list-item-content {
         padding-left: 16px;
     }

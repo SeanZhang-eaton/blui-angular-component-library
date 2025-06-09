@@ -33,6 +33,7 @@ $size: 2.5rem;
     }
 }
 
+/* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
 mat-card.blui-user-menu-overlay {
     padding: 0;
 }
@@ -68,7 +69,7 @@ mat-card.blui-user-menu-overlay {
 
 .blui-user-menu-overlay,
 .blui-user-menu-bottomsheet {
-    .mat-list-base .mat-list-item.blui-info-list-item-content .blui-info-list-item-title-wrapper {
+    .mat-mdc-list-base .mat-mdc-list-item.blui-info-list-item-content .blui-info-list-item-title-wrapper {
         font-weight: 400;
     }
 }

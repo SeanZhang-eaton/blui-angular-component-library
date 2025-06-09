@@ -32,11 +32,11 @@ export const PERSISTENT = `<blui-drawer-layout variant="persistent">
     template: PERSISTENT,
     styles: [
         `
-            :host {
-                display: flex;
-                width: 100%;
-            }
-        `,
+                    :host {
+                        display: flex;
+                        width: 100%;
+                    }
+                `,
     ],
 })
 export class PersistentVariantExampleComponent {

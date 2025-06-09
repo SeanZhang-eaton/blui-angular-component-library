@@ -1,5 +1,5 @@
 /* Mobile Styles */
-.sm .tabs-container .mat-tab-header {
+.sm .tabs-container .mat-mdc-tab-header {
     top: 56px !important;
 }
 
@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
 
-    .tabs-container.small .mat-tab-header {
+    .tabs-container.small .mat-mdc-tab-header {
         width: 100%;
         max-width: 1200px;
     }
@@ -16,10 +16,11 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
         .mat-tab-label {
             // height: 50px;
         }
-        .mat-tab-header {
+        .mat-mdc-tab-header {
             height: 52px;
             width: 100%;
             position: sticky;
@@ -31,13 +32,14 @@
             max-width: 100%;
             border-bottom: 0 !important;
         }
-        .mat-tab-group {
+        .mat-mdc-tab-group {
             max-width: 1200px;
         }
+        /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
         .mat-tab-label {
             width: 100% !important;
         }
-        .mat-tab-body-content,
+        .mat-mdc-tab-body-content,
         .mat-tab-body {
             overflow: unset;
         }
@@ -171,7 +173,7 @@
         right: 0;
         // padding: 16px;
         padding: 16px 0;
-
+        /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version. */
         input,
         .mat-checkbox-label,
         .mat-select-value-text {
@@ -179,6 +181,7 @@
             white-space: pre-wrap;
         }
         .non-prop {
+            /* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version. */
             input,
             .mat-checkbox-label,
             .mat-select-value-text {

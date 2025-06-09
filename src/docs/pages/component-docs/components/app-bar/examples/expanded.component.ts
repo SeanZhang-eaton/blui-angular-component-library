@@ -14,18 +14,18 @@ export const EXPANDED = `<div class="scroll-container">
     template: EXPANDED,
     styles: [
         `
-            .scroll-container {
-                width: 100%;
-                max-width: 450px;
-                max-height: 400px;
-                overflow: auto;
-                position: relative;
-            }
-            .content-body {
-                padding: 16px;
-                background: white;
-            }
-        `,
+                    .scroll-container {
+                        width: 100%;
+                        max-width: 450px;
+                        max-height: 400px;
+                        overflow: auto;
+                        position: relative;
+                    }
+                    .content-body {
+                        padding: 16px;
+                        background: white;
+                    }
+                `,
     ],
 })
 export class ExpandedComponent {

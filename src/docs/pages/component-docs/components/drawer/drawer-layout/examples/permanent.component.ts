@@ -21,11 +21,11 @@ export const PERMANENT = `<blui-drawer-layout variant="permanent">
     template: PERMANENT,
     styles: [
         `
-            :host {
-                display: flex;
-                width: 100%;
-            }
-        `,
+                    :host {
+                        display: flex;
+                        width: 100%;
+                    }
+                `,
     ],
 })
 export class PermanentVariantExampleComponent {}

@@ -11,7 +11,7 @@
 
 /* Used for scaling mat-icons inside of mat-buttons. */
 @mixin scale-icon-button {
-    .mat-icon-button {
+    .mat-mdc-icon-button {
         height: 2.5rem;
         width: 2.5rem;
         line-height: 2.5rem;

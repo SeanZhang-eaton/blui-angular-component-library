@@ -2,19 +2,19 @@
     <blui-drawer blui-drawer [open]="isOpen()" [sideBorder]="true" class="app-navigation-drawer">
         <blui-drawer-header>
             <div blui-title-content style="display: flex; flex-direction: column; justify-content: center">
-                <div class="mat-subheading-1">Brightlayer User Interface</div>
+                <div class="mat-body-1">Brightlayer User Interface</div>
                 <div style="display: flex; align-items: center">
-                    <div class="mat-body-2">Developer Docs</div>
-                    <mat-chip-list class="framework-chip">
-                        <mat-chip>
+                    <div class="mat-subtitle-2">Developer Docs</div>
+                    <mat-chip-listbox class="framework-chip">
+                        <mat-chip-option>
                             <img
                                 matChipAvatar
                                 src="assets/angular-shield.svg"
                                 style="background-color: unset; height: 16px; width: 16px"
                             />
                             <div>Angular</div>
-                        </mat-chip>
-                    </mat-chip-list>
+                        </mat-chip-option>
+                    </mat-chip-listbox>
                 </div>
             </div>
         </blui-drawer-header>

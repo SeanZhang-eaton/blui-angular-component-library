@@ -88,7 +88,7 @@ import { requireInput } from '../../utils/utils';
             [cdkConnectedOverlayViewportMargin]="16"
             [cdkConnectedOverlayBackdropClass]="'blui-user-menu-overlay-backdrop'"
         >
-            <mat-card class="blui-user-menu-overlay mat-elevation-z8" [@fade-in-out]>
+            <mat-card appearance="outlined" class="blui-user-menu-overlay mat-elevation-z8" [@fade-in-out]>
                 <ng-template [ngTemplateOutlet]="menu"></ng-template>
             </mat-card>
         </ng-template>

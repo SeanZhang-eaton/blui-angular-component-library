@@ -11,7 +11,7 @@ import { requireInput } from '../../utils/utils';
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     template: `
-        <mat-card class="blui-score-card-content">
+        <mat-card appearance="outlined" class="blui-score-card-content">
             <div class="blui-score-card-header">
                 <div class="blui-score-card-header-background"></div>
                 <div class="blui-score-card-header-wrapper">

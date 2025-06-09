@@ -22,7 +22,7 @@ import { isEmptyView } from '../../../utils/utils';
                 </div>
                 <div *ngIf="title" class="blui-user-menu-header-title-wrapper">
                     <div class="blui-user-menu-header-title">{{ title }}</div>
-                    <div *ngIf="subtitle" class="blui-user-menu-header-subtitle mat-subheading-2">{{ subtitle }}</div>
+                    <div *ngIf="subtitle" class="blui-user-menu-header-subtitle mat-subtitle-1">{{ subtitle }}</div>
                 </div>
                 <ng-content select="[blui-title-content]"></ng-content>
             </div>
