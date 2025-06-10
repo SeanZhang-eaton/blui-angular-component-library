@@ -1,0 +1,32 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "target": "ES2022",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "paths": {
+      "@blui-lab/angular": [
+        "src/lab"
+      ],
+      "@brightlayer-ui/angular-components/*": [
+        "projects/component-library/src/lib/*"
+      ]
+    },
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "useDefineForClassFields": false,
+    "rootDir": "."
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}
