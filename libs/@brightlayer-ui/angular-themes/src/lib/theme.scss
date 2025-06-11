@@ -11,19 +11,23 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 
 @use './theme-bases';
 
+@include mat.core();
+
 $blui-blue-primary: theme-bases.$blui-blue-primary;
 $blui-blue-accent: theme-bases.$blui-blue-accent;
 $blui-blue-warn: theme-bases.$blui-blue-warn;
 
-.blui-blue {
+:root {
+    @include theme-bases.blueDark();
+}
+
+.blui-blue-test {
     @include theme-bases.blue();
 }
+
+@include theme-bases.sharedConfig();
 
 $blui-blue-dark-primary: theme-bases.$blui-blue-dark-primary;
 $blui-blue-dark-accent: theme-bases.$blui-blue-dark-accent;
 $blui-blue-dark-warn: theme-bases.$blui-blue-dark-warn;
 
-// Blue Dark Theme
-.blui-blue-dark {
-    @include theme-bases.blueDark();
-}

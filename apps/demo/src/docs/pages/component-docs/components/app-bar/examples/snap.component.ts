@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { loremIpsum } from './lorem-ipsum';
+import { StyleObserver } from 'style-observer';
 
-export const SNAP = `<div id="app-bar-basic-example" class="scroll-container">
+export const SNAP = `
+<div id="app-bar-basic-example" class="scroll-container">
     <blui-app-bar 
         variant="snap" 
         expandedHeight="200" 
@@ -19,20 +21,26 @@ export const SNAP = `<div id="app-bar-basic-example" class="scroll-container">
     template: SNAP,
     styles: [
         `
-                    .scroll-container {
-                        width: 100%;
-                        max-width: 450px;
-                        max-height: 400px;
-                        overflow: auto;
-                        position: relative;
-                    }
-                    .content-body {
-                        padding: 16px;
-                        background: white;
-                    }
-                `,
+            .scroll-container {
+                width: 100%;
+                max-width: 450px;
+                max-height: 400px;
+                overflow: auto;
+                position: relative;
+            }
+            .content-body {
+                padding: 16px;
+                background: white;
+            }
+        `,
     ],
 })
-export class SnapAppBarComponent {
+export class SnapAppBarComponent implements AfterViewInit {
     filler = loremIpsum;
+    ngAfterViewInit() {
+        const observer = new StyleObserver((records) => {
+            console.log(records);
+        });
+        observer.observe(document.querySelectorAll('.mat-toolbar'), ['--mat-toolbar-container-background-color']);
+    }
 }

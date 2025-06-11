@@ -1,7 +1,7 @@
 import { NgModule, SecurityContext } from '@angular/core';
 import { ScaffoldComponent } from './scaffold/scaffold.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { MarkdownModule, MARKED_OPTIONS } from 'ngx-markdown';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -60,7 +60,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
             loader: HttpClientModule,
             sanitize: SecurityContext.NONE,
             markedOptions: {
-                provide: MarkedOptions,
+                provide: MARKED_OPTIONS,
                 useValue: {
                     gfm: true,
                     breaks: false,

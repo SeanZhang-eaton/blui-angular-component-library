@@ -667,7 +667,7 @@
         background-color: map-get(blui.$blui-darkBlack, 300);
         /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
         .blui-drawer-nav-item-active, /*NavRail item*/
-        .blui-drawer-nav-item-active .blui-info-list-item .mat-list-item-content, /*Normal NavItem*/
+        .blui-drawer-nav-item-active .blui-info-list-item .mdc-list-item__content, /*Normal NavItem*/
         .blui-drawer-nav-item-active .blui-info-list-item .blui-info-list-item-icon-wrapper {
             color: map-get($primary, 200);
 

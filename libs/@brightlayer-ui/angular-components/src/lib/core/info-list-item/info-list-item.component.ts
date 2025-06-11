@@ -33,7 +33,7 @@ type DividerType = 'full' | 'partial' | undefined;
             [disabled]="disabled"
         >
             <div
-                mat-list-icon
+                matListItemIcon
                 class="blui-info-list-item-icon-wrapper"
                 [class.blui-info-list-item-hide-padding]="hidePadding"
                 [class.blui-info-list-item-avatar]="avatar"

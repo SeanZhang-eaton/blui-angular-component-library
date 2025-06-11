@@ -15,7 +15,7 @@ $denseHeight: 3.25rem;
     .blui-info-list-item-content,
     .mat-mdc-list-base .mat-mdc-list-item.blui-info-list-item-content {
         /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
-        &.blui-info-list-item-status .mat-list-item-content {
+        &.blui-info-list-item-status .mdc-list-item__content {
             border-right: solid $statusWidth;
             border-right-color: inherit;
             padding-right: $contentPaddingLeft - $statusWidth;
@@ -23,7 +23,7 @@ $denseHeight: 3.25rem;
             border-left: unset;
         }
         /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
-        .mat-list-item-content .mat-list-text {
+        .mdc-list-item__content .mat-list-text {
             padding-right: 0;
         }
 
@@ -56,14 +56,17 @@ $denseHeight: 3.25rem;
     height: inherit; /* Used to override height applied when wrapped in a mat-list. */
     /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
     /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
-    .mat-list-item-content {
-        display: flex;
-        align-items: center;
+    .mdc-list-item__content {
+        width: 100%;
+        padding: 0.5rem $contentPaddingLeft 0.5rem $contentPaddingLeft;
         box-sizing: border-box;
         height: $normalHeight;
-        padding: 0.5rem $contentPaddingLeft 0.5rem $contentPaddingLeft;
-        width: 100%;
-
+        display: flex;
+        & > * {
+            width: inherit;
+            display: flex;
+            align-items: center;
+        }
         // Needed for ng v9
         /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
         .mat-list-text {
@@ -72,24 +75,24 @@ $denseHeight: 3.25rem;
         }
     }
     /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
-    &.blui-info-list-item-status .mat-list-item-content {
+    &.blui-info-list-item-status .mdc-list-item__content {
         border-left: solid $statusWidth;
         border-left-color: inherit;
         padding-left: $contentPaddingLeft - $statusWidth;
     }
     /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
-    &.blui-info-list-item-dense .mat-list-item-content {
+    &.blui-info-list-item-dense .mdc-list-item__content {
         height: $denseHeight;
     }
 
     &.blui-info-list-item-wrap {
         /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
-        .mat-list-item-content {
+        .mdc-list-item__content {
             height: unset;
             min-height: $normalHeight;
         }
         /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
-        &.blui-info-list-item-dense .mat-list-item-content {
+        &.blui-info-list-item-dense .mdc-list-item__content {
             min-height: $denseHeight;
         }
     }
@@ -135,7 +138,7 @@ $denseHeight: 3.25rem;
     }
 
     .blui-info-list-item-icon-wrapper {
-        order: 1;
+        order: 0;
         width: 2.5rem;
         min-width: 2.5rem;
         max-width: 40px;
