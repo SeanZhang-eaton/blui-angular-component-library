@@ -1,7 +1,4 @@
 {
-    "affected": {
-        "defaultBase": "master"
-    },
     "namedInputs": {
         "sharedGlobals": [],
         "default": ["{projectRoot}/**/*", "sharedGlobals"],
@@ -22,5 +19,7 @@
             "inputs": ["default", "^production", "{workspaceRoot}/karma.conf.js"],
             "cache": true
         }
-    }
+    },
+    "useInferencePlugins": false,
+    "defaultBase": "master"
 }
