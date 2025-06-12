@@ -7,14 +7,18 @@
     font-size: 1.5rem;
     height: 1.5rem;
     width: 1.5rem;
+    line-height: 1.5rem;
 }
 
 /* Used for scaling mat-icons inside of mat-buttons. */
 @mixin scale-icon-button {
     .mat-mdc-icon-button {
-        height: 2.5rem;
-        width: 2.5rem;
-        line-height: 2.5rem;
+        // height: 2.5rem;
+        // width: 2.5rem;
+        // line-height: 2.5rem;
+        // 默认按钮为 48px, 修改为 40px
+        --mdc-icon-button-state-layer-size: 2.5rem;
+        padding: 0.5rem;
         .mat-icon {
             @include scale-icon-content();
             height: unset;

@@ -68,13 +68,13 @@ type Group = {
     </blui-drawer>`,
     styles: [
         `
-                    :host {
-                        height: 100%;
-                    }
-                    ::ng-deep .app-drawer-playground-drawer .blui-drawer-content blui-drawer-body {
-                        overflow: auto !important;
-                    }
-                `,
+            :host {
+                height: 100%;
+            }
+            ::ng-deep .app-drawer-playground-drawer .blui-drawer-content blui-drawer-body {
+                overflow: auto !important;
+            }
+        `,
     ],
 })
 export class PlaygroundComponent implements OnDestroy {

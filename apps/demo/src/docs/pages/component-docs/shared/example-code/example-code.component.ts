@@ -12,7 +12,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
             (mouseenter)="isHoverSnippet = true"
             (mouseleave)="isHoverSnippet = false"
         >
-            <code [innerHTML]="snippet | language: 'html' | markdown"></code>
+            <code [innerHTML]="snippet | language: 'html' | markdown | async"></code>
             <app-copy-code-button [code]="snippet" *ngIf="copyButtonOnHover && isHoverSnippet"
                   style="position: absolute; bottom: 16px; right: 420px;"></app-copy-code-button>
             

@@ -41,13 +41,18 @@ blui-drawer-nav-item {
     &.blui-drawer-nav-item-compact {
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
-        .blui-info-list-item-content {
-            /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
-            &.blui-info-list-item-dense,
-            .mdc-list-item__content {
-                height: 2.5rem !important;
-            }
+
+        .blui-info-list-item.blui-info-list-item-dense {
+            height: 2.5rem !important;
         }
+
+        // .blui-info-list-item-content {
+        //     /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
+        //     &.blui-info-list-item-dense,
+        //     .mdc-list-item__content {
+        //         height: 2.5rem !important;
+        //     }
+        // }
     }
     .blui-drawer-nav-item-depth-1 {
         padding-left: 0;
@@ -59,7 +64,10 @@ blui-drawer-nav-item {
         padding-left: 32px;
     }
     /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
-    .blui-info-list-item .mat-mdc-list-item.blui-info-list-item-content .mat-list-text .blui-info-list-item-title-wrapper {
+    .blui-info-list-item
+        .mat-mdc-list-item.blui-info-list-item-content
+        .mat-list-text
+        .blui-info-list-item-title-wrapper {
         font-weight: 400; // Default font-weight for nav items.
     }
     &.blui-drawer-nav-item-active,
@@ -149,10 +157,10 @@ blui-drawer-nav-item {
 }
 
 .blui-drawer-nested-nav-item {
-    /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
-    .blui-info-list-item .mdc-list-item__content {
-        padding-left: 16px;
-    }
+    // /* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
+    // .blui-info-list-item .mdc-list-item__content {
+    //     padding-left: 16px;
+    // }
     .mat-expansion-panel-body {
         padding: 0;
     }

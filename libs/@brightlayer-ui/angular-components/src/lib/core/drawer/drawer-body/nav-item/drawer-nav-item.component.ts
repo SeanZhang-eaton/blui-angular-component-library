@@ -87,7 +87,9 @@ export type ActiveItemBackgroundShape = 'round' | 'square';
                     >
                         {{ title }}
                     </div>
-                    <div blui-subtitle>{{ subtitle }}</div>
+                    @if (subtitle != null) {
+                        <div blui-subtitle>{{ subtitle }}</div>
+                    }
                     <div blui-right-content *ngIf="hasChildren && isOpen()">
                         <div #expandIcon *ngIf="!expanded">
                             <ng-content select="[blui-expand-icon]"></ng-content>
@@ -194,7 +196,10 @@ export class DrawerNavItemComponent extends StateListener implements Omit<Drawer
      *  Depth is populated by iterating through the Drawer navigation tree.  See DrawerNavGroupComponent for details. */
     depth: number;
 
-    constructor(stateManagerService: DrawerStateManagerService, public changeDetectorRef: ChangeDetectorRef) {
+    constructor(
+        stateManagerService: DrawerStateManagerService,
+        public changeDetectorRef: ChangeDetectorRef
+    ) {
         super(stateManagerService, changeDetectorRef);
         this.id = this.drawerState.createNavItemID();
         this.drawerState.emitNewNavItemCreated();

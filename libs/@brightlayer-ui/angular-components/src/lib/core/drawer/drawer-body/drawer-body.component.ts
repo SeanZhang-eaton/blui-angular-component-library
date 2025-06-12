@@ -16,15 +16,16 @@ import { DrawerStateManagerService, StateListener } from '../state-listener.comp
     `,
     styles: [
         `
-                    .blui-drawer-body-content {
-                        height: 100%;
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    .blui-drawer-body-closed {
-                        overflow-x: hidden;
-                    }
-                `,
+            .blui-drawer-body-content {
+                max-height: 100%;
+                display: flex;
+                flex-direction: column;
+                overflow-y: auto;
+            }
+            .blui-drawer-body-closed {
+                overflow-x: hidden;
+            }
+        `,
     ],
     host: {
         class: 'blui-drawer-body',

@@ -8,7 +8,7 @@ export const CUSTOM_CONTENT = `<blui-drawer style="width: 250px">
                        justify-content: space-between; 
                        align-items: center; 
                        padding: 8px 16px">
-                <div class="mat-subheading-2">Nav Group Title Content</div>
+                <div class="mat-subtitle-2">Nav Group Title Content</div>
                 <blui-list-item-tag label="v1.0.3"></blui-list-item-tag>
             </div>
             <blui-drawer-nav-item title="Item 1"></blui-drawer-nav-item>

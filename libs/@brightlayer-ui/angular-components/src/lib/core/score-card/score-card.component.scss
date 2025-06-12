@@ -13,6 +13,9 @@
 
 .blui-score-card {
     display: flex;
+    *[blui-body] > * {
+        padding: unset;
+    }
 }
 
 .blui-score-card-content.mat-mdc-card {

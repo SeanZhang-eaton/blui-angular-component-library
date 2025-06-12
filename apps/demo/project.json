@@ -11,7 +11,9 @@
         }
     },
     "cli": {
-        "cache": false
+        "cache": {
+            "enabled": false
+        }
     },
     "sourceRoot": "apps/demo/src",
     "prefix": "app",
@@ -36,18 +38,30 @@
                     {
                         "glob": "icons.svg",
                         "input": "node_modules/@brightlayer-ui/icons-svg",
-                        "output": "src/assets/blui-icons"
+                        "output": "apps/demo/src/assets/blui-icons"
                     }
                 ],
                 "styles": [
                     "apps/demo/src/assets/fonts-material/material-icons.css",
-                    "apps/demo/src/styles.scss",
                     "node_modules/@brightlayer-ui/icons/BrightlayerUIIcons.css",
                     "node_modules/prismjs/themes/prism-tomorrow.css",
                     "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css",
                     "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
-                    "libs/@brightlayer-ui/angular-themes/src/lib/theme.scss",
-                    "libs/@brightlayer-ui/angular-themes/src/lib/open-sans.scss"
+                    {
+                        "input": "libs/@brightlayer-ui/angular-themes/src/lib/theme.scss",
+                        "inject": true,
+                        "bundleName": "test4-theme"
+                    },
+                    {
+                        "input": "libs/@brightlayer-ui/angular-themes/src/lib/open-sans.scss",
+                        "inject": true,
+                        "bundleName": "test4-open-sans"
+                    },
+                    {
+                        "input": "apps/demo/src/styles.scss",
+                        "inject": true,
+                        "bundleName": "test4-custom-styles"
+                    }
                 ],
                 "scripts": [
                     "node_modules/marked/marked.min.js",

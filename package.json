@@ -7,7 +7,7 @@
     "scripts": {
         "initialize": "bash scripts/initializeSubmodule.sh",
         "install:dependencies": "yarn && cd showcase && yarn",
-        "start": "nx serve demo -c local --open --host 0.0.0.0 --skip-nx-cache",
+        "start": "npx cross-env NX_PROFILE=profile.json  nx serve demo -c local --open --host 0.0.0.0 --skip-nx-cache",
         "start:npm": "nx serve demo -c npm --open",
         "start:showcase": "yarn initialize && yarn install:dependencies && cd showcase && yarn start:lib",
         "build:demo": "nx build demo",

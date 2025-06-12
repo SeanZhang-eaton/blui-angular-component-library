@@ -510,7 +510,7 @@
     /*  Drawer Content */
     .mat-drawer-content {
         background-color: map-get(blui.$blui-darkBlack, 800);
-        color: map-get($foreground, text);
+        // color: map-get($foreground, text);
     }
 
     /* snackbar theming */

@@ -2,4 +2,7 @@
     display: flex;
     box-sizing: border-box;
     overflow: hidden;
+    & .mat-mdc-form-field-subscript-wrapper {
+        display: none;
+    }
 }

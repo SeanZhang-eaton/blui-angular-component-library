@@ -6,6 +6,8 @@ import {
     Input,
     ViewChild,
     ViewEncapsulation,
+    viewChild,
+    computed,
 } from '@angular/core';
 import { isEmptyView, requireContent } from '../../utils/utils';
 
@@ -23,16 +25,9 @@ type DividerType = 'full' | 'partial' | undefined;
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     template: `
-        <mat-list-item
-            class="blui-info-list-item-content"
-            [class.blui-info-list-item-wrap]="wrapSubtitle || wrapTitle || wrapInfo"
-            [class.blui-info-list-item-dense]="dense"
-            [class.blui-info-list-item-status]="statusColor"
-            [style.border-left-color]="statusColor"
-            [style.border-right-color]="statusColor"
-            [disabled]="disabled"
-        >
+        <mat-list-item class="blui-info-list-item-content" [disabled]="disabled">
             <div
+                #icon
                 matListItemIcon
                 class="blui-info-list-item-icon-wrapper"
                 [class.blui-info-list-item-hide-padding]="hidePadding"
@@ -43,12 +38,12 @@ type DividerType = 'full' | 'partial' | undefined;
             >
                 <ng-content select="[blui-icon]"></ng-content>
             </div>
-            <div class="blui-info-list-item-left-content-wrapper">
+            <div matListItemAvatar class="blui-info-list-item-left-content-wrapper">
                 <ng-content select="[blui-left-content]"></ng-content>
             </div>
             <div
                 class="mat-body-2 blui-info-list-item-title-wrapper"
-                matLine
+                matListItemTitle
                 [class.blui-info-list-item-wrap]="wrapTitle"
                 #title
             >
@@ -56,20 +51,20 @@ type DividerType = 'full' | 'partial' | undefined;
             </div>
             <div
                 class="mat-subtitle-2 blui-info-list-item-subtitle-wrapper"
-                matLine
+                matListItemLine
                 [class.blui-info-list-item-wrap]="wrapSubtitle"
             >
                 <ng-content select="[blui-subtitle]"></ng-content>
             </div>
             <div
                 class="mat-subtitle-2 blui-info-list-item-info-wrapper"
-                matLine
+                matListItemLine
                 [class.blui-info-list-item-wrap]="wrapInfo"
             >
                 <ng-content select="[blui-info]"></ng-content>
             </div>
             <blui-spacer class="blui-info-list-item-spacer"></blui-spacer>
-            <div class="blui-info-list-item-right-content">
+            <div matListItemMeta class="blui-info-list-item-right-content">
                 <div #right class="blui-info-list-item-right-content-wrapper">
                     <ng-content select="[blui-right-content]"></ng-content>
                 </div>
@@ -86,6 +81,12 @@ type DividerType = 'full' | 'partial' | undefined;
     styleUrls: ['./info-list-item.component.scss'],
     host: {
         class: 'blui-info-list-item',
+        '[class.blui-info-list-item-wrap]': 'wrapSubtitle || wrapTitle || wrapInfo',
+        '[class.blui-info-list-item-dense]': 'dense',
+        '[class.blui-info-list-item-status]': 'statusColor',
+        '[class.blui-info-list-item-icon]': 'hasIcon()',
+        '[style.border-left-color]': 'statusColor',
+        '[style.border-right-color]': 'statusColor',
     },
 })
 export class InfoListItemComponent implements AfterViewInit {
@@ -149,6 +150,9 @@ export class InfoListItemComponent implements AfterViewInit {
 
     @ViewChild('title') titleEl: ElementRef;
     @ViewChild('right') rightEl: ElementRef;
+
+    readonly iconEl = viewChild('icon', { read: ElementRef });
+    readonly hasIcon = computed(() => !isEmptyView(this.iconEl()));
 
     isEmpty = (el: ElementRef): boolean => isEmptyView(el);
 

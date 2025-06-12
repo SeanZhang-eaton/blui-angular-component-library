@@ -12,6 +12,9 @@
     }
 }
 
+.blui-drawer-header {
+    height: var(--mat-toolbar-standard-height);
+}
 .blui-drawer-header-content {
     width: 100%;
     align-items: flex-start;

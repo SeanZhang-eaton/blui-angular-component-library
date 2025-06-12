@@ -31,24 +31,24 @@ export type DrawerNavGroup = {
     encapsulation: ViewEncapsulation.None,
     styles: [
         `
-                    .blui-drawer-nav-group-content .mat-mdc-list-base {
-                        font-weight: 600;
-                        padding-top: 0;
-                    }
-                    .blui-drawer-nav-group-content .blui-drawer-nav-group-title {
-                        font-weight: 600;
-                        height: 3rem;
-                        line-height: 3rem;
-                        padding: 0 16px;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        display: block;
-                    }
-                    .blui-drawer-nav-group-content .blui-drawer-nav-group-title-closed {
-                        visibility: hidden;
-                    }
-                `,
+            .blui-drawer-nav-group-content .mat-mdc-list-base {
+                font-weight: 600;
+                padding: unset;
+            }
+            .blui-drawer-nav-group-content .blui-drawer-nav-group-title {
+                font-weight: 600;
+                height: 3rem;
+                line-height: 3rem;
+                padding: 0 16px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                display: block;
+            }
+            .blui-drawer-nav-group-content .blui-drawer-nav-group-title-closed {
+                visibility: hidden;
+            }
+        `,
     ],
     template: `
         <div class="blui-drawer-nav-group-content">
