@@ -1,0 +1,67 @@
+/**
+Copyright (c) 2021-present, Eaton
+
+All rights reserved.
+
+This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
+**/
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '@brightlayer-ui/colors/palette.scss' as blui;
+
+@use './theme-bases';
+@use './blui-component-theme';
+@use './darkTheme';
+@use './blueTheme';
+
+@mixin theme-colors($theme) {
+    $color-config: mat.get-color-config($theme);
+    $primary-palette: map.get($color-config, 'primary');
+    $accent-palette: map.get($color-config, 'accent');
+    $warn-palette: map.get($color-config, 'warn');
+    $is-dark-theme: map.get($color-config, 'is-dark');
+    $background: map.get($theme, background);
+
+    --blui-primary-color: #{mat.get-color-from-palette($primary-palette, 500)};
+    --blui-accent-color: #{mat.get-color-from-palette($accent-palette, 500)};
+    --blui-warn-color: #{mat.get-color-from-palette($warn-palette, 500)};
+    --blui-background-color: #{mat.get-color-from-palette($background, card)};
+}
+
+$blui-blue-primary: theme-bases.$blui-blue-primary;
+$blui-blue-accent: theme-bases.$blui-blue-accent;
+$blui-blue-warn: theme-bases.$blui-blue-warn;
+
+$blui-blue-dark-primary: theme-bases.$blui-blue-dark-primary;
+$blui-blue-dark-accent: theme-bases.$blui-blue-dark-accent;
+$blui-blue-dark-warn: theme-bases.$blui-blue-dark-warn;
+
+@mixin blui-theme() {
+    @include mat.core();
+
+    :root {
+        --blui-drawer-open-width: 360px;
+    }
+
+    .blui-blue {
+        $theme: theme-bases.$blui-light-app-theme;
+        @include mat.all-component-themes($theme);
+
+        @include blui-component-theme.blui-components-theme($theme);
+        @include blueTheme.bluetheme($theme);
+
+        @include theme-colors($theme);
+    }
+
+    .blui-blue-dark {
+        $theme: theme-bases.$blui-dark-app-theme;
+        @include mat.all-component-themes($theme);
+
+        @include blui-component-theme.blui-components-theme($theme);
+        @include darkTheme.darktheme($theme);
+
+        @include theme-colors($theme);
+    }
+
+    @include theme-bases.sharedConfig();
+}

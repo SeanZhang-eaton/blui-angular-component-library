@@ -1,12 +1,11 @@
 {
     "name": "@brightlayer-ui/angular-themes",
     "version": "0.0.1",
+    "type": "module",
     "peerDependencies": {
-        "@angular/common": "17.3.12",
-        "@angular/core": "17.3.12"
-    },
-    "dependencies": {
-        "tslib": "^2.3.0"
+        "@angular/material": "^15.0.0 || ^16.0.0 || ^17.0.0",
+        "@fontsource/open-sans": "^5.2.5",
+        "@brightlayer-ui/colors": "^3.1.1"
     },
     "sideEffects": false
 }

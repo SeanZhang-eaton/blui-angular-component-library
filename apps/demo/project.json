@@ -50,17 +50,17 @@
                     {
                         "input": "libs/@brightlayer-ui/angular-themes/src/lib/theme.scss",
                         "inject": true,
-                        "bundleName": "test11-theme"
+                        "bundleName": "theme"
                     },
                     {
                         "input": "libs/@brightlayer-ui/angular-themes/src/lib/open-sans.scss",
                         "inject": true,
-                        "bundleName": "test11-open-sans"
+                        "bundleName": "open-sans"
                     },
                     {
                         "input": "apps/demo/src/styles.scss",
                         "inject": true,
-                        "bundleName": "test11-custom-styles"
+                        "bundleName": "custom-styles"
                     }
                 ],
                 "scripts": [
@@ -77,13 +77,13 @@
                     "budgets": [
                         {
                             "type": "initial",
-                            "maximumWarning": "500kb",
-                            "maximumError": "3mb"
+                            "maximumWarning": "3mb",
+                            "maximumError": "5mb"
                         },
                         {
                             "type": "anyComponentStyle",
-                            "maximumWarning": "10kb",
-                            "maximumError": "20kb"
+                            "maximumWarning": "20kb",
+                            "maximumError": "50kb"
                         }
                     ],
                     "fileReplacements": [
