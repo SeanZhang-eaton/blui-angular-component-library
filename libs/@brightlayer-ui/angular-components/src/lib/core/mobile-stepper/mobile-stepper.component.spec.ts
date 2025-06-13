@@ -43,7 +43,7 @@ describe('DotStepperComponent', () => {
     it('should render progress indicator', () => {
         const progressFixture = TestBed.createComponent(TestMobileStepperProgress);
         progressFixture.detectChanges();
-        const progressBar = progressFixture.nativeElement.querySelectorAll('.mat-progress-bar');
+        const progressBar = progressFixture.nativeElement.querySelectorAll('.mat-mdc-progress-bar');
         void expect(progressBar.length).toBe(1);
     });
 

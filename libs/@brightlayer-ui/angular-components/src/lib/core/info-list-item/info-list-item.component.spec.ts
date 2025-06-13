@@ -130,15 +130,15 @@ describe('InfoListItemComponent', () => {
 
     it('should have a default height of 72px', () => {
         fixture.detectChanges();
-        const root = fixture.debugElement.query(By.css('.blui-info-list-item-content'));
-        void expect(root.nativeElement.children[0].offsetHeight).toBe(72);
+        const root = fixture.debugElement.query(By.css('.blui-info-list-item'));
+        void expect(root.nativeElement.offsetHeight).toBe(72);
     });
 
     it('should have a dense height of 52px', () => {
         component.dense = true;
         fixture.detectChanges();
-        const root = fixture.debugElement.query(By.css('.blui-info-list-item-content'));
-        void expect(root.nativeElement.children[0].offsetHeight).toBe(52);
+        const root = fixture.debugElement.query(By.css('.blui-info-list-item'));
+        void expect(root.nativeElement.offsetHeight).toBe(52);
     });
 
     it('should enforce class naming conventions', () => {
