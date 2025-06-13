@@ -30,7 +30,6 @@ export const SNAP = `
             }
             .content-body {
                 padding: 16px;
-                background: white;
             }
         `,
     ],

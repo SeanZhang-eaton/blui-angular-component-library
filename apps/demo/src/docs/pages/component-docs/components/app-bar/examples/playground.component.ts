@@ -24,7 +24,6 @@ export type AppBarPlaygroundKnobs = {
             }
             .content-body {
                 padding: 16px;
-                background: white;
             }
         `,
     ],

@@ -83,6 +83,7 @@ type DividerType = 'full' | 'partial' | undefined;
         class: 'blui-info-list-item',
         '[class.blui-info-list-item-wrap]': 'wrapSubtitle || wrapTitle || wrapInfo',
         '[class.blui-info-list-item-dense]': 'dense',
+        '[class.blui-info-list-item-default]': '!hasIcon() && !statusColor',
         '[class.blui-info-list-item-status]': 'statusColor',
         '[class.blui-info-list-item-icon]': 'hasIcon()',
         '[style.border-left-color]': 'statusColor',

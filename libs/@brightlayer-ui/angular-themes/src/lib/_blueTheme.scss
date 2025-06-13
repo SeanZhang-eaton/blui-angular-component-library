@@ -227,8 +227,8 @@
 
     /* toolbar*/
     .mat-toolbar {
-        color: map.get($foreground, text);
-        background-color: map.get(blui.$blui-white, 50);
+        // color: map.get($foreground, text);
+        // background-color: map.get(blui.$blui-white, 50);
         &.mat-primary {
             background-color: map.get($primary, 500);
             .mat-mdc-icon-button:not([color]) {
@@ -529,7 +529,7 @@
         .blui-drawer-nav-item-active, /*NavRail item*/
         .blui-drawer-nav-item-active .blui-info-list-item .mdc-list-item__content, /*Normal NavItem*/
         .blui-drawer-nav-item-active .blui-info-list-item .blui-info-list-item-icon-wrapper {
-            color: map.get($primary, 500);
+            --mdc-list-list-item-label-text-color: #{map.get($primary, 500)};
         }
 
         .blui-info-list-item .blui-info-list-item-icon-wrapper {

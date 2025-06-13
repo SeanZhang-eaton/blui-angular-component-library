@@ -73,7 +73,7 @@ $denseHeight: 3.25rem;
 .blui-info-list-item {
     display: block;
     width: 100%;
-    padding: 0 $contentPaddingLeft;
+    // padding-left: $contentPaddingLeft;
     height: $normalHeight;
     box-sizing: border-box;
     position: relative;
@@ -81,7 +81,9 @@ $denseHeight: 3.25rem;
     &:focus {
         background: rgba(0, 0, 0, 0.04);
     }
-
+    &.blui-info-list-item-default {
+        padding-left: $contentPaddingLeft;
+    }
     &.blui-info-list-item-dense {
         height: $denseHeight;
     }
@@ -93,10 +95,10 @@ $denseHeight: 3.25rem;
         }
     }
     // & .mat-expansion-panel .blui-info-list-item,
-    &.blui-info-list-item-icon,
-    &.blui-info-list-item-status {
-        padding-left: 0;
-    }
+    // &.blui-info-list-item-icon,
+    // &.blui-info-list-item-status {
+    //     padding-left: 0;
+    // }
 
     &.blui-info-list-item-status {
         // border-left: solid $statusWidth;
@@ -111,6 +113,12 @@ $denseHeight: 3.25rem;
             border-left-color: inherit;
             display: inline-block;
         }
+    }
+}
+
+.blui-drawer-nested-nav-item {
+    & .blui-info-list-item-default {
+        padding-left: unset;
     }
 }
 
@@ -230,6 +238,11 @@ $denseHeight: 3.25rem;
             width: 0;
             margin: 0;
             min-width: unset;
+            & + .blui-info-list-item-left-content-wrapper:empty {
+                & + .mdc-list-item__content {
+                    padding-left: $contentPaddingLeft;
+                }
+            }
         }
         &.blui-info-list-item-avatar > * {
             padding: 0.5rem;

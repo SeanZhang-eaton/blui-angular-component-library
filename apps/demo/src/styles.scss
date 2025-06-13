@@ -41,13 +41,17 @@ body {
     }
     .example-demo-wrapper {
         margin: 16px 0 0 0;
-        background-color: #eeeeee;
+        // background-color: #eeeeee;
         padding: 32px;
         display: flex;
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
         overflow: auto;
+        & > :first-child {
+            box-shadow: 0 0 0 30px #e7e7e7;
+            border-radius: 0.25rem;
+        }
     }
     .example-actions {
         padding-top: 16px;
@@ -57,6 +61,7 @@ body {
     .example-description {
         code {
             background-color: #e7e7e7;
+            color: var(--blui-primary-color);
         }
     }
     app-example-code {

@@ -50,17 +50,17 @@
                     {
                         "input": "libs/@brightlayer-ui/angular-themes/src/lib/theme.scss",
                         "inject": true,
-                        "bundleName": "test4-theme"
+                        "bundleName": "test11-theme"
                     },
                     {
                         "input": "libs/@brightlayer-ui/angular-themes/src/lib/open-sans.scss",
                         "inject": true,
-                        "bundleName": "test4-open-sans"
+                        "bundleName": "test11-open-sans"
                     },
                     {
                         "input": "apps/demo/src/styles.scss",
                         "inject": true,
-                        "bundleName": "test4-custom-styles"
+                        "bundleName": "test11-custom-styles"
                     }
                 ],
                 "scripts": [

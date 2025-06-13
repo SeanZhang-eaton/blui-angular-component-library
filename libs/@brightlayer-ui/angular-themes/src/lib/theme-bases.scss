@@ -17,7 +17,7 @@ $blui-blue-accent: mat.define-palette(blui.$blui-lightBlue, 200);
 $blui-blue-warn: mat.define-palette(blui.$blui-red, 200);
 
 $blui-blue-dark-primary: mat.define-palette(blui.$blui-blue);
-$blui-blue-dark-accent: mat.define-palette(blui.$blui-lightBlue, 200);
+$blui-blue-dark-accent: mat.define-palette(blui.$blui-lightBlue, A200, A100, A400);
 $blui-blue-dark-warn: mat.define-palette(blui.$blui-red, 200);
 
 $typography-config: mat.define-typography-config(

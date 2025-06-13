@@ -30,23 +30,22 @@ export const THREE_LINER = `<div id="app-bar-three-liner-example" class="three-l
     template: THREE_LINER,
     styles: [
         `
-                    .three-liner-scroll-container {
-                        width: 100%;
-                        max-width: 450px;
-                        max-height: 400px;
-                        overflow: auto;
-                        position: relative;
-                    }
-                    .content-body {
-                        padding: 16px;
-                        background: white;
-                    }
-                    ::ng-deep .three-liner-scroll-container .blui-app-bar-background {
-                        background-image: url('../../../../../../assets/farm.jpg') !important;
-                        background-size: cover !important;
-                        opacity: 0.5;
-                    }
-                `,
+            .three-liner-scroll-container {
+                width: 100%;
+                max-width: 450px;
+                max-height: 400px;
+                overflow: auto;
+                position: relative;
+            }
+            .content-body {
+                padding: 16px;
+            }
+            ::ng-deep .three-liner-scroll-container .blui-app-bar-background {
+                background-image: url('../../../../../../assets/farm.jpg') !important;
+                background-size: cover !important;
+                opacity: 0.5;
+            }
+        `,
     ],
 })
 export class ThreeLinerComponent {

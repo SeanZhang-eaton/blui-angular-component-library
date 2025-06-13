@@ -2,7 +2,7 @@
     .mat-mdc-tab-group {
         /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
         /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
-        .mat-tab-label {
+        .mat-mdc-tab {
             color: $text;
             font-weight: 400;
             background-color: $background;
@@ -12,7 +12,7 @@
             }
         }
         /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
-        .mat-tab-label-active {
+        .mdc-tab-indicator--active{
             font-weight: 600;
             color: $activeText;
             background-color: $activeBackground;
