@@ -28,6 +28,7 @@ import { requireInput } from '../../utils/utils';
  */
 @Component({
     selector: 'blui-user-menu',
+    standalone: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./user-menu.component.scss'],
@@ -132,7 +133,10 @@ export class UserMenuComponent implements OnInit, OnChanges, OnDestroy {
 
     @ViewChild(TemplateRef) menu: TemplateRef<any>;
 
-    constructor(private readonly _bottomSheet: MatBottomSheet, private readonly _ref: ChangeDetectorRef) {}
+    constructor(
+        private readonly _bottomSheet: MatBottomSheet,
+        private readonly _ref: ChangeDetectorRef
+    ) {}
 
     screenSizeChangeListener: Subscription;
     useBottomSheet: boolean;

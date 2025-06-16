@@ -8,6 +8,7 @@ import { requireInput } from '../../utils/utils';
  */
 @Component({
     selector: 'blui-score-card',
+    standalone: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     template: `

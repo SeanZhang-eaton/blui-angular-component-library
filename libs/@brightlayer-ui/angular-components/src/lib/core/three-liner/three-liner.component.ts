@@ -17,6 +17,7 @@ import { isEmptyView } from '../../utils/utils';
  */
 @Component({
     selector: 'blui-three-liner',
+    standalone: false,
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['three-liner.component.scss'],
     template: `

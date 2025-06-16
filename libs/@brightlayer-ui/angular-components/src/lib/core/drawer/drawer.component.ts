@@ -18,6 +18,7 @@ import { Subscription } from 'rxjs';
  */
 @Component({
     selector: 'blui-drawer',
+    standalone: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     template: `

@@ -9,6 +9,7 @@ import { isEmptyView } from '../../../utils/utils';
  */
 @Component({
     selector: 'blui-drawer-header',
+    standalone: false,
     encapsulation: ViewEncapsulation.None,
     template: `
         <mat-toolbar

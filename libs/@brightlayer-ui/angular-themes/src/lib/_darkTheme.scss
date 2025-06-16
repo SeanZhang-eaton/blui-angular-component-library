@@ -75,7 +75,7 @@
     );
     @include chip.blui-mat-chip-default($chipPrimary, $chipAccent, $chipWarn, $chipDefault);
     /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
-    .mat-mdc-chip.mat-chip-disabled .mat-chip-avatar {
+    .mat-mdc-chip.mat-mdc-chip-disabled .mat-mdc-chip-avatar {
         opacity: 0.5;
     }
     /* Chips-Outline */

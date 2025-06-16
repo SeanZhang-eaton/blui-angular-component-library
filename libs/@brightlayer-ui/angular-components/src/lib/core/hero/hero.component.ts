@@ -20,6 +20,7 @@ import { UnitSpaceType } from '../channel-value/channel-value.component';
  */
 @Component({
     selector: 'blui-hero',
+    standalone: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./hero.component.scss'],

@@ -7,6 +7,7 @@ import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@a
  */
 @Component({
     selector: 'blui-hero-banner',
+    standalone: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     template: `

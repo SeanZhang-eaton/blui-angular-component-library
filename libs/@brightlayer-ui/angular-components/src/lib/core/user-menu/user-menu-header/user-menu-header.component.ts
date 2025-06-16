@@ -8,6 +8,7 @@ import { isEmptyView } from '../../../utils/utils';
  */
 @Component({
     selector: 'blui-user-menu-header',
+    standalone: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     template: `

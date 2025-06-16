@@ -1,0 +1,28 @@
+.app-bar-container {
+    max-height: 300px;
+    overflow: auto;
+}
+.score-badge-example-content mat-list-item {
+    height: 2.25rem !important;
+}
+.score-badge-example-content.mat-mdc-list-base .mat-mdc-list-item .mat-mdc-list-item-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 1.5rem;
+}
+.score-badge-example-content mat-icon {
+    margin-right: 32px;
+    padding: 0;
+}
+.rtl.score-badge-example-content mat-icon {
+    margin-left: 32px;
+    margin-right: 0;
+    transform: scaleX(-1);
+}
+/* TODO(mdc-migration): The following rule targets internal classes of list that may no longer apply for the MDC version. */
+.rtl .mat-list-text {
+    padding-right: 0 !important;
+}
+.blui-score-card {
+    margin-bottom: 1rem;
+}

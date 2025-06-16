@@ -10,9 +10,11 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "importHelpers": true,
+        "skipLibCheck": true,
         "paths": {
             "@blui-apps/demo/*": ["apps/demo/src/*"],
             "@blui-lab/angular": ["src/lab"],
+            "@brightlayer-ui/angular-components": ["libs/@brightlayer-ui/angular-components/src/public-api.ts"],
             "@brightlayer-ui/angular-components/*": ["libs/@brightlayer-ui/angular-components/src/lib/*"],
             "@brightlayer-ui/angular-themes/*": ["libs/@brightlayer-ui/angular-themes/src/lib/*"]
         },

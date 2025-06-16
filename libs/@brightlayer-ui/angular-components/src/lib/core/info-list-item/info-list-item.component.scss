@@ -255,7 +255,6 @@ $denseHeight: 3.25rem;
     }
 
     .blui-info-list-item-left-content-wrapper {
-        margin-top: 0;
         width: auto;
         color: unset;
         > * {
@@ -285,6 +284,9 @@ $denseHeight: 3.25rem;
         .blui-info-list-item-right-content-wrapper > * {
             display: flex;
             align-items: center;
+            & .mat-mdc-form-field-subscript-wrapper {
+                display: none;
+            }
         }
     }
     .blui-chevron {

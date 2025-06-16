@@ -24,6 +24,7 @@ import { Element } from '@angular/compiler';
  * */
 @Component({
     selector: 'blui-app-bar',
+    standalone: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./app-bar.component.scss'],

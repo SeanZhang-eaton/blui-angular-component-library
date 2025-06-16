@@ -1,0 +1,13 @@
+
+/* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
+.demo-chip-list .mat-chip-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.chip-demo {
+    .section-title {
+        margin-top: 24px;
+        margin-bottom: 8px;
+    }
+}

@@ -8,6 +8,7 @@ import { requireInput } from '../../utils/utils';
  */
 @Component({
     selector: 'blui-list-item-tag',
+    standalone: false,
     templateUrl: './list-item-tag.component.html',
     styleUrls: ['./list-item-tag.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,

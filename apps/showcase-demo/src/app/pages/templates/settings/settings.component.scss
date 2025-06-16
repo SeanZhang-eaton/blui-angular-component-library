@@ -1,0 +1,31 @@
+@use '@brightlayer-ui/colors/palette.scss';
+
+.app-template-settings {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-mdc-list-base {
+    padding-top: 0 !important;
+}
+
+.settings-root {
+    /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
+    mat-card {
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
+    /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
+    mat-card-header {
+        /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
+        .mat-card-header-text {
+            margin-left: 8px !important;
+        }
+        height: 48px;
+        line-height: 48px;
+        color: map-get(palette.$blui-blue, 500);
+        font-weight: 600;
+    }
+}

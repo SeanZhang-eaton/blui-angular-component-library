@@ -1,0 +1,15 @@
+@use '@brightlayer-ui/colors/palette.scss';
+
+.test-background-image .blui-drawer-header-background {
+    background-image: url('../assets/topology_40.png');
+}
+
+.user-menu {
+    margin-left: 8px;
+    height: 2.5rem;
+
+    &.rtl {
+        margin-right: 8px;
+        margin-left: 0;
+    }
+}

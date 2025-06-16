@@ -8,6 +8,7 @@ import { MatMenuTrigger } from '@angular/material/menu';
  */
 @Component({
     selector: 'blui-toolbar-menu',
+    standalone: false,
     encapsulation: ViewEncapsulation.None,
     template: `
         <div class="blui-toolbar-icon-wrapper">

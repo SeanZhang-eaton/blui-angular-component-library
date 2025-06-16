@@ -9,6 +9,7 @@ export type UnitSpaceType = 'show' | 'hide' | 'auto';
  * */
 @Component({
     selector: 'blui-channel-value',
+    standalone: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     template: `

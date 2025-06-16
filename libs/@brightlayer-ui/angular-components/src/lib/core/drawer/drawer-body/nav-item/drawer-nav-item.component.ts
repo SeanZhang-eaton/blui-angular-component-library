@@ -41,6 +41,7 @@ export type ActiveItemBackgroundShape = 'round' | 'square';
  */
 @Component({
     selector: 'blui-drawer-nav-item',
+    standalone: false,
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./drawer-nav-item.component.scss'],
     template: `

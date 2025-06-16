@@ -8,6 +8,7 @@ import { Component, HostBinding, Input, NgModule, OnChanges, OnInit } from '@ang
  */
 @Component({
     selector: 'blui-spacer',
+    standalone: false,
     template: ` <ng-content></ng-content> `,
 })
 export class SpacerComponent implements OnChanges, OnInit {

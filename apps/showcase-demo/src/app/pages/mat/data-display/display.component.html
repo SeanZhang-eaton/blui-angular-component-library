@@ -1,0 +1,561 @@
+<div class="showcase-container">
+    <mat-card appearance="outlined" class="ng-comp-card">
+        <mat-card-header>
+            <div mat-card-title>Badge</div>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="story-title">Standard (default)</div>
+            <p>
+                <span matBadge="4" matBadgeOverlap="false">Basic</span>
+            </p>
+            <p>
+                <span matBadge="4" matBadgeOverlap="false" matBadgeColor="primary">Primary</span>
+            </p>
+            <p>
+                <span matBadge="4" matBadgeOverlap="false" matBadgeColor="accent">Accent</span>
+            </p>
+            <p>
+                <span matBadge="4" matBadgeOverlap="false" matBadgeColor="warn">Warn</span>
+            </p>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card appearance="outlined" class="ng-comp-card">
+        <mat-card-header>
+            <div mat-card-title>Chip (default)</div>
+        </mat-card-header>
+        <mat-card-content class="chip-demo">
+            <div class="section-title">Default</div>
+            <mat-chip-listbox class="demo-chip-list">
+                <div>
+                    <mat-chip-option selected>Selected</mat-chip-option>
+                    <mat-chip-option selected disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option>Default</mat-chip-option>
+                    <mat-chip-option disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option>
+                        Removable
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option disabled>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        With Icon
+                    </mat-chip-option>
+                    <mat-chip-option disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Dual Icon
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option>
+                        <div matChipAvatar>MB</div>
+                        Text Avatar
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option disabled>
+                        <div matChipAvatar>MB</div>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+            </mat-chip-listbox>
+
+            <div class="section-title">Primary</div>
+            <mat-chip-listbox class="demo-chip-list">
+                <div>
+                    <mat-chip-option color="primary">Unselected</mat-chip-option>
+                    <mat-chip-option color="primary" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="primary">Default</mat-chip-option>
+                    <mat-chip-option selected color="primary" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="primary">
+                        Removable
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected color="primary" disabled>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="primary">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        With Icon
+                    </mat-chip-option>
+                    <mat-chip-option selected color="primary" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="primary">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Dual Icon
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected color="primary" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="primary">
+                        <div matChipAvatar>MB</div>
+                        Text Avatar
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected color="primary" disabled>
+                        <div matChipAvatar>MB</div>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+            </mat-chip-listbox>
+
+            <div class="section-title">Accent</div>
+            <mat-chip-listbox class="demo-chip-list">
+                <div>
+                    <mat-chip-option color="accent">Unselected</mat-chip-option>
+                    <mat-chip-option color="accent" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="accent">Default</mat-chip-option>
+                    <mat-chip-option selected color="accent" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="accent">
+                        Removable
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected color="accent" disabled>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="accent">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        With Icon
+                    </mat-chip-option>
+                    <mat-chip-option selected color="accent" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="accent">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Dual Icon
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected color="accent" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="accent">
+                        <div matChipAvatar>MB</div>
+                        Text Avatar
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected color="accent" disabled>
+                        <div matChipAvatar>MB</div>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+            </mat-chip-listbox>
+
+            <div class="section-title">Warn</div>
+            <mat-chip-listbox class="demo-chip-list">
+                <div>
+                    <mat-chip-option color="warn">Unselected</mat-chip-option>
+                    <mat-chip-option color="warn" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="warn">Default</mat-chip-option>
+                    <mat-chip-option selected color="warn" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="warn">
+                        Removable
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected color="warn" disabled>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="warn">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        With Icon
+                    </mat-chip-option>
+                    <mat-chip-option selected color="warn" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="warn">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Dual Icon
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected color="warn" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected color="warn">
+                        <div matChipAvatar>MB</div>
+                        Text Avatar
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected color="warn" disabled>
+                        <div matChipAvatar>MB</div>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+            </mat-chip-listbox>
+        </mat-card-content>
+    </mat-card>
+    <mat-card appearance="outlined" class="ng-comp-card">
+        <mat-card-header>
+            <div mat-card-title>Chip (outline)</div>
+        </mat-card-header>
+        <mat-card-content class="chip-demo">
+            <div class="section-title">Default</div>
+            <mat-chip-listbox class="demo-chip-list">
+                <div>
+                    <mat-chip-option selected variant="outline">Selected</mat-chip-option>
+                    <mat-chip-option selected variant="outline" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option variant="outline">Default</mat-chip-option>
+                    <mat-chip-option variant="outline" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option variant="outline">
+                        Removable
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option variant="outline" disabled>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option variant="outline">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        With Icon
+                    </mat-chip-option>
+                    <mat-chip-option variant="outline" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option variant="outline">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Dual Icon
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option variant="outline" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option variant="outline">
+                        <div matChipAvatar>MB</div>
+                        Text Avatar
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option variant="outline" disabled>
+                        <div matChipAvatar>MB</div>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+            </mat-chip-listbox>
+
+            <div class="section-title">Primary</div>
+            <mat-chip-listbox class="demo-chip-list">
+                <div>
+                    <mat-chip-option variant="outline" color="primary">Unselected</mat-chip-option>
+                    <mat-chip-option variant="outline" color="primary" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="primary">Default</mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="primary" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="primary">
+                        Removable
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="primary" disabled>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="primary">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        With Icon
+                    </mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="primary" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="primary">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Dual Icon
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="primary" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="primary">
+                        <div matChipAvatar>MB</div>
+                        Text Avatar
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="primary" disabled>
+                        <div matChipAvatar>MB</div>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+            </mat-chip-listbox>
+
+            <div class="section-title">Accent</div>
+            <mat-chip-listbox class="demo-chip-list">
+                <div>
+                    <mat-chip-option variant="outline" color="accent">Unselected</mat-chip-option>
+                    <mat-chip-option variant="outline" color="accent" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="accent">Default</mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="accent" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="accent">
+                        Removable
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="accent" disabled>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="accent">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        With Icon
+                    </mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="accent" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="accent">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Dual Icon
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="accent" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="accent">
+                        <div matChipAvatar>MB</div>
+                        Text Avatar
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="accent" disabled>
+                        <div matChipAvatar>MB</div>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+            </mat-chip-listbox>
+
+            <div class="section-title">Warn</div>
+            <mat-chip-listbox class="demo-chip-list">
+                <div>
+                    <mat-chip-option variant="outline" color="warn">Unselected</mat-chip-option>
+                    <mat-chip-option variant="outline" color="warn" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="warn">Default</mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="warn" disabled>Disabled</mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="warn">
+                        Removable
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="warn" disabled>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="warn">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        With Icon
+                    </mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="warn" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="warn">
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Dual Icon
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="warn" disabled>
+                        <mat-icon matChipAvatar>favorite</mat-icon>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+                <div>
+                    <mat-chip-option selected variant="outline" color="warn">
+                        <div matChipAvatar>MB</div>
+                        Text Avatar
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                    <mat-chip-option selected variant="outline" color="warn" disabled>
+                        <div matChipAvatar>MB</div>
+                        Disabled
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip-option>
+                </div>
+            </mat-chip-listbox>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card appearance="outlined" class="ng-comp-card">
+        <mat-card-header>
+            <div mat-card-title>Table</div>
+        </mat-card-header>
+        <mat-card-content>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z2" style="width: 100%">
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef>No.</th>
+                    <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="symbol">
+                    <th mat-header-cell *matHeaderCellDef>Symbol</th>
+                    <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card appearance="outlined" class="ng-comp-card">
+        <mat-card-header>
+            <div mat-card-title>Tooltip</div>
+        </mat-card-header>
+        <mat-card-content>
+            <button mat-raised-button matTooltip="Basic Tooltip">Tooltip</button>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card appearance="outlined" class="ng-comp-card">
+        <mat-card-header>
+            <div mat-card-title>Typography</div>
+        </mat-card-header>
+        <mat-card-content>
+            <div style="padding: 24px">
+                <div #matDisplay4 class="mat-headline-1">mat-display-4</div>
+                <div #matDisplay3 class="mat-headline-2">mat-display-3</div>
+                <div #matDisplay2 class="mat-headline-3">mat-display-2</div>
+                <div #matDisplay1 class="mat-headline-4">mat-display-1</div>
+                <!-- headline -->
+                <div #matH1 class="mat-h1">mat-h1</div>
+                <div #matHeadline class="mat-headline-5">mat-headline</div>
+                <!-- title -->
+                <div #matH2 class="mat-h2">mat-h2</div>
+                <div #matTitle class="mat-headline-6">mat-title</div>
+                <!-- Subheading-2 -->
+                <div #matH3 class="mat-h3">mat-h3</div>
+                <div #matSubheading2 class="mat-subtitle-1">mat-subheading-2</div>
+                <!-- Subheading-1 -->
+                <div #matH4 class="mat-h4">mat-h4</div>
+                <div #matSubheading1 class="mat-body-1">mat-subheading-1</div>
+                <!-- body-1 -->
+                <div #matBody class="mat-body">mat-body</div>
+                <div #matBody1 class="mat-body-2">mat-body-1</div>
+                <!-- body-2 -->
+                <div #matBodyStrong class="mat-body-strong">mat-body-strong</div>
+                <div #matBody2 class="mat-subtitle-2">mat-body-2</div>
+                <!-- caption -->
+                <div #matSmall class="mat-small">mat-small</div>
+                <div #matCaption class="mat-caption">mat-caption</div>
+                <div #matCaption class="mat-overline">mat-overline</div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

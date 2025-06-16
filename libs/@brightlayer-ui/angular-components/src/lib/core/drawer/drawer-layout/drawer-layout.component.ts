@@ -29,6 +29,7 @@ export type DrawerLayoutVariantType = 'permanent' | 'persistent' | 'temporary' |
  */
 @Component({
     selector: 'blui-drawer-layout',
+    standalone: false,
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./drawer-layout.component.scss'],
     template: `

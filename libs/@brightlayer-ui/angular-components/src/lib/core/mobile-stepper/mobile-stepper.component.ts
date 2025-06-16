@@ -11,6 +11,7 @@ export type MobileStepperVariant = 'dots' | 'text' | 'progress';
  */
 @Component({
     selector: 'blui-mobile-stepper',
+    standalone: false,
     templateUrl: './mobile-stepper.component.html',
     styleUrls: ['./mobile-stepper.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,

@@ -7,6 +7,7 @@ import { DrawerStateManagerService, StateListener } from '../state-listener.comp
  */
 @Component({
     selector: 'blui-drawer-body',
+    standalone: false,
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     template: `
