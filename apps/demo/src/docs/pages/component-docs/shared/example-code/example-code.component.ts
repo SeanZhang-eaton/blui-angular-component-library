@@ -1,35 +1,35 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-    selector: 'app-example-code',
-    host: {
-        class: 'app-example-code',
-    },
-    template: `
-        <pre
-            style="display: flex"
-            [attr.data-line]="dataLine"
-            (mouseenter)="isHoverSnippet = true"
-            (mouseleave)="isHoverSnippet = false"
-        >
+  selector: 'app-example-code',
+  host: {
+    class: 'app-example-code',
+  },
+  template: `
+    <pre
+      style="display: flex"
+      [attr.data-line]="dataLine"
+      (mouseenter)="isHoverSnippet = true"
+      (mouseleave)="isHoverSnippet = false"
+    >
             <code [innerHTML]="snippet | language: 'html' | markdown | async"></code>
             <app-copy-code-button [code]="snippet" *ngIf="copyButtonOnHover && isHoverSnippet"
                   style="position: absolute; bottom: 16px; right: 420px;"></app-copy-code-button>
             
         </pre>
-    `,
-    encapsulation: ViewEncapsulation.None,
-    styleUrls: ['example-code.component.scss'],
+  `,
+  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['example-code.component.scss'],
 })
-export class ExampleCodeComponent {
-    @Input() snippet: string;
-    @Input() dataLine: string;
-    @Input() copyButtonOnHover = false;
+export class ExampleCodeComponent implements AfterViewInit {
+  @Input() snippet: string;
+  @Input() dataLine: string;
+  @Input() copyButtonOnHover = false;
 
-    isHoverSnippet: boolean;
+  isHoverSnippet: boolean;
 
-    ngAfterViewInit(): void {
-        /* This triggers a code-highlighting event. */
-        window.dispatchEvent(new Event('resize'));
-    }
+  ngAfterViewInit(): void {
+    /* This triggers a code-highlighting event. */
+    window.dispatchEvent(new Event('resize'));
+  }
 }

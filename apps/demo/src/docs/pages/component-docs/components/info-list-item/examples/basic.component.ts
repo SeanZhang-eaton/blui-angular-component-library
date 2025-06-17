@@ -8,7 +8,7 @@ export const BASIC = `<blui-info-list-item>
 `;
 
 @Component({
-    selector: 'app-basic-info-list-item-demo',
-    template: BASIC,
+  selector: 'app-basic-info-list-item-demo',
+  template: BASIC,
 })
 export class BasicExampleComponent {}

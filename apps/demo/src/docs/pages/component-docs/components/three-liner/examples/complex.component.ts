@@ -12,9 +12,9 @@ export const COMPLEX = `<blui-three-liner title="title" subtitle="subtitle">
 </blui-three-liner>`;
 
 @Component({
-    selector: 'app-complex-three-liner',
-    template: COMPLEX,
+  selector: 'app-complex-three-liner',
+  template: COMPLEX,
 })
-export class ComplexExample {
-    colors = Colors;
+export class ComplexExampleComponent {
+  colors = Colors;
 }

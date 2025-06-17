@@ -1,69 +1,71 @@
-import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
+
 import { Subscription } from 'rxjs';
+
 import { PlaygroundService } from '../../../../../services/playground/playground.service';
 import { Knob } from '../../../shared/scaffold/scaffold.component';
 
 export type HeroPlaygroundKnobs = {
-    label: Knob;
-    primaryIcon: Knob;
+  label: Knob;
+  primaryIcon: Knob;
 
-    // Optional
-    unitSpace: Knob;
-    value: Knob;
-    iconSize: Knob;
-    units: Knob;
-    prefix: Knob;
+  // Optional
+  unitSpace: Knob;
+  value: Knob;
+  iconSize: Knob;
+  units: Knob;
+  prefix: Knob;
 
-    // Other
-    showSecondary: Knob;
+  // Other
+  showSecondary: Knob;
 };
 
 @Component({
-    selector: 'app-hero-playground',
-    template: `<blui-hero
-        [label]="inputs.label.value"
-        [unitSpace]="inputs.unitSpace.value"
-        [units]="inputs.units.value"
-        [prefix]="inputs.prefix.value"
-        [value]="inputs.value.value"
-        [iconSize]="inputs.iconSize.value"
-    >
-        <i blui-primary [class]="inputs.primaryIcon.value"></i>
-        <mat-icon blui-secondary *ngIf="inputs.showSecondary.value">trending_up</mat-icon>
-    </blui-hero>`,
+  selector: 'app-hero-playground',
+  template: `<blui-hero
+    [label]="inputs.label.value"
+    [unitSpace]="inputs.unitSpace.value"
+    [units]="inputs.units.value"
+    [prefix]="inputs.prefix.value"
+    [value]="inputs.value.value"
+    [iconSize]="inputs.iconSize.value"
+  >
+    <i blui-primary [class]="inputs.primaryIcon.value"></i>
+    <mat-icon blui-secondary *ngIf="inputs.showSecondary.value">trending_up</mat-icon>
+  </blui-hero>`,
 })
-export class PlaygroundComponent implements OnDestroy {
-    @Input() inputs: HeroPlaygroundKnobs;
-    @Output() codeChange = new EventEmitter<string>();
+export class PlaygroundComponent implements AfterViewInit, OnDestroy {
+  @Input() inputs: HeroPlaygroundKnobs;
+  @Output() codeChange = new EventEmitter<string>();
 
-    knobListener: Subscription;
-    open = true;
+  knobListener: Subscription;
+  open = true;
 
-    constructor(private readonly _playgroundService: PlaygroundService) {
-        this.knobListener = this._playgroundService.knobChange.subscribe((updatedKnobs: HeroPlaygroundKnobs) => {
-            this.inputs = updatedKnobs;
-            this._emitNewCodeChanges();
-        });
+  constructor(private readonly _playgroundService: PlaygroundService) {
+    this.knobListener = this._playgroundService.knobChange.subscribe((updatedKnobs: HeroPlaygroundKnobs) => {
+      this.inputs = updatedKnobs;
+      this._emitNewCodeChanges();
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this._emitNewCodeChanges();
+  }
+
+  ngOnDestroy(): void {
+    if (this.knobListener) {
+      this.knobListener.unsubscribe();
     }
+  }
 
-    ngAfterViewInit(): void {
-        this._emitNewCodeChanges();
-    }
+  private _emitNewCodeChanges(): void {
+    setTimeout(() => {
+      this.codeChange.emit(this._createGeneratedCode());
+    });
+  }
 
-    ngOnDestroy(): void {
-        if (this.knobListener) {
-            this.knobListener.unsubscribe();
-        }
-    }
-
-    private _emitNewCodeChanges(): void {
-        setTimeout(() => {
-            this.codeChange.emit(this._createGeneratedCode());
-        });
-    }
-
-    private _createGeneratedCode(): string {
-        const code = `<blui-hero
+  private _createGeneratedCode(): string {
+    const code = `<blui-hero
     ${this._playgroundService.addOptionalProp(this.inputs, 'unitSpace')}
     ${this._playgroundService.addOptionalProp(this.inputs, 'units')}
     ${this._playgroundService.addOptionalProp(this.inputs, 'prefix')}
@@ -74,6 +76,6 @@ export class PlaygroundComponent implements OnDestroy {
     ${this.inputs.showSecondary.value ? '<mat-icon blui-secondary>trending_up</mat-icon>' : ''}
 </blui-hero>`;
 
-        return this._playgroundService.removeEmptyLines(code);
-    }
+    return this._playgroundService.removeEmptyLines(code);
+  }
 }

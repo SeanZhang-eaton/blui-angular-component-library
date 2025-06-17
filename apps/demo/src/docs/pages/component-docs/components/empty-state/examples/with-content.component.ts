@@ -8,7 +8,7 @@ export const WITH_CONTENT = `<blui-empty-state>
 `;
 
 @Component({
-    selector: 'app-with-content-empty-state-demo',
-    template: WITH_CONTENT,
+  selector: 'app-with-content-empty-state-demo',
+  template: WITH_CONTENT,
 })
 export class WithContentComponent {}

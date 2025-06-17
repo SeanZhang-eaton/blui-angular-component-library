@@ -11,9 +11,9 @@ export const STATUS = `<blui-info-list-item statusColor="#2ca618" [avatar]="true
 `;
 
 @Component({
-    selector: 'app-with-status-info-list-item-demo',
-    template: STATUS,
+  selector: 'app-with-status-info-list-item-demo',
+  template: STATUS,
 })
 export class WithStatusComponent {
-    Colors = Colors;
+  Colors = Colors;
 }

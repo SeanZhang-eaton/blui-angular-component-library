@@ -1,6 +1,8 @@
 import { AfterViewInit, Component } from '@angular/core';
-import { loremIpsum } from './lorem-ipsum';
+
 import { StyleObserver } from 'style-observer';
+
+import { loremIpsum } from './lorem-ipsum';
 
 export const SNAP = `
 <div id="app-bar-basic-example" class="scroll-container">
@@ -17,29 +19,29 @@ export const SNAP = `
 `;
 
 @Component({
-    selector: 'app-snap-app-bar-demo',
-    template: SNAP,
-    styles: [
-        `
-            .scroll-container {
-                width: 100%;
-                max-width: 450px;
-                max-height: 400px;
-                overflow: auto;
-                position: relative;
-            }
-            .content-body {
-                padding: 16px;
-            }
-        `,
-    ],
+  selector: 'app-snap-app-bar-demo',
+  template: SNAP,
+  styles: [
+    `
+      .scroll-container {
+        width: 100%;
+        max-width: 450px;
+        max-height: 400px;
+        overflow: auto;
+        position: relative;
+      }
+      .content-body {
+        padding: 16px;
+      }
+    `,
+  ],
 })
 export class SnapAppBarComponent implements AfterViewInit {
-    filler = loremIpsum;
-    ngAfterViewInit() {
-        const observer = new StyleObserver((records) => {
-            console.log(records);
-        });
-        observer.observe(document.querySelectorAll('.mat-toolbar'), ['--mat-toolbar-container-background-color']);
-    }
+  filler = loremIpsum;
+  ngAfterViewInit() {
+    const observer = new StyleObserver((records) => {
+      console.log(records);
+    });
+    observer.observe(document.querySelectorAll('.mat-toolbar'), ['--mat-toolbar-container-background-color']);
+  }
 }

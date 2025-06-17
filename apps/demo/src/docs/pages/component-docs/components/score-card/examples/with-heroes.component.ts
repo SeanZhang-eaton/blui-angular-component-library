@@ -19,7 +19,7 @@ export const WITH_HEROES = `<blui-score-card style="width: 350px"
 `;
 
 @Component({
-    selector: 'app-with-heroes-score-card-demo',
-    template: WITH_HEROES,
+  selector: 'app-with-heroes-score-card-demo',
+  template: WITH_HEROES,
 })
 export class WithHeroesComponent {}

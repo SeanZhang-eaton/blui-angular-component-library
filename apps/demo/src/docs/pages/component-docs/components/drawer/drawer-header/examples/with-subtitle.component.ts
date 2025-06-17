@@ -6,7 +6,7 @@ export const WITH_SUBTITLE = `<blui-drawer style="width: 250px">
 `;
 
 @Component({
-    selector: 'app-with-subtitle-drawer-header-demo',
-    template: WITH_SUBTITLE,
+  selector: 'app-with-subtitle-drawer-header-demo',
+  template: WITH_SUBTITLE,
 })
 export class WithSubtitleComponent {}

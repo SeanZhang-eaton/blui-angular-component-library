@@ -14,7 +14,7 @@ export const WITH_BANNER = `<blui-hero-banner>
 `;
 
 @Component({
-    selector: 'app-with-banner-hero-demo',
-    template: WITH_BANNER,
+  selector: 'app-with-banner-hero-demo',
+  template: WITH_BANNER,
 })
 export class WithinBannerComponent {}

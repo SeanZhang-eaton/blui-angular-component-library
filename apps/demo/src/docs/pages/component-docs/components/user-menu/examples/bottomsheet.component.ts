@@ -11,24 +11,24 @@ export const BOTTOMSHEET = `<blui-user-menu avatarValue="BS" [(open)]="open" [us
 `;
 
 @Component({
-    selector: 'app-bottom-sheet-user-menu-demo',
-    template: BOTTOMSHEET,
+  selector: 'app-bottom-sheet-user-menu-demo',
+  template: BOTTOMSHEET,
 })
 export class BottomsheetComponent {
-    open = false;
+  open = false;
 
-    items = [
-        {
-            title: 'Settings',
-            icon: 'settings',
-        },
-        {
-            title: 'Contact Us',
-            icon: 'mail',
-        },
-        {
-            title: 'Log Out',
-            icon: 'logout',
-        },
-    ];
+  items = [
+    {
+      title: 'Settings',
+      icon: 'settings',
+    },
+    {
+      title: 'Contact Us',
+      icon: 'mail',
+    },
+    {
+      title: 'Log Out',
+      icon: 'logout',
+    },
+  ];
 }

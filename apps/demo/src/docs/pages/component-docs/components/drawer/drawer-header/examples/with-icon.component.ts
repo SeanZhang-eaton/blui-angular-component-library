@@ -10,7 +10,7 @@ export const WITH_ICON = `<blui-drawer style="width: 250px">
 `;
 
 @Component({
-    selector: 'app-with-icon-drawer-header-demo',
-    template: WITH_ICON,
+  selector: 'app-with-icon-drawer-header-demo',
+  template: WITH_ICON,
 })
 export class WithIconComponent {}

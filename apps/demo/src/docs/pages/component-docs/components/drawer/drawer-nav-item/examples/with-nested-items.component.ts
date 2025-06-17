@@ -17,7 +17,7 @@ export const WITH_NESTED_ITEMS = `<blui-drawer style="width: 250px">
 `;
 
 @Component({
-    selector: 'app-nav-item-with-nested-items-demo',
-    template: WITH_NESTED_ITEMS,
+  selector: 'app-nav-item-with-nested-items-demo',
+  template: WITH_NESTED_ITEMS,
 })
 export class WithNestedItemsComponent {}

@@ -23,10 +23,10 @@ export const NON_TEXT_AVATAR = `<div style="display: flex; justify-content: spac
 `;
 
 @Component({
-    selector: 'app-non-text-avatar-user-menu-demo',
-    template: NON_TEXT_AVATAR,
+  selector: 'app-non-text-avatar-user-menu-demo',
+  template: NON_TEXT_AVATAR,
 })
 export class NonTextAvatarComponent {
-    open1 = false;
-    open2 = false;
+  open1 = false;
+  open2 = false;
 }

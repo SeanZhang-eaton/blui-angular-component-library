@@ -27,35 +27,35 @@ export const COMPLEX = `<blui-drawer style="width: 250px" [openOnHover]="false">
 `;
 
 @Component({
-    selector: 'app-complex-drawer-subheader-demo',
-    template: COMPLEX,
-    encapsulation: ViewEncapsulation.None,
-    styles: [
-        `
-                    .drawer-complex-subheader-demo {
-                        max-width: 218px !important;
-                    }
-                    drawer-complex-subheader-demo .mat-mdc-select-panel {
-                        box-sizing: content-box;
-                        max-width: 250px !important;
-                    }
-                `,
-    ],
+  selector: 'app-complex-drawer-subheader-demo',
+  template: COMPLEX,
+  encapsulation: ViewEncapsulation.None,
+  styles: [
+    `
+      .drawer-complex-subheader-demo {
+        max-width: 218px !important;
+      }
+      drawer-complex-subheader-demo .mat-mdc-select-panel {
+        box-sizing: content-box;
+        max-width: 250px !important;
+      }
+    `,
+  ],
 })
 export class ComplexComponent {
-    selected = 'option2';
-    navItems: DrawerNavItem[] = [
-        {
-            title: 'Dashboard',
-            icon: 'dashboard',
-        },
-        {
-            title: 'Locations',
-            icon: 'location_on',
-        },
-        {
-            title: 'Legal',
-            icon: 'copyright',
-        },
-    ];
+  selected = 'option2';
+  navItems: DrawerNavItem[] = [
+    {
+      title: 'Dashboard',
+      icon: 'dashboard',
+    },
+    {
+      title: 'Locations',
+      icon: 'location_on',
+    },
+    {
+      title: 'Legal',
+      icon: 'copyright',
+    },
+  ];
 }

@@ -7,7 +7,7 @@ export const SUBTITLE = `<blui-info-list-item>
 `;
 
 @Component({
-    selector: 'app-with-subtitle-info-list-item-demo',
-    template: SUBTITLE,
+  selector: 'app-with-subtitle-info-list-item-demo',
+  template: SUBTITLE,
 })
 export class WithSubtitleComponent {}

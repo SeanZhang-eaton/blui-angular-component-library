@@ -33,85 +33,85 @@ export const FROM_LIST = `<blui-drawer style="width: 300px; height: 620px;">
 `;
 
 type Group = {
-    title: string;
-    items: DrawerNavItem[];
+  title: string;
+  items: DrawerNavItem[];
 };
 
 @Component({
-    selector: 'app-from-list-drawer-demo',
-    template: FROM_LIST,
+  selector: 'app-from-list-drawer-demo',
+  template: FROM_LIST,
 })
 export class FromListComponent {
-    selectedItem: string;
+  selectedItem: string;
 
-    Colors = Colors;
+  Colors = Colors;
 
-    group1: Group = {
-        title: 'Group 1',
+  group1: Group = {
+    title: 'Group 1',
+    items: [
+      {
+        title: 'Overview',
+        subtitle: 'Learn more about us',
+        statusColor: Colors.green[500],
+        icon: 'dashboard',
         items: [
-            {
-                title: 'Overview',
-                subtitle: 'Learn more about us',
-                statusColor: Colors.green[500],
-                icon: 'dashboard',
-                items: [
-                    {
-                        title: 'Monthly Report',
-                    },
-                    {
-                        title: 'Annual Report',
-                    },
-                ],
-            },
-            {
-                title: 'Timeline',
-                icon: 'toc',
-            },
-            {
-                title: 'Devices',
-                subtitle: '4 new warnings',
-                statusColor: Colors.yellow[500],
-                icon: 'devices',
-            },
-            {
-                title: 'Schedule',
-                icon: 'airport_shuttle',
-            },
+          {
+            title: 'Monthly Report',
+          },
+          {
+            title: 'Annual Report',
+          },
         ],
-    };
+      },
+      {
+        title: 'Timeline',
+        icon: 'toc',
+      },
+      {
+        title: 'Devices',
+        subtitle: '4 new warnings',
+        statusColor: Colors.yellow[500],
+        icon: 'devices',
+      },
+      {
+        title: 'Schedule',
+        icon: 'airport_shuttle',
+      },
+    ],
+  };
 
-    group2 = {
-        title: 'Group 2',
+  group2 = {
+    title: 'Group 2',
+    items: [
+      {
+        title: 'User Guide',
+        icon: 'move_to_inbox',
+      },
+      {
+        title: 'License Agreement',
+        subtitle: 'For Eaton employees only',
+        icon: 'fact_check',
+      },
+      {
+        title: 'Accessibility',
+        icon: 'accessibility',
         items: [
-            {
-                title: 'User Guide',
-                icon: 'move_to_inbox',
-            },
-            {
-                title: 'License Agreement',
-                subtitle: 'For Eaton employees only',
-                icon: 'fact_check',
-            },
-            {
-                title: 'Accessibility',
-                icon: 'accessibility',
-                items: [
-                    {
-                        title: 'Color Contrast Guide',
-                    },
-                    {
-                        title: 'Screen Reader',
-                    },
-                ],
-            },
-            {
-                title: 'Notifications',
-                icon: 'notifications',
-            },
+          {
+            title: 'Color Contrast Guide',
+          },
+          {
+            title: 'Screen Reader',
+          },
         ],
-    };
+      },
+      {
+        title: 'Notifications',
+        icon: 'notifications',
+      },
+    ],
+  };
 
-    setActive(navItem: DrawerNavItem): void {
-        this.selectedItem = navItem.title;
-    }
+  setActive(navItem: DrawerNavItem): void {
+    this.selectedItem = navItem.title;
+  }
 }

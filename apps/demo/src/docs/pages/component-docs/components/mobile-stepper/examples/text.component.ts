@@ -11,9 +11,9 @@ export const TEXT = `<blui-mobile-stepper [steps]="4" [activeStep]="activeStep" 
 `;
 
 @Component({
-    selector: 'app-text-mobile-stepper-demo',
-    template: TEXT,
+  selector: 'app-text-mobile-stepper-demo',
+  template: TEXT,
 })
 export class TextComponent {
-    activeStep = 0;
+  activeStep = 0;
 }

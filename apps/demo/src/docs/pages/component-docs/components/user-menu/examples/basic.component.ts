@@ -11,9 +11,9 @@ export const BASIC = `<blui-user-menu avatarValue="AV" [(open)]="open">
 `;
 
 @Component({
-    selector: 'app-basic-user-menu-demo',
-    template: BASIC,
+  selector: 'app-basic-user-menu-demo',
+  template: BASIC,
 })
 export class BasicExampleComponent {
-    open = false;
+  open = false;
 }

@@ -8,7 +8,7 @@ export const VALUE_AND_UNITS = `<blui-hero-banner>
 `;
 
 @Component({
-    selector: 'app-value-units-hero-demo',
-    template: VALUE_AND_UNITS,
+  selector: 'app-value-units-hero-demo',
+  template: VALUE_AND_UNITS,
 })
 export class ValueUnitsComponent {}

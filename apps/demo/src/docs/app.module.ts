@@ -5,51 +5,51 @@
 
  This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
  **/
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@ngbracket/ngx-layout';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+//material modules
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-
 //brightlayer-ui modules
 import { DrawerModule, EmptyStateModule } from '@brightlayer-ui/angular-components/core';
 
-//material modules
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { environment } from '../environments/environment';
 
+import { NavigationComponent } from './navigation/navigation.component';
+import { ComponentDocsModule } from './pages/component-docs/component-docs.module';
 // app
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
-import { NavigationComponent } from './navigation/navigation.component';
-import { ComponentDocsModule } from './pages/component-docs/component-docs.module';
-import { MatChipsModule } from '@angular/material/chips';
-import { environment } from '../environments/environment';
+
 import { NgxGoogleAnalyticsModule, provideGoogleAnalytics } from '@hakimio/ngx-google-analytics';
+import { FlexLayoutModule } from '@ngbracket/ngx-layout';
 
 @NgModule({
-    declarations: [AppComponent, NavigationComponent],
-    providers: [provideGoogleAnalytics(environment.ga)],
-    imports: [
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        BrowserModule,
-        ComponentDocsModule,
-        CommonModule,
-        DrawerModule,
-        EmptyStateModule,
-        FlexLayoutModule,
-        FormsModule,
-        MatButtonModule,
-        MatToolbarModule,
-        MatIconModule,
-        RouterModule,
-        MatChipsModule,
-        NgxGoogleAnalyticsModule,
-    ],
-    bootstrap: [AppComponent],
+  declarations: [AppComponent, NavigationComponent],
+  providers: [provideGoogleAnalytics(environment.ga)],
+  imports: [
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    BrowserModule,
+    ComponentDocsModule,
+    CommonModule,
+    DrawerModule,
+    EmptyStateModule,
+    FlexLayoutModule,
+    FormsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    RouterModule,
+    MatChipsModule,
+    NgxGoogleAnalyticsModule,
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

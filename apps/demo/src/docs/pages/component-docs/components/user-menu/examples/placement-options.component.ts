@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { ConnectionPositionPair } from '@angular/cdk/overlay';
+import { Component } from '@angular/core';
 
 export const PLACEMENT = `<blui-user-menu avatarValue="PO" [(open)]="open" [positions]="positions">
     <mat-nav-list blui-menu-body [style.paddingTop.px]="0">
@@ -12,14 +12,14 @@ export const PLACEMENT = `<blui-user-menu avatarValue="PO" [(open)]="open" [posi
 `;
 
 @Component({
-    selector: 'app-placement-user-menu-demo',
-    template: PLACEMENT,
+  selector: 'app-placement-user-menu-demo',
+  template: PLACEMENT,
 })
 export class PlacementOptionsComponent {
-    open = false;
+  open = false;
 
-    positions = new ConnectionPositionPair(
-        { originX: 'start', originY: 'bottom' },
-        { overlayX: 'end', overlayY: 'bottom' }
-    );
+  positions = new ConnectionPositionPair(
+    { originX: 'start', originY: 'bottom' },
+    { overlayX: 'end', overlayY: 'bottom' }
+  );
 }

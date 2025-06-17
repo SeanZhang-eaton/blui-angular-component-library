@@ -22,7 +22,7 @@ export const WITHIN_LIST = `<mat-nav-list [style.paddingTop.px]="0">
 `;
 
 @Component({
-    selector: 'app-within-list-info-list-item-demo',
-    template: WITHIN_LIST,
+  selector: 'app-within-list-info-list-item-demo',
+  template: WITHIN_LIST,
 })
 export class WithinListComponent {}

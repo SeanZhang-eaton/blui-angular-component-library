@@ -19,7 +19,7 @@ export const CUSTOM_CONTENT = `<blui-drawer style="width: 250px">
 `;
 
 @Component({
-    selector: 'app-custom-content-nav-group-demo',
-    template: CUSTOM_CONTENT,
+  selector: 'app-custom-content-nav-group-demo',
+  template: CUSTOM_CONTENT,
 })
 export class WithCustomContentComponent {}

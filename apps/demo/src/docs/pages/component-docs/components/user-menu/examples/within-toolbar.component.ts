@@ -15,23 +15,23 @@ export const WITHIN_TOOLBAR = `<mat-toolbar style="padding: 0 16px; height: 4rem
 `;
 
 @Component({
-    selector: 'app-in-toolbar-user-menu-demo',
-    template: WITHIN_TOOLBAR,
+  selector: 'app-in-toolbar-user-menu-demo',
+  template: WITHIN_TOOLBAR,
 })
 export class WithinToolbarComponent {
-    open = false;
-    items = [
-        {
-            title: 'Settings',
-            icon: 'settings',
-        },
-        {
-            title: 'Contact Us',
-            icon: 'mail',
-        },
-        {
-            title: 'Log Out',
-            icon: 'logout',
-        },
-    ];
+  open = false;
+  items = [
+    {
+      title: 'Settings',
+      icon: 'settings',
+    },
+    {
+      title: 'Contact Us',
+      icon: 'mail',
+    },
+    {
+      title: 'Log Out',
+      icon: 'logout',
+    },
+  ];
 }

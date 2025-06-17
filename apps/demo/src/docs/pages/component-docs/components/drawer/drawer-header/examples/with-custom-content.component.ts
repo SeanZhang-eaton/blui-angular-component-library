@@ -14,14 +14,14 @@ export const WITH_CUSTOM_CONTENT = `<blui-drawer style="width: 250px" class="dra
 `;
 
 @Component({
-    selector: 'app-with-custom-content-drawer-header-demo',
-    template: WITH_CUSTOM_CONTENT,
-    styles: [
-        `
-                    ::ng-deep .drawer-header-with-custom-content .blui-drawer-header-background {
-                        background-image: url('../../../../../../../assets/topology_40.png');
-                    }
-                `,
-    ],
+  selector: 'app-with-custom-content-drawer-header-demo',
+  template: WITH_CUSTOM_CONTENT,
+  styles: [
+    `
+      ::ng-deep .drawer-header-with-custom-content .blui-drawer-header-background {
+        background-image: url('../../../../../../../assets/topology_40.png');
+      }
+    `,
+  ],
 })
 export class WithCustomContentComponent {}

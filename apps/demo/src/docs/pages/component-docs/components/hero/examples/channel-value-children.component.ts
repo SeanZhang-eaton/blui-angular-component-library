@@ -8,7 +8,7 @@ export const CV_CHILDREN = `<blui-hero label="Duration">
 `;
 
 @Component({
-    selector: 'app-channel-value-children-hero-demo',
-    template: CV_CHILDREN,
+  selector: 'app-channel-value-children-hero-demo',
+  template: CV_CHILDREN,
 })
 export class ChannelValueChildrenComponent {}

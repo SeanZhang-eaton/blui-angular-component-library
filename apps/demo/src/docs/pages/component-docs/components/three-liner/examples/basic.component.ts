@@ -7,7 +7,7 @@ export const BASIC = `<blui-three-liner
 </blui-three-liner>`;
 
 @Component({
-    selector: 'app-basic-three-liner',
-    template: BASIC,
+  selector: 'app-basic-three-liner',
+  template: BASIC,
 })
-export class BasicExample {}
+export class BasicExampleComponent {}

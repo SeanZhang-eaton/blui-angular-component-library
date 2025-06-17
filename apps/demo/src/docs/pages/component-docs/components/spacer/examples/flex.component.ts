@@ -8,7 +8,7 @@ export const FLEX = `<div style="display: flex; height: 56px; width: 300px">
 `;
 
 @Component({
-    selector: 'app-flex-spacer-demo',
-    template: FLEX,
+  selector: 'app-flex-spacer-demo',
+  template: FLEX,
 })
 export class FlexComponent {}

@@ -15,7 +15,7 @@ export const MULTIPLE_GROUPS = `<blui-drawer style="width: 250px">
 `;
 
 @Component({
-    selector: 'app-multiple-groups-nav-group-demo',
-    template: MULTIPLE_GROUPS,
+  selector: 'app-multiple-groups-nav-group-demo',
+  template: MULTIPLE_GROUPS,
 })
 export class MultipleGroupsComponent {}

@@ -13,7 +13,7 @@ export const PIXELS = `<div style="display: flex; height: 56px">
 `;
 
 @Component({
-    selector: 'app-pixel-spacer-demo',
-    template: PIXELS,
+  selector: 'app-pixel-spacer-demo',
+  template: PIXELS,
 })
 export class PixelComponent {}

@@ -5,7 +5,7 @@ export const WITH_ICON = `<blui-channel-value value="123" units="hz">
 </blui-channel-value>`;
 
 @Component({
-    selector: 'app-icon-channel-value-demo',
-    template: WITH_ICON,
+  selector: 'app-icon-channel-value-demo',
+  template: WITH_ICON,
 })
 export class IconComponent {}

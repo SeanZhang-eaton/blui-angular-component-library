@@ -18,7 +18,7 @@ export const WITHIN_TOOLBAR = `<mat-toolbar color="primary" style="width: 300px"
 `;
 
 @Component({
-    selector: 'app-within-toolbar-toolbar-menu-demo',
-    template: WITHIN_TOOLBAR,
+  selector: 'app-within-toolbar-toolbar-menu-demo',
+  template: WITHIN_TOOLBAR,
 })
 export class WithinToolbarComponent {}

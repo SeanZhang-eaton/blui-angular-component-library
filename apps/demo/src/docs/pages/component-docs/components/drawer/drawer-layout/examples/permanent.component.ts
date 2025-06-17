@@ -17,15 +17,15 @@ export const PERMANENT = `<blui-drawer-layout variant="permanent">
 `;
 
 @Component({
-    selector: 'app-permanent-drawer-layout-demo',
-    template: PERMANENT,
-    styles: [
-        `
-                    :host {
-                        display: flex;
-                        width: 100%;
-                    }
-                `,
-    ],
+  selector: 'app-permanent-drawer-layout-demo',
+  template: PERMANENT,
+  styles: [
+    `
+      :host {
+        display: flex;
+        width: 100%;
+      }
+    `,
+  ],
 })
 export class PermanentVariantExampleComponent {}

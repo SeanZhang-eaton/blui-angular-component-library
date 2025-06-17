@@ -15,9 +15,9 @@ export const MENU_HEADER = `<blui-user-menu
 `;
 
 @Component({
-    selector: 'app-menu-header-user-menu-demo',
-    template: MENU_HEADER,
+  selector: 'app-menu-header-user-menu-demo',
+  template: MENU_HEADER,
 })
 export class MenuHeaderComponent {
-    open = false;
+  open = false;
 }

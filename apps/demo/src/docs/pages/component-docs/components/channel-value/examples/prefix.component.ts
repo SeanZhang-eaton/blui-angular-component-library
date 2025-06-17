@@ -5,7 +5,7 @@ export const PREFIX = `<blui-channel-value value="12" units="$" [prefix]="true">
 </blui-channel-value>`;
 
 @Component({
-    selector: 'app-prefix-channel-value-demo',
-    template: PREFIX,
+  selector: 'app-prefix-channel-value-demo',
+  template: PREFIX,
 })
 export class PrefixComponent {}

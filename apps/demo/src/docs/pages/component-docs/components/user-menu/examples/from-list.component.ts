@@ -11,23 +11,23 @@ export const FROM_LIST = `<blui-user-menu avatarValue="AV" [(open)]="open">
 `;
 
 @Component({
-    selector: 'app-from-list-user-menu-demo',
-    template: FROM_LIST,
+  selector: 'app-from-list-user-menu-demo',
+  template: FROM_LIST,
 })
 export class FromListComponent {
-    open = false;
-    items = [
-        {
-            title: 'Settings',
-            icon: 'settings',
-        },
-        {
-            title: 'Contact Us',
-            icon: 'mail',
-        },
-        {
-            title: 'Log Out',
-            icon: 'logout',
-        },
-    ];
+  open = false;
+  items = [
+    {
+      title: 'Settings',
+      icon: 'settings',
+    },
+    {
+      title: 'Contact Us',
+      icon: 'mail',
+    },
+    {
+      title: 'Log Out',
+      icon: 'logout',
+    },
+  ];
 }

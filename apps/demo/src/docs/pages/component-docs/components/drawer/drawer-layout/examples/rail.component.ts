@@ -23,15 +23,15 @@ export const RAIL = `<blui-drawer-layout variant="rail" class="rail-example">
 `;
 
 @Component({
-    selector: 'app-rail-drawer-layout-demo',
-    template: RAIL,
-    styles: [
-        `
-                    :host {
-                        display: flex;
-                        width: 100%;
-                    }
-                `,
-    ],
+  selector: 'app-rail-drawer-layout-demo',
+  template: RAIL,
+  styles: [
+    `
+      :host {
+        display: flex;
+        width: 100%;
+      }
+    `,
+  ],
 })
 export class RailVariantExampleComponent {}

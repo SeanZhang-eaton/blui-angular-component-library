@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { loremIpsum } from './lorem-ipsum';
 
 export const EXPANDED = `<div class="scroll-container">
@@ -10,23 +11,23 @@ export const EXPANDED = `<div class="scroll-container">
 `;
 
 @Component({
-    selector: 'app-expanded-app-bar-demo',
-    template: EXPANDED,
-    styles: [
-        `
-            .scroll-container {
-                width: 100%;
-                max-width: 450px;
-                max-height: 400px;
-                overflow: auto;
-                position: relative;
-            }
-            .content-body {
-                padding: 16px;
-            }
-        `,
-    ],
+  selector: 'app-expanded-app-bar-demo',
+  template: EXPANDED,
+  styles: [
+    `
+      .scroll-container {
+        width: 100%;
+        max-width: 450px;
+        max-height: 400px;
+        overflow: auto;
+        position: relative;
+      }
+      .content-body {
+        padding: 16px;
+      }
+    `,
+  ],
 })
 export class ExpandedComponent {
-    filler = loremIpsum;
+  filler = loremIpsum;
 }

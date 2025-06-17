@@ -28,17 +28,17 @@ export const PERSISTENT = `<blui-drawer-layout variant="persistent">
 `;
 
 @Component({
-    selector: 'app-persistent-drawer-layout-demo',
-    template: PERSISTENT,
-    styles: [
-        `
-                    :host {
-                        display: flex;
-                        width: 100%;
-                    }
-                `,
-    ],
+  selector: 'app-persistent-drawer-layout-demo',
+  template: PERSISTENT,
+  styles: [
+    `
+      :host {
+        display: flex;
+        width: 100%;
+      }
+    `,
+  ],
 })
 export class PersistentVariantExampleComponent {
-    open = true;
+  open = true;
 }

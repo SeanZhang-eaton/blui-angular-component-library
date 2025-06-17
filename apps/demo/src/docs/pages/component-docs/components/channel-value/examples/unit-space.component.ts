@@ -9,7 +9,7 @@ export const UNIT_SPACE = `<div style="display: flex; flex-direction: column">
 </div>`;
 
 @Component({
-    selector: 'app-unit-space-channel-value-demo',
-    template: UNIT_SPACE,
+  selector: 'app-unit-space-channel-value-demo',
+  template: UNIT_SPACE,
 })
 export class UnitSpaceComponent {}

@@ -11,7 +11,7 @@ export const WITH_ICON = `<blui-toolbar-menu label="My Home">
 `;
 
 @Component({
-    selector: 'app-with-icon-toolbar-menu-demo',
-    template: WITH_ICON,
+  selector: 'app-with-icon-toolbar-menu-demo',
+  template: WITH_ICON,
 })
 export class WithIconComponent {}

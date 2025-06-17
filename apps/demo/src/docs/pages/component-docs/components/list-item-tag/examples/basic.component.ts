@@ -10,7 +10,7 @@ export const BASIC = `<div style="width: 200px; display: flex; justify-content: 
 </div>`;
 
 @Component({
-    selector: 'app-basic-list-item-tag-demo',
-    template: BASIC,
+  selector: 'app-basic-list-item-tag-demo',
+  template: BASIC,
 })
-export class BasicExample {}
+export class BasicExampleComponent {}

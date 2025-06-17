@@ -6,7 +6,7 @@ export const BASIC = `<blui-drawer style="width: 250px">
 `;
 
 @Component({
-    selector: 'app-basic-drawer-header-demo',
-    template: BASIC,
+  selector: 'app-basic-drawer-header-demo',
+  template: BASIC,
 })
 export class BasicExampleComponent {}

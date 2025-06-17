@@ -23,15 +23,15 @@ export const RAIL_CONDENSED = `<blui-drawer-layout variant="rail" class="condens
 `;
 
 @Component({
-    selector: 'app-rail-condensed-drawer-layout-demo',
-    template: RAIL_CONDENSED,
-    styles: [
-        `
-                    :host {
-                        display: flex;
-                        width: 100%;
-                    }
-                `,
-    ],
+  selector: 'app-rail-condensed-drawer-layout-demo',
+  template: RAIL_CONDENSED,
+  styles: [
+    `
+      :host {
+        display: flex;
+        width: 100%;
+      }
+    `,
+  ],
 })
 export class RailCondensedVariantExampleComponent {}
