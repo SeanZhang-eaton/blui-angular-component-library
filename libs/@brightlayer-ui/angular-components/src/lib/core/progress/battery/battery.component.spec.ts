@@ -1,25 +1,26 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BatteryComponent } from './battery.component';
 import { PxbProgressIconComponent } from '../pxb-progress-icon.component';
 
+import { BatteryComponent } from './battery.component';
+
 describe('BatteryComponent', () => {
-    let component: BatteryComponent;
-    let fixture: ComponentFixture<BatteryComponent>;
+  let component: BatteryComponent;
+  let fixture: ComponentFixture<BatteryComponent>;
 
-    beforeEach(async(() => {
-        void TestBed.configureTestingModule({
-            declarations: [PxbProgressIconComponent, BatteryComponent],
-        }).compileComponents();
-    }));
+  beforeEach(async(() => {
+    void TestBed.configureTestingModule({
+      declarations: [PxbProgressIconComponent, BatteryComponent],
+    }).compileComponents();
+  }));
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(BatteryComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(BatteryComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it('should create', () => {
-        void expect(component).toBeTruthy();
-    });
+  it('should create', () => {
+    void expect(component).toBeTruthy();
+  });
 });

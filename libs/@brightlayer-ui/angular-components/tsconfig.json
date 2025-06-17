@@ -10,7 +10,7 @@
     "noFallthroughCasesInSwitch": true,
     "strictNullChecks": false,
     "strictFunctionTypes": false,
-    "noImplicitAny": false,
+    "noImplicitAny": false
   },
   "files": [],
   "include": [],

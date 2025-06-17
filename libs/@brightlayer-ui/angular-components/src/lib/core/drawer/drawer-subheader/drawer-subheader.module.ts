@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DrawerSubheaderComponent } from './drawer-subheader.component';
+import { NgModule } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 
+import { DrawerSubheaderComponent } from './drawer-subheader.component';
+
 @NgModule({
-    declarations: [DrawerSubheaderComponent],
-    imports: [CommonModule, MatDividerModule],
-    exports: [DrawerSubheaderComponent],
+  declarations: [DrawerSubheaderComponent],
+  imports: [CommonModule, MatDividerModule],
+  exports: [DrawerSubheaderComponent],
 })
 export class DrawerSubheaderModule {}

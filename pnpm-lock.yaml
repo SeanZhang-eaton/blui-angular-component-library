@@ -274,7 +274,7 @@ importers:
         specifier: ^17.0.0 || ^18.0.0
         version: 17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.8))
       '@angular/cdk':
-        specifier: 17.3.10
+        specifier: ^17.0.0 || ^18.0.0
         version: 17.3.10(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.8))(rxjs@7.8.2))(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.8))(rxjs@7.8.2)
       '@angular/common':
         specifier: ^17.0.0 || ^18.0.0
@@ -285,6 +285,9 @@ importers:
       '@angular/forms':
         specifier: ^17.0.0 || ^18.0.0
         version: 17.3.12(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.8))(rxjs@7.8.2))(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.8))(@angular/platform-browser@17.3.12(@angular/animations@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.8)))(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.8))(rxjs@7.8.2))(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.8)))(rxjs@7.8.2)
+      '@angular/material':
+        specifier: ^17.0.0 || ^18.0.0
+        version: 17.3.10(9b88e13afa6b269611a426c976909f5c)
       '@angular/platform-browser':
         specifier: ^17.0.0 || ^18.0.0
         version: 17.3.12(@angular/animations@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.8)))(@angular/common@17.3.12(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.8))(rxjs@7.8.2))(@angular/core@17.3.12(rxjs@7.8.2)(zone.js@0.14.8))
@@ -294,6 +297,10 @@ importers:
       rxjs:
         specifier: ^6.5.3 || ^7.4.0
         version: 7.8.2
+    devDependencies:
+      jsonc-eslint-parser:
+        specifier: ^2.4.0
+        version: 2.4.0
 
   libs/@brightlayer-ui/angular-themes:
     dependencies:
@@ -13230,7 +13237,7 @@ snapshots:
 
   acorn-walk@8.3.4:
     dependencies:
-      acorn: 8.14.1
+      acorn: 8.15.0
 
   acorn@8.14.1: {}
 

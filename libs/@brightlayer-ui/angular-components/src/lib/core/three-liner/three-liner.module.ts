@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+
 import { ThreeLinerComponent } from './three-liner.component';
 
 @NgModule({
-    declarations: [ThreeLinerComponent],
-    imports: [CommonModule],
-    exports: [ThreeLinerComponent],
+  declarations: [ThreeLinerComponent],
+  imports: [CommonModule],
+  exports: [ThreeLinerComponent],
 })
 export class ThreeLinerModule {}

@@ -20,14 +20,14 @@
       },
       "defaultConfiguration": "production"
     },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
     "test": {
       "executor": "@angular-devkit/build-angular:karma",
       "options": {
         "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.spec.json",
-        "polyfills": [
-          "zone.js",
-          "zone.js/testing"
-        ]
+        "polyfills": ["zone.js", "zone.js/testing"]
       }
     }
   }

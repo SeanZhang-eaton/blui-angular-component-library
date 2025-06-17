@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ScoreCardComponent } from './score-card.component';
+import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 
+import { ScoreCardComponent } from './score-card.component';
+
 @NgModule({
-    declarations: [ScoreCardComponent],
-    imports: [CommonModule, MatCardModule, MatDividerModule],
-    exports: [ScoreCardComponent],
+  declarations: [ScoreCardComponent],
+  imports: [CommonModule, MatCardModule, MatDividerModule],
+  exports: [ScoreCardComponent],
 })
 export class ScoreCardModule {}

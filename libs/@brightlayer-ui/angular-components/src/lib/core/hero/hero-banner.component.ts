@@ -6,25 +6,25 @@ import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@a
  * The `<blui-hero-banner>` component is a simple wrapper component that is used to contain `<blui-hero>`s.
  */
 @Component({
-    selector: 'blui-hero-banner',
-    standalone: false,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation: ViewEncapsulation.None,
-    template: `
-        <div class="blui-hero-banner-content">
-            <ng-content select="blui-hero"></ng-content>
-        </div>
-        <mat-divider class="blui-hero-banner-divider" *ngIf="divider"></mat-divider>
-    `,
-    styleUrls: ['./hero-banner.component.scss'],
-    host: {
-        class: 'blui-hero-banner',
-    },
+  selector: 'blui-hero-banner',
+  standalone: false,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
+  template: `
+    <div class="blui-hero-banner-content">
+      <ng-content select="blui-hero"></ng-content>
+    </div>
+    <mat-divider class="blui-hero-banner-divider" *ngIf="divider"></mat-divider>
+  `,
+  styleUrls: ['./hero-banner.component.scss'],
+  host: {
+    class: 'blui-hero-banner',
+  },
 })
 export class HeroBannerComponent {
-    /** Whether to show the line separator
-     *
-     * @default false
-     * */
-    @Input() divider = false;
+  /** Whether to show the line separator
+   *
+   * @default false
+   * */
+  @Input() divider = false;
 }

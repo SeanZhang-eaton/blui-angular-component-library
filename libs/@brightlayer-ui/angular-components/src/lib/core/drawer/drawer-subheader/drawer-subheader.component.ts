@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation, ChangeDetectorRef, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, ViewEncapsulation } from '@angular/core';
+
 import { DrawerStateManagerService, StateListener } from '../state-listener.component';
 
 /**
@@ -8,37 +9,37 @@ import { DrawerStateManagerService, StateListener } from '../state-listener.comp
  * It can be used to support custom content (passed as children), such as filtering options or to display additional information.
  */
 @Component({
-    selector: 'blui-drawer-subheader',
-    standalone: false,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation: ViewEncapsulation.None,
-    template: `
-        <div
-            class="blui-drawer-subheader-content"
-            [style.visibility]="hideContentOnCollapse ? (isOpen() ? 'visible' : 'hidden') : 'visible'"
-        >
-            <ng-content></ng-content>
-        </div>
-        <mat-divider *ngIf="divider"></mat-divider>
-    `,
-    styleUrls: ['./drawer-subheader.component.scss'],
-    host: {
-        class: 'blui-drawer-subheader',
-    },
+  selector: 'blui-drawer-subheader',
+  standalone: false,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
+  template: `
+    <div
+      class="blui-drawer-subheader-content"
+      [style.visibility]="hideContentOnCollapse ? (isOpen() ? 'visible' : 'hidden') : 'visible'"
+    >
+      <ng-content></ng-content>
+    </div>
+    <mat-divider *ngIf="divider"></mat-divider>
+  `,
+  styleUrls: ['./drawer-subheader.component.scss'],
+  host: {
+    class: 'blui-drawer-subheader',
+  },
 })
 export class DrawerSubheaderComponent extends StateListener {
-    /** Whether to show a dividing line below the SubHeader
-     *
-     * @default true
-     * */
-    @Input() divider = true;
-    /** Hide subheader content when drawer is collapsed
-     *
-     * @default true
-     * */
-    @Input() hideContentOnCollapse = true;
+  /** Whether to show a dividing line below the SubHeader
+   *
+   * @default true
+   * */
+  @Input() divider = true;
+  /** Hide subheader content when drawer is collapsed
+   *
+   * @default true
+   * */
+  @Input() hideContentOnCollapse = true;
 
-    constructor(stateManagerService: DrawerStateManagerService, changeDetectorRef: ChangeDetectorRef) {
-        super(stateManagerService, changeDetectorRef);
-    }
+  constructor(stateManagerService: DrawerStateManagerService, changeDetectorRef: ChangeDetectorRef) {
+    super(stateManagerService, changeDetectorRef);
+  }
 }
