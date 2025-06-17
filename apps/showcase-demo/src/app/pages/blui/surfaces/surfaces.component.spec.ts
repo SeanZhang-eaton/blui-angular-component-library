@@ -1,23 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { BluiSurfacesComponent } from './surfaces.component';
 
 describe('BluiSurfacesComponent', () => {
-    let component: BluiSurfacesComponent;
-    let fixture: ComponentFixture<BluiSurfacesComponent>;
+  let component: BluiSurfacesComponent;
+  let fixture: ComponentFixture<BluiSurfacesComponent>;
 
-    beforeEach(async () => {
-        await TestBed.configureTestingModule({
-            imports: [BluiSurfacesComponent],
-        }).compileComponents();
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [BluiSurfacesComponent],
+    }).compileComponents();
+  });
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(BluiSurfacesComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(BluiSurfacesComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it('should create', () => {
-        void expect(component).toBeTruthy();
-    });
+  it('should create', () => {
+    void expect(component).toBeTruthy();
+  });
 });

@@ -1,23 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { MatNavigationComponent } from './navigation.component';
 
 describe('MatNavigationComponent', () => {
-    let component: MatNavigationComponent;
-    let fixture: ComponentFixture<MatNavigationComponent>;
+  let component: MatNavigationComponent;
+  let fixture: ComponentFixture<MatNavigationComponent>;
 
-    beforeEach(async () => {
-        await TestBed.configureTestingModule({
-            imports: [MatNavigationComponent],
-        }).compileComponents();
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [MatNavigationComponent],
+    }).compileComponents();
+  });
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(MatNavigationComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(MatNavigationComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it('should create', () => {
-        void expect(component).toBeTruthy();
-    });
+  it('should create', () => {
+    void expect(component).toBeTruthy();
+  });
 });
