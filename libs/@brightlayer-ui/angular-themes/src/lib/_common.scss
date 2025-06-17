@@ -9,13 +9,7 @@
         height: 36px;
         line-height: 36px;
     }
-    /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
-    .mat-mdc-chip .mat-mdc-chip-avatar.mat-icon {
-        height: 18px;
-        width: 18px;
-        font-size: 18px;
-        margin: 0 8px;
-    }
+
     /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version. */
     .mat-mdc-chip .mat-mdc-chip-avatar {
         font-size: 0.625rem;

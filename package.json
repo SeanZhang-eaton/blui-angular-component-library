@@ -57,6 +57,7 @@
         "doc": "src/docs/md"
     },
     "dependencies": {
+        "color": "^5.0.0",
         "style-observer": "^0.1.1",
         "tslib": "^2.3.0"
     },

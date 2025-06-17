@@ -1,10 +1,10 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
-import { MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle } from '@angular/material/expansion';
-import { MatIcon } from '@angular/material/icon';
-import { MatIconButton } from '@angular/material/button';
-import { MatToolbar } from '@angular/material/toolbar';
-import { MatCard, MatCardHeader, MatCardTitle, MatCardContent } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
     selector: 'app-mat-surfaces',
@@ -15,19 +15,6 @@ import { MatCard, MatCardHeader, MatCardTitle, MatCardContent } from '@angular/m
         class: 'host',
     },
     standalone: true,
-    imports: [
-        MatCard,
-        MatCardHeader,
-        MatCardTitle,
-        MatCardContent,
-        MatToolbar,
-        MatIconButton,
-        MatIcon,
-        MatAccordion,
-        MatExpansionPanel,
-        MatExpansionPanelHeader,
-        MatExpansionPanelTitle,
-        NgTemplateOutlet,
-    ],
+    imports: [MatCardModule, MatToolbarModule, MatButtonModule, MatIconModule, MatExpansionModule, NgTemplateOutlet],
 })
 export class MatSurfacesComponent {}

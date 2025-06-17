@@ -74,7 +74,7 @@
                 </blui-hero>
 
                 <blui-hero label="Load">
-                    <!-- <pie-progress class="progress-icon" percent="65" size="36" blui-primary></pie-progress> -->
+                    <blui-pie-progress class="progress-icon" percent="65" size="36" blui-primary></blui-pie-progress>
                     <blui-channel-value value="65" units="%">
                         <mat-icon [style.color]="colors.red['500']" class="invert-rtl">trending_up</mat-icon>
                     </blui-channel-value>
@@ -87,7 +87,8 @@
                 </blui-hero>
 
                 <blui-hero label="Battery" value="Full">
-                    <!-- <battery-progress class="progress-icon" percent="90" size="36" blui-primary> </battery-progress> -->
+                    <blui-battery-progress class="progress-icon" percent="90" size="36" blui-primary>
+                    </blui-battery-progress>
                 </blui-hero>
             </blui-hero-banner>
         </mat-list>

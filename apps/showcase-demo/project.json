@@ -22,7 +22,7 @@
                     {
                         "glob": "icons.svg",
                         "input": "node_modules/@brightlayer-ui/icons-svg",
-                        "output": "apps/demo/src/assets/blui-icons"
+                        "output": "/assets/blui-icons/"
                     },
                     {
                         "glob": "*.woff2",
@@ -41,17 +41,17 @@
                     {
                         "input": "libs/@brightlayer-ui/angular-themes/src/lib/theme.scss",
                         "inject": true,
-                        "bundleName": "tt2-theme"
+                        "bundleName": "tt4-theme"
                     },
                     {
                         "input": "libs/@brightlayer-ui/angular-themes/src/lib/open-sans.scss",
                         "inject": true,
-                        "bundleName": "tt2-open-sans"
+                        "bundleName": "tt4-open-sans"
                     },
                     {
                         "input": "apps/demo/src/styles.scss",
                         "inject": true,
-                        "bundleName": "tt2-custom-styles"
+                        "bundleName": "tt4-custom-styles"
                     }
                 ],
                 "scripts": []

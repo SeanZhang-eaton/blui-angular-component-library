@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { BLUIColors } from '@brightlayer-ui/colors';
 import { RtlService } from '../../../services/rtl.service';
 import {
-    AppBarModule,
     ChannelValueModule,
     EmptyStateModule,
     HeroModule,
@@ -18,6 +17,7 @@ import {
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
     selector: 'app-blui-display',
@@ -27,6 +27,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         MatIconModule,
         MatCardModule,
         MatToolbarModule,
+        MatButtonModule,
         ChannelValueModule,
         HeroModule,
         InfoListItemModule,

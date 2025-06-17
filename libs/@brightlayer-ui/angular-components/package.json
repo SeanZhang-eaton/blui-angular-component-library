@@ -8,9 +8,19 @@
         "@angular/common": "^17.0.0 || ^18.0.0",
         "@angular/forms": "^17.0.0 || ^18.0.0",
         "@angular/platform-browser": "^17.0.0 || ^18.0.0",
-        "rxjs": "^6.5.3 || ^7.4.0"
+        "rxjs": "^6.5.3 || ^7.4.0",
+        "color": "^5.0.0"
     },
-    "dependencies": {},
+    "dependencies": {
+        "@angular/animations": "^17.0.0 || ^18.0.0",
+        "@angular/cdk": "17.3.10",
+        "@angular/core": "^17.0.0 || ^18.0.0",
+        "@angular/common": "^17.0.0 || ^18.0.0",
+        "@angular/forms": "^17.0.0 || ^18.0.0",
+        "@angular/platform-browser": "^17.0.0 || ^18.0.0",
+        "rxjs": "^6.5.3 || ^7.4.0",
+        "color": "^5.0.0"
+    },
     "devDependencies": {},
     "sideEffects": false,
     "type": "module"

@@ -7,10 +7,12 @@ import {
     ScoreCardModule,
     InfoListItemModule,
     ListItemTagModule,
+    ProgressIconsModule,
 } from '@brightlayer-ui/angular-components';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
     selector: 'app-template-dashboard',
@@ -31,6 +33,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
         ListItemTagModule,
         MatExpansionModule,
         EmptyStateModule,
+        MatButtonModule,
+        ProgressIconsModule,
     ],
 })
 export class DashboardComponent {

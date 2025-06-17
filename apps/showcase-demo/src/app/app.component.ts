@@ -82,7 +82,7 @@ export class AppComponent {
                     // this._domSanitizer.bypassSecurityTrustResourceUrl('iconSet')
              */
             this._domSanitizer.bypassSecurityTrustResourceUrl(
-                'https://raw.githubusercontent.com/etn-ccis/blui-icons/dev/packages/svg/icons.svg'
+                'https://raw.githubusercontent.com/etn-ccis/blui-icons/v3.5.0-blui-icons-mui/packages/svg/icons.svg'
             )
         );
     }

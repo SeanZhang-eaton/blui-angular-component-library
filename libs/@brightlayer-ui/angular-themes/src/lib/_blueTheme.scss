@@ -154,8 +154,7 @@
         avatarDisabledColor: map.get(blui.$blui-white, 50),
     );
     @include chip.blui-mat-chip-default($chipPrimary, $chipAccent, $chipWarn, $chipDefault);
-    /* TODO(mdc-migration): The following rule targets internal classes of chips that may no longer apply for the MDC version.*/
-    .mat-mdc-chip.mat-mdc-chip-disabled .mat-mdc-chip-avatar {
+    .mat-mdc-chip.mat-mdc-chip-disabled:not(.mat-mdc-chip-selected) .mat-mdc-chip-avatar {
         opacity: 0.5;
     }
 
