@@ -23,7 +23,8 @@ export type Tab = 'examples' | 'api-docs' | 'playground';
 
 export type Knob = {
   label?: string;
-  value: unknown;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  value: any;
   componentDefault?: string | boolean | number;
   range?: { min: number; max: number; tickInterval: number; step: number };
   type: 'string' | 'color' | 'select' | 'number' | 'boolean';

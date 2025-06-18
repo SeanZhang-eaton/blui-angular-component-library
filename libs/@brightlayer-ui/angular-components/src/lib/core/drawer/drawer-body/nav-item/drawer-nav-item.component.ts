@@ -86,7 +86,7 @@ export type ActiveItemBackgroundShape = 'round' | 'square';
           >
             {{ title }}
           </div>
-          @if (subtitle !== null || subtitle !== void 0) {
+          @if (subtitle !== null || subtitle !== undefined) {
             <div blui-subtitle>{{ subtitle }}</div>
           }
           <div blui-right-content *ngIf="hasChildren && isOpen()">
