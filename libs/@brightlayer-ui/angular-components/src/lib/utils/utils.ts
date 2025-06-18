@@ -35,3 +35,17 @@ export function isEmptyView(el: ElementRef): boolean {
   }
   return !hasChildren(el);
 }
+
+export function isEmptyContent(el?: HTMLElement | ElementRef | null): boolean {
+  if (!el) {
+    return true;
+  }
+
+  if ('nativeElement' in el) {
+    return isEmptyContent(el.nativeElement);
+  }
+  if (el.children.length > 0) {
+    return false;
+  }
+  return el.textContent.length === 0;
+}

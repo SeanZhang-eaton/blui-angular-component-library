@@ -20,7 +20,9 @@ export class AppComponent {
                     // const iconSet = require('@brightlayer-ui/icons-svg/icons.svg').default;
                     // this._domSanitizer.bypassSecurityTrustResourceUrl('iconSet')
              */
-      this._domSanitizer.bypassSecurityTrustResourceUrl('assets/blui-icons/icons.svg')
+      this._domSanitizer.bypassSecurityTrustResourceUrl(
+        'https://raw.githubusercontent.com/etn-ccis/blui-icons/v3.5.0-blui-icons-mui/packages/svg/icons.svg'
+      )
     );
   }
 }

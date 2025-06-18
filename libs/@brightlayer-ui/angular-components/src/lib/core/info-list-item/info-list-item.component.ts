@@ -4,13 +4,15 @@ import {
   Component,
   computed,
   ElementRef,
+  inject,
+  Injector,
   Input,
   ViewChild,
   viewChild,
   ViewEncapsulation,
 } from '@angular/core';
 
-import { isEmptyView, requireContent } from '../../utils/utils';
+import { isEmptyContent, isEmptyView, requireContent } from '../../utils/utils';
 
 type IconAlignType = 'left' | 'center' | 'right' | undefined;
 type DividerType = 'full' | 'partial' | undefined;
@@ -50,6 +52,7 @@ type DividerType = 'full' | 'partial' | undefined;
         <ng-content select="[blui-title]"></ng-content>
       </div>
       <div
+        #subtitle
         class="mat-subtitle-2 blui-info-list-item-subtitle-wrapper"
         matListItemLine
         [class.blui-info-list-item-wrap]="wrapSubtitle"
@@ -152,12 +155,15 @@ export class InfoListItemComponent implements AfterViewInit {
 
   @ViewChild('title') titleEl: ElementRef;
   @ViewChild('right') rightEl: ElementRef;
+  readonly injector = inject(Injector);
 
   readonly iconEl = viewChild('icon', { read: ElementRef });
   readonly subtitleEl = viewChild('subtitle', { read: ElementRef });
 
   readonly hasIcon = computed(() => !isEmptyView(this.iconEl()));
-  readonly hasSubtitle = computed(() => !isEmptyView(this.subtitleEl()));
+  readonly hasSubtitle = computed(
+    () => !isEmptyContent(this.subtitleEl()?.nativeElement?.querySelector('[blui-subtitle]'))
+  );
 
   isEmpty = (el: ElementRef): boolean => isEmptyView(el);
 
