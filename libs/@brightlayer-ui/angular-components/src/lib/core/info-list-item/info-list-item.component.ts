@@ -53,6 +53,7 @@ type DividerType = 'full' | 'partial' | undefined;
         class="mat-subtitle-2 blui-info-list-item-subtitle-wrapper"
         matListItemLine
         [class.blui-info-list-item-wrap]="wrapSubtitle"
+        [class.is-empty]="!hasSubtitle()"
       >
         <ng-content select="[blui-subtitle]"></ng-content>
       </div>
@@ -153,7 +154,10 @@ export class InfoListItemComponent implements AfterViewInit {
   @ViewChild('right') rightEl: ElementRef;
 
   readonly iconEl = viewChild('icon', { read: ElementRef });
+  readonly subtitleEl = viewChild('subtitle', { read: ElementRef });
+
   readonly hasIcon = computed(() => !isEmptyView(this.iconEl()));
+  readonly hasSubtitle = computed(() => !isEmptyView(this.subtitleEl()));
 
   isEmpty = (el: ElementRef): boolean => isEmptyView(el);
 
