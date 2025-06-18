@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "peerDependencies": {
-    "@angular/material": "^17.3.10",
+    "@angular/material": "^17.0.0 || ^18.0.0",
     "@fontsource/open-sans": "^5.2.5",
     "@brightlayer-ui/colors": "^3.1.1"
   },
