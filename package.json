@@ -1,6 +1,6 @@
 {
   "name": "blui-angular",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "Angular components for Brightlayer UI applications",
   "packageManager": "pnpm@10.0.0",
   "scripts": {

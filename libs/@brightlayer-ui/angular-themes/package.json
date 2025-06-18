@@ -1,6 +1,6 @@
 {
   "name": "@brightlayer-ui/angular-themes",
-  "version": "0.0.1",
+  "version": "10.0.0",
   "type": "module",
   "peerDependencies": {
     "@angular/material": "^17.0.0 || ^18.0.0",
