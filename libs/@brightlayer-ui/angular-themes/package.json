@@ -1,14 +1,14 @@
 {
-    "name": "@brightlayer-ui/angular-themes",
-    "version": "0.0.1",
-    "type": "module",
-    "peerDependencies": {
-        "@angular/material": "^17.3.10",
-        "@fontsource/open-sans": "^5.2.5",
-        "@brightlayer-ui/colors": "^3.1.1"
-    },  
-    "devDependencies": {
-        "jsonc-eslint-parser": "~2.4.0"
-    },
-    "sideEffects": false
+  "name": "@brightlayer-ui/angular-themes",
+  "version": "0.0.1",
+  "type": "module",
+  "peerDependencies": {
+    "@angular/material": "^17.3.10",
+    "@fontsource/open-sans": "^5.2.5",
+    "@brightlayer-ui/colors": "^3.1.1"
+  },
+  "devDependencies": {
+    "jsonc-eslint-parser": "~2.4.0"
+  },
+  "sideEffects": false
 }

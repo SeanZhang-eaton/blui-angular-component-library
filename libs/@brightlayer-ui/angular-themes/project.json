@@ -1,29 +1,29 @@
 {
-    "name": "@brightlayer-ui/angular-themes",
-    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "libs/@brightlayer-ui/angular-themes/src",
-    "prefix": "lib",
-    "projectType": "library",
-    "tags": [],
-    "targets": {
-        "build": {
-            "executor": "@nx/vite:build",
-            "outputs": ["{options.outputPath}"],
-            "defaultConfiguration": "production",
-            "options": {
-                "outputPath": "dist/libs/@brightlayer-ui/angular-themes"
-            },
-            "configurations": {
-                "development": {
-                    "mode": "development"
-                },
-                "production": {
-                    "mode": "production"
-                }
-            }
+  "name": "@brightlayer-ui/angular-themes",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/@brightlayer-ui/angular-themes/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/libs/@brightlayer-ui/angular-themes"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
         },
-        "lint": {
-            "executor": "@nx/eslint:lint"
+        "production": {
+          "mode": "production"
         }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
     }
+  }
 }
