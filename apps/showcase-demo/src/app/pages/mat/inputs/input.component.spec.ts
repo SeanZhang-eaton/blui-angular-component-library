@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatInputsComponent } from './inputs.component';
 
@@ -8,7 +9,7 @@ describe('MatInputsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MatInputsComponent],
+      imports: [MatInputsComponent, NoopAnimationsModule],
     }).compileComponents();
   });
 

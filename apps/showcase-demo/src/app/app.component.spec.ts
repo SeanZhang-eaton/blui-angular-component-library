@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 
 import { ReplaySubject } from 'rxjs';
@@ -20,7 +21,7 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [AppComponent, NoopAnimationsModule],
       providers: [{ provide: Router, useValue: routerMock }],
     });
 
