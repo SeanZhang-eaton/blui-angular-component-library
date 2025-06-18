@@ -21,7 +21,14 @@
       "defaultConfiguration": "production"
     },
     "lint": {
-      "executor": "@nx/eslint:lint"
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/@brightlayer-ui/angular-components/**/*.{ts,tsx,js,jsx}",
+          "libs/@brightlayer-ui/angular-components/package.json"
+        ]
+      }
     },
     "test": {
       "executor": "@angular-devkit/build-angular:karma",

@@ -1,10 +1,20 @@
 {
   "name": "@brightlayer-ui/angular-components",
   "version": "9.0.0",
-  "peerDependencies": {},
+  "peerDependencies": {
+    "@angular/animations": "^17.3.12",
+    "@angular/cdk": "^17.3.10",
+    "@angular/material": "^17.3.10",
+    "@angular/core": "^17.3.12",
+    "@angular/common": "^17.3.12",
+    "@angular/forms": "^17.3.12",
+    "@angular/platform-browser": "^17.3.12",
+    "rxjs": "^7.8.1",
+    "color": "^5.0.0"
+  },
   "dependencies": {},
   "devDependencies": {
-    "jsonc-eslint-parser": "^2.4.0"
+    "jsonc-eslint-parser": "~2.4.0"
   },
   "sideEffects": false,
   "type": "module"

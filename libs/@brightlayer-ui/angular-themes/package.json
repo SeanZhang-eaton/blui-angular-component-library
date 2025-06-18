@@ -3,9 +3,12 @@
     "version": "0.0.1",
     "type": "module",
     "peerDependencies": {
-        "@angular/material": "^15.0.0 || ^16.0.0 || ^17.0.0",
+        "@angular/material": "^17.3.10",
         "@fontsource/open-sans": "^5.2.5",
         "@brightlayer-ui/colors": "^3.1.1"
+    },  
+    "devDependencies": {
+        "jsonc-eslint-parser": "~2.4.0"
     },
     "sideEffects": false
 }
