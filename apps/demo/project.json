@@ -124,15 +124,6 @@
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
-        },
-        "npm": {
-          "tsConfig": "apps/demo/tsconfig.npm.json",
-          "buildOptimizer": false,
-          "optimization": false,
-          "vendorChunk": true,
-          "extractLicenses": false,
-          "sourceMap": true,
-          "namedChunks": true
         }
       },
       "defaultConfiguration": "production"
@@ -142,9 +133,6 @@
       "configurations": {
         "local": {
           "buildTarget": "demo:build:local"
-        },
-        "npm": {
-          "buildTarget": "demo:build:npm"
         }
       },
       "defaultConfiguration": "local"
