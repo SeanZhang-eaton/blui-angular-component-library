@@ -14,7 +14,7 @@ describe('AppComponent', () => {
   const eventSubject = new ReplaySubject<RouterEvent>(1);
 
   const routerMock = {
-    navigate: jasmine.createSpy('navigate'),
+    navigate: vi.fn(),
     events: eventSubject.asObservable(),
     url: 'test/url',
   };
@@ -122,7 +122,7 @@ describe('AppComponent', () => {
   it('should toggle theme', () => {
     fixture.detectChanges();
     const toggleThemeBtn = fixture.debugElement.query(By.css('.toggle-theme'));
-    const toggleThemeSpy = spyOn(component, 'toggleTheme').and.stub();
+    const toggleThemeSpy = vi.spyOn(component, 'toggleTheme').mockImplementation(() => Promise.resolve());
     toggleThemeBtn.triggerEventHandler('click', undefined);
     fixture.detectChanges();
     void expect(toggleThemeSpy).toHaveBeenCalledTimes(1);

@@ -28,7 +28,7 @@ describe('BluiDisplayComponent', () => {
     const infoListItem = document.getElementsByClassName('display-info-list-item')[0];
     const mouseEvent = new MouseEvent('click');
     infoListItem.dispatchEvent(mouseEvent);
-    const handleInfoListItemClickSpy = spyOn(component, 'handleInfoListItemClick');
+    const handleInfoListItemClickSpy = vi.spyOn(component, 'handleInfoListItemClick');
     fixture.detectChanges();
     void expect(handleInfoListItemClickSpy).toBeTruthy();
   });

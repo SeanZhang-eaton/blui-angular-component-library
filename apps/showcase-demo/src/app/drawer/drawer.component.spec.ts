@@ -16,15 +16,15 @@ describe('DrawerComponent', () => {
   const eventSubject = new ReplaySubject<RouterEvent>(1);
 
   const routerMock = {
-    navigate: jasmine.createSpy('navigate'),
-    navigateByUrl: jasmine.createSpy('navigateByUrl'),
+    navigate: vi.fn(),
+    navigateByUrl: vi.fn(),
     events: eventSubject.asObservable(),
     url: 'test/url',
   };
 
   const StateServiceMock = {
-    setDrawerOpen: jasmine.createSpy('setDrawerOpen'),
-    getDrawerOpen: jasmine.createSpy('getDrawerOpen'),
+    setDrawerOpen: vi.fn(),
+    getDrawerOpen: vi.fn(),
     drawerOpen: true,
   };
 
@@ -56,7 +56,7 @@ describe('DrawerComponent', () => {
     it('should navigate to BLUI Data Display page', () => {
       fixture.detectChanges();
       const navMenuItem = fixture.debugElement.query(By.css('.nav-menuData'));
-      const navigateSpy = spyOn(component, 'navigate').and.stub();
+      const navigateSpy = vi.spyOn(component, 'navigate').mockImplementation(() => Promise.resolve());
       navMenuItem.triggerEventHandler('select', undefined);
       void expect(navigateSpy).toHaveBeenCalledWith('/blui-components/data-display-components');
     });
@@ -64,7 +64,7 @@ describe('DrawerComponent', () => {
     it('should navigate to BLUI Navigation Components page', () => {
       fixture.detectChanges();
       const navMenuItem = fixture.debugElement.query(By.css('.nav-menuNavigation'));
-      const navigateSpy = spyOn(component, 'navigate').and.stub();
+      const navigateSpy = vi.spyOn(component, 'navigate').mockImplementation(() => Promise.resolve());
       navMenuItem.triggerEventHandler('select', undefined);
       void expect(navigateSpy).toHaveBeenCalledWith('/blui-components/navigation-components');
     });
@@ -72,7 +72,7 @@ describe('DrawerComponent', () => {
     it('should navigate to BLUI Surface Components page', () => {
       fixture.detectChanges();
       const navMenuItem = fixture.debugElement.query(By.css('.nav-menuSurfaces'));
-      const navigateSpy = spyOn(component, 'navigate').and.stub();
+      const navigateSpy = vi.spyOn(component, 'navigate').mockImplementation(() => Promise.resolve());
       navMenuItem.triggerEventHandler('select', undefined);
       void expect(navigateSpy).toHaveBeenCalledWith('/blui-components/surface-components');
     });
@@ -80,7 +80,7 @@ describe('DrawerComponent', () => {
     it('should navigate to Mat Feedback Components page', () => {
       fixture.detectChanges();
       const navMenuItem = fixture.debugElement.query(By.css('.nav-menuFeedback'));
-      const navigateSpy = spyOn(component, 'navigate').and.stub();
+      const navigateSpy = vi.spyOn(component, 'navigate').mockImplementation(() => Promise.resolve());
       navMenuItem.triggerEventHandler('select', undefined);
       fixture.detectChanges();
       void expect(navigateSpy).toHaveBeenCalledWith('/material-components/feedback-components');
@@ -89,7 +89,7 @@ describe('DrawerComponent', () => {
     it('should navigate to Mat Input Components page', () => {
       fixture.detectChanges();
       const navMenuItem = fixture.debugElement.query(By.css('.nav-menuInputs'));
-      const navigateSpy = spyOn(component, 'navigate').and.stub();
+      const navigateSpy = vi.spyOn(component, 'navigate').mockImplementation(() => Promise.resolve());
       navMenuItem.triggerEventHandler('select', undefined);
       void expect(navigateSpy).toHaveBeenCalledWith('/material-components/input-components');
     });
@@ -97,7 +97,7 @@ describe('DrawerComponent', () => {
     it('should navigate to Alarms template', () => {
       fixture.detectChanges();
       const navMenuItem = fixture.debugElement.query(By.css('.nav-menuAlarms'));
-      const navigateSpy = spyOn(component, 'navigate').and.stub();
+      const navigateSpy = vi.spyOn(component, 'navigate').mockImplementation(() => Promise.resolve());
       navMenuItem.triggerEventHandler('select', undefined);
       void expect(navigateSpy).toHaveBeenCalledWith('/templates/alarms');
     });
@@ -105,7 +105,7 @@ describe('DrawerComponent', () => {
     it('should navigate to Dashboard template', () => {
       fixture.detectChanges();
       const navMenuItem = fixture.debugElement.query(By.css('.nav-menuDashboard'));
-      const navigateSpy = spyOn(component, 'navigate').and.stub();
+      const navigateSpy = vi.spyOn(component, 'navigate').mockImplementation(() => Promise.resolve());
       navMenuItem.triggerEventHandler('select', undefined);
       void expect(navigateSpy).toHaveBeenCalledWith('/templates/dashboard');
     });
@@ -113,7 +113,7 @@ describe('DrawerComponent', () => {
     it('should navigate to Settings template', () => {
       fixture.detectChanges();
       const navMenuItem = fixture.debugElement.query(By.css('.nav-menuSettings'));
-      const navigateSpy = spyOn(component, 'navigate').and.stub();
+      const navigateSpy = vi.spyOn(component, 'navigate').mockImplementation(() => Promise.resolve());
       navMenuItem.triggerEventHandler('select', undefined);
       void expect(navigateSpy).toHaveBeenCalledWith('/templates/settings');
     });

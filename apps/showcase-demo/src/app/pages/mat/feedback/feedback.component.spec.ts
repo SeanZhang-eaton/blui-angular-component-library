@@ -9,16 +9,16 @@ describe('MatFeedackComponent', () => {
   let component: MatFeedackComponent;
   let fixture: ComponentFixture<MatFeedackComponent>;
   const mockBottomSheetRef = {
-    open: jasmine.createSpy('open'),
-    dismiss: jasmine.createSpy('dismiss'),
+    open: vi.fn(),
+    dismiss: vi.fn(),
   };
 
   const mockDialogRef = {
-    open: jasmine.createSpy('open'),
+    open: vi.fn(),
   };
 
   const mockSnackbarRef = {
-    open: jasmine.createSpy('open'),
+    open: vi.fn(),
   };
 
   beforeEach(async () => {

@@ -7,81 +7,26 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
+      "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "configFile": "apps/showcase-demo/vite.config.mts",
         "outputPath": "dist/apps/showcase-demo",
-        "index": "apps/showcase-demo/src/index.html",
-        "browser": "apps/showcase-demo/src/main.ts",
-        "polyfills": ["zone.js"],
-        "tsConfig": "apps/showcase-demo/tsconfig.app.json",
-        "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/showcase-demo/src/favicon.ico",
-          "apps/showcase-demo/src/assets",
-          {
-            "glob": "icons.svg",
-            "input": "node_modules/@brightlayer-ui/icons-svg",
-            "output": "/assets/blui-icons/"
-          },
-          {
-            "glob": "*.woff2",
-            "input": "apps/showcase-demo/src/assets/fonts-material",
-            "output": "/"
-          },
-          {
-            "glob": "*.(woff2|woff|eot|ttf)",
-            "input": "node_modules/@brightlayer-ui/icons",
-            "output": "/"
-          }
-        ],
-        "styles": [
-          "apps/demo/src/assets/fonts-material/material-icons.css",
-          "node_modules/@brightlayer-ui/icons/BrightlayerUIIcons.css",
-          {
-            "input": "libs/@brightlayer-ui/angular-themes/src/lib/theme.scss",
-            "inject": true,
-            "bundleName": "tt4-theme"
-          },
-          {
-            "input": "libs/@brightlayer-ui/angular-themes/src/lib/open-sans.scss",
-            "inject": true,
-            "bundleName": "tt4-open-sans"
-          },
-          {
-            "input": "apps/demo/src/styles.scss",
-            "inject": true,
-            "bundleName": "tt4-custom-styles"
-          }
-        ],
-        "scripts": []
+        "tsConfig": "apps/showcase-demo/tsconfig.app.json"
       },
+      "defaultConfiguration": "production",
       "configurations": {
-        "production": {
-          "budgets": [
-            {
-              "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
-            },
-            {
-              "type": "anyComponentStyle",
-              "maximumWarning": "2kb",
-              "maximumError": "4kb"
-            }
-          ],
-          "outputHashing": "all"
-        },
         "development": {
-          "optimization": false,
-          "extractLicenses": false,
-          "sourceMap": true
+          "mode": "development"
+        },
+        "production": {
+          "sourcemap": false,
+          "mode": "production"
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nx/vite:dev-server",
       "configurations": {
         "production": {
           "buildTarget": "showcase-demo:build:production"
@@ -99,16 +44,12 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint"
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
-      "executor": "@angular-devkit/build-angular:karma",
-      "options": {
-        "polyfills": ["zone.js", "zone.js/testing"],
-        "tsConfig": "apps/showcase-demo/tsconfig.spec.json",
-        "karmaConfig": "apps/showcase-demo/karma.conf.js",
-        "inlineStyleLanguage": "scss"
-      }
+      "executor": "@nx/vite:test",
+      "dependsOn": ["^build"]
     }
   }
 }
