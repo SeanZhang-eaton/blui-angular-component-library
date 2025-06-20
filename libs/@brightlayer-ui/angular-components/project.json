@@ -11,17 +11,14 @@
       "options": {
         "outputPath": "dist/libs/@brightlayer-ui/angular-components",
         "main": "libs/@brightlayer-ui/angular-components/src/public-api.ts",
-        "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.json",
         "configFile": "libs/@brightlayer-ui/angular-components/vite.config.mts"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.prod.json",
-          "mode": "production"
+          "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.json",
-          "mode": "development"
+          "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"

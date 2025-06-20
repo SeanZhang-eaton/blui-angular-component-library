@@ -17,6 +17,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { MarkdownModule, MARKED_OPTIONS } from 'ngx-markdown';
 
+import 'marked/marked.min.js';
+
 import { AppCommonComponentsModule } from '../../../components/components.module';
 
 import { CopyCodeButtonComponent } from './buttons/copy-code-button/copy-code-button.component';

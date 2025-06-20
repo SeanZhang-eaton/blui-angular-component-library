@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 
+import { HighlightService } from './highlight.service';
 @Component({
   selector: 'app-toggle-code-button',
   template: `
@@ -9,14 +10,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   `,
 })
 export class ToggleCodeButtonComponent {
+  private readonly highlightService = inject(HighlightService);
   @Input() showCode: boolean;
   @Output() showCodeChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   toggleShowCodeButton(): void {
     this.showCode = !this.showCode;
     this.showCodeChange.emit(this.showCode);
     setTimeout(() => {
-      window.Prism.highlightAll();
+      this.highlightService.highlightAll();
       window.dispatchEvent(new Event('resize'));
     });
   }

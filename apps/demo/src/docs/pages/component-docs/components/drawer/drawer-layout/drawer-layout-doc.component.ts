@@ -170,11 +170,11 @@ export class DrawerLayoutDocComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this._markdownService.getSource(`src/assets/md/Drawer.md`).subscribe((data) => {
+    this._markdownService.getSource(`assets/md/Drawer.md`).subscribe((data) => {
       const delimiterTop = '## Drawer Layout';
       const delimiterBottom = '## Drawer Header';
       const layoutSection = this._splitService.subsection(data, delimiterTop, delimiterBottom);
-      this.md = layoutSection.replace('images/', 'src/assets/md/images/');
+      this.md = layoutSection.replace('images/', 'assets/md/images/');
     });
   }
 }

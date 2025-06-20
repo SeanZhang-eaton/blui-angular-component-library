@@ -84,10 +84,10 @@ export class DrawerFooterDocComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this._markdownService.getSource(`src/assets/md/Drawer.md`).subscribe((data) => {
+    this._markdownService.getSource(`assets/md/Drawer.md`).subscribe((data) => {
       const delimiterTop = '## Drawer Footer';
       const footerSection = this._splitService.subsection(data, delimiterTop);
-      this.md = footerSection.replace('images/', 'src/assets/md/images/');
+      this.md = footerSection.replace('images/', 'assets/md/images/');
     });
   }
 }

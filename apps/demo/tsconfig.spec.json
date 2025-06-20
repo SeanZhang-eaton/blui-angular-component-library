@@ -1,9 +1,10 @@
-/* Configuration used while testing. Reads the local instance of @blui-lab/angular. */
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./out-tsc/spec",
-    "types": ["jasmine", "prismjs"]
+    "outDir": "../../dist/out-tsc",
+    "target": "es2016",
+    "types": ["vitest/globals", "prismjs"]
   },
-  "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]
+  "include": ["src/**/*.spec.ts", "src/**/*.d.ts"],
+  "files": ["src/test-setup.ts"]
 }

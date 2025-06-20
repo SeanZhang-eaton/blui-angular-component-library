@@ -91,11 +91,11 @@ export class DrawerSubheaderDocComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this._markdownService.getSource(`src/assets/md/Drawer.md`).subscribe((data) => {
+    this._markdownService.getSource(`assets/md/Drawer.md`).subscribe((data) => {
       const delimiterTop = '## Drawer Subheader';
       const delimiterBottom = '## Drawer Body';
       const subsection = this._splitService.subsection(data, delimiterTop, delimiterBottom);
-      this.md = subsection.replace('images/', 'src/assets/md/images/');
+      this.md = subsection.replace('images/', 'assets/md/images/');
     });
   }
 }

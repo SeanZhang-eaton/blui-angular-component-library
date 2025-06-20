@@ -5,7 +5,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // 创建临时入口文件
 const tempEntryPath = path.resolve(__dirname, 'temp-entry.js');
-fs.writeFileSync(tempEntryPath, '// 临时入口文件\nexport default {};\n');
+fs.writeFileSync(tempEntryPath, '// temp entry file\nexport default {};\n');
 
 export default defineConfig({
   plugins: [
@@ -45,7 +45,6 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        // 不生成JS文件
         assetFileNames: () => 'assets/[name][extname]',
       },
     },

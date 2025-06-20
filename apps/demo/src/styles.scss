@@ -1,89 +1,99 @@
 @use '@brightlayer-ui/colors/palette.scss' as blui;
 @use './themes/doc-light.scss';
 
+@import 'prismjs/themes/prism-tomorrow.css';
+@import 'prismjs/plugins/line-highlight/prism-line-highlight.css';
+@import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+
+@import 'libs/@brightlayer-ui/angular-themes/src/lib/open-sans.scss';
+@import 'libs/@brightlayer-ui/angular-themes/src/lib/theme.scss';
+
+@import './assets/fonts-material/material-icons.css';
+@import '@brightlayer-ui/icons/BrightlayerUIIcons.css';
+
 html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .blui-blue {
-    @include doc-light.light-theme();
+  @include doc-light.light-theme();
 }
 
 // This is required for the demos, otherwise will need to specify the height on the drawer in each demo.
 .app-example,
 .playground-container {
-    .blui-drawer-content blui-drawer-body {
-        overflow: unset;
-    }
+  .blui-drawer-content blui-drawer-body {
+    overflow: unset;
+  }
 }
 
 .color-picker .arrow.arrow-bottom {
-    display: none;
+  display: none;
 }
 /** Examples Pages */
 
 .app-example {
-    .example-page-title {
-        font-weight: 400;
-        font-size: 2.125rem;
-        margin-bottom: 1rem;
-    }
+  .example-page-title {
+    font-weight: 400;
+    font-size: 2.125rem;
+    margin-bottom: 1rem;
+  }
 
-    .example-heading {
-        font-weight: 600;
-        font-size: 1.25rem;
+  .example-heading {
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+  .example-section {
+    margin-bottom: 64px;
+  }
+  .example-demo-wrapper {
+    margin: 16px 0 0 0;
+    // background-color: #eeeeee;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: auto;
+    & > :first-child {
+      box-shadow: 0 0 0 30px #e7e7e7;
+      border-radius: 0.25rem;
     }
-    .example-section {
-        margin-bottom: 64px;
+  }
+  .example-actions {
+    padding-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .example-description {
+    code {
+      background-color: #e7e7e7;
+      color: var(--blui-primary-color);
     }
-    .example-demo-wrapper {
-        margin: 16px 0 0 0;
-        // background-color: #eeeeee;
-        padding: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        overflow: auto;
-        & > :first-child {
-            box-shadow: 0 0 0 30px #e7e7e7;
-            border-radius: 0.25rem;
-        }
-    }
-    .example-actions {
-        padding-top: 16px;
-        display: flex;
-        justify-content: flex-end;
-    }
-    .example-description {
-        code {
-            background-color: #e7e7e7;
-            color: var(--blui-primary-color);
-        }
-    }
-    app-example-code {
-        display: flex;
-        overflow: auto;
-        margin-top: 16px;
-    }
+  }
+  app-example-code {
+    display: flex;
+    overflow: auto;
+    margin-top: 16px;
+  }
 }
 
 $drawerWidth: 300px;
 $marginLeftRightSum: 48px;
 .app-example {
-    app-example-code,
-    .doc-tab-content,
-    .example-demo-wrapper {
-        max-width: min(1200px, calc(100vw - $drawerWidth - $marginLeftRightSum));
-    }
+  app-example-code,
+  .doc-tab-content,
+  .example-demo-wrapper {
+    max-width: min(1200px, calc(100vw - $drawerWidth - $marginLeftRightSum));
+  }
 }
 .md .app-example {
-    app-example-code,
-    .doc-tab-content,
-    .example-demo-wrapper {
-        max-width: calc(100vw - $marginLeftRightSum);
-    }
+  app-example-code,
+  .doc-tab-content,
+  .example-demo-wrapper {
+    max-width: calc(100vw - $marginLeftRightSum);
+  }
 }

@@ -204,10 +204,10 @@ export class ScaffoldComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnInit(): void {
     if (this.mdFileName) {
-      this._markdownService.getSource(`src/assets/md/${this.mdFileName}`).subscribe((data) => {
+      this._markdownService.getSource(`assets/md/${this.mdFileName}`).subscribe((data) => {
         let adjusted = data;
-        adjusted = adjusted.replace(/images/g, `src/assets/md/images/`);
-        adjusted = adjusted.replace(/gifs/g, `src/assets/md/gifs/`);
+        adjusted = adjusted.replace(/images/g, `assets/md/images/`);
+        adjusted = adjusted.replace(/gifs/g, `assets/md/gifs/`);
         adjusted = this.updateCompDocLinks(adjusted);
         this.md = adjusted;
       });
