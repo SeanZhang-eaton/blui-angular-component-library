@@ -1,6 +1,6 @@
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule, SecurityContext } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -45,39 +45,6 @@ import { ScaffoldComponent } from './scaffold/scaffold.component';
     KnobSelectComponent,
     KnobNumberComponent,
   ],
-  imports: [
-    CommonModule,
-    AppCommonComponentsModule,
-    ColorPickerModule,
-    MatIconModule,
-    MatCheckboxModule,
-    MatExpansionModule,
-    HttpClientModule,
-    MatFormFieldModule,
-    MatSliderModule,
-    OverlayModule,
-    MatInputModule,
-    MatTabsModule,
-    MatSelectModule,
-    FormsModule,
-    MatButtonModule,
-    MarkdownModule.forRoot({
-      loader: HttpClientModule,
-      sanitize: SecurityContext.NONE,
-      markedOptions: {
-        provide: MARKED_OPTIONS,
-        useValue: {
-          gfm: true,
-          breaks: false,
-          pedantic: false,
-          smartLists: true,
-          smartypants: false,
-        },
-      },
-    }),
-    MatDividerModule,
-    ReactiveFormsModule,
-  ],
   exports: [
     ExampleCodeComponent,
     ToggleCodeButtonComponent,
@@ -94,5 +61,38 @@ import { ScaffoldComponent } from './scaffold/scaffold.component';
     KnobSelectComponent,
     KnobNumberComponent,
   ],
+  imports: [
+    CommonModule,
+    AppCommonComponentsModule,
+    ColorPickerModule,
+    MatIconModule,
+    MatCheckboxModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatSliderModule,
+    OverlayModule,
+    MatInputModule,
+    MatTabsModule,
+    MatSelectModule,
+    FormsModule,
+    MatButtonModule,
+    MarkdownModule.forRoot({
+      loader: HttpClient,
+      sanitize: SecurityContext.NONE,
+      markedOptions: {
+        provide: MARKED_OPTIONS,
+        useValue: {
+          gfm: true,
+          breaks: false,
+          pedantic: false,
+          smartLists: true,
+          smartypants: false,
+        },
+      },
+    }),
+    MatDividerModule,
+    ReactiveFormsModule,
+  ],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
 })
 export class SharedCompDocsModule {}

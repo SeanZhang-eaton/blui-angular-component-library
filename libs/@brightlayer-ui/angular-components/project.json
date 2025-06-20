@@ -3,7 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/@brightlayer-ui/angular-components/src",
-  "prefix": "lib",
+  "prefix": "blui",
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
@@ -11,7 +11,8 @@
       "options": {
         "outputPath": "dist/libs/@brightlayer-ui/angular-components",
         "main": "libs/@brightlayer-ui/angular-components/src/public-api.ts",
-        "configFile": "libs/@brightlayer-ui/angular-components/vite.config.mts"
+        "configFile": "libs/@brightlayer-ui/angular-components/vite.config.mts",
+        "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.json"
       },
       "configurations": {
         "production": {

@@ -27,7 +27,7 @@
             }
         }
         .blui-hero-primary-wrapper {
-            background-color: mat.get-color-from-palette($background, card);
+            background-color: mat.m2-get-color-from-palette($background, card);
         }
     }
 }
@@ -73,7 +73,7 @@
             .mat-list-text {
                 .mat-line:nth-child(n + 2) {
                     $typography: map-get($theme, typography);
-                    font-size: mat.font-size($typography, body-2);
+                    font-size: mat.m2-font-size($typography, body-2);
                 }
             }
         }
@@ -124,7 +124,7 @@
         .blui-drawer-nav-item-rail {
             &:hover,
             &:focus {
-                background: mat.get-color-from-palette($background, 'hover');
+                background: mat.m2-get-color-from-palette($background, 'hover');
             }
         }
     }

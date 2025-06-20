@@ -12,27 +12,27 @@
 
 mat.$theme-ignore-duplication-warnings: true;
 
-$blui-blue-primary: mat.define-palette(blui.$blui-blue);
-$blui-blue-accent: mat.define-palette(blui.$blui-lightBlue, 200);
-$blui-blue-warn: mat.define-palette(blui.$blui-red, 200);
+$blui-blue-primary: mat.m2-define-palette(blui.$blui-blue);
+$blui-blue-accent: mat.m2-define-palette(blui.$blui-lightBlue, 200);
+$blui-blue-warn: mat.m2-define-palette(blui.$blui-red, 200);
 
-$blui-blue-dark-primary: mat.define-palette(blui.$blui-blue);
-$blui-blue-dark-accent: mat.define-palette(blui.$blui-lightBlue, A200, A100, A400);
-$blui-blue-dark-warn: mat.define-palette(blui.$blui-red, 200);
+$blui-blue-dark-primary: mat.m2-define-palette(blui.$blui-blue);
+$blui-blue-dark-accent: mat.m2-define-palette(blui.$blui-lightBlue, A200, A100, A400);
+$blui-blue-dark-warn: mat.m2-define-palette(blui.$blui-red, 200);
 
-$typography-config: mat.define-typography-config(
+$typography-config: mat.m2-define-typography-config(
     $font-family: '"Open Sans", Arial, Helvetica, sans-serif',
-    $headline-1: mat.define-typography-level(6rem, 1.167, 300),
-    $headline-3: mat.define-typography-level(3rem, 1.167, 400),
-    $headline-4: mat.define-typography-level(2.125rem, 1.235, 400),
-    $headline-5: mat.define-typography-level(1.5rem, 1.334, 400),
-    $headline-6: mat.define-typography-level(1.25rem, 1.6, 600),
-    $subtitle-1: mat.define-typography-level(1rem, 1.75, 400),
-    $body-1: mat.define-typography-level(0.875rem, 1.57, 600),
-    $subtitle-2: mat.define-typography-level(0.875rem, 1.43, 500),
-    $body-2: mat.define-typography-level(1rem, 1.5, 400),
-    $caption: mat.define-typography-level(0.75rem, 1.66, 400),
-    $button: mat.define-typography-level(0.875rem, 1, 600)
+    $headline-1: mat.m2-define-typography-level(6rem, 1.167, 300),
+    $headline-3: mat.m2-define-typography-level(3rem, 1.167, 400),
+    $headline-4: mat.m2-define-typography-level(2.125rem, 1.235, 400),
+    $headline-5: mat.m2-define-typography-level(1.5rem, 1.334, 400),
+    $headline-6: mat.m2-define-typography-level(1.25rem, 1.6, 600),
+    $subtitle-1: mat.m2-define-typography-level(1rem, 1.75, 400),
+    $body-1: mat.m2-define-typography-level(0.875rem, 1.57, 600),
+    $subtitle-2: mat.m2-define-typography-level(0.875rem, 1.43, 500),
+    $body-2: mat.m2-define-typography-level(1rem, 1.5, 400),
+    $caption: mat.m2-define-typography-level(0.75rem, 1.66, 400),
+    $button: mat.m2-define-typography-level(0.875rem, 1, 600)
         /* TODO(mdc-migration): No longer supported. Use `body-1` instead. $input: mat.define-typography-level(inherit, 1.125, 400),*/,
 );
 
@@ -48,7 +48,7 @@ $typography-config: mat.define-typography-config(
     );
 
     @return map.deep-merge(
-        mat.define-light-theme($theme),
+        mat.m2-define-light-theme($theme),
         (
             color: (
                 foreground: (
@@ -91,7 +91,7 @@ $typography-config: mat.define-typography-config(
     );
 
     @return map.deep-merge(
-        mat.define-dark-theme($theme),
+        mat.m2-define-dark-theme($theme),
         (
             color: (
                 foreground: (

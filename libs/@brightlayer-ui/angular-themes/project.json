@@ -11,7 +11,8 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/libs/@brightlayer-ui/angular-themes"
+        "outputPath": "dist/libs/@brightlayer-ui/angular-themes",
+        "tsConfig": "libs/@brightlayer-ui/angular-themes/tsconfig.json"
       },
       "configurations": {
         "development": {

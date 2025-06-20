@@ -15,17 +15,17 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 @use './blueTheme';
 
 @mixin theme-colors($theme) {
-    $color-config: mat.get-color-config($theme);
+    $color-config: mat.m2-get-color-config($theme);
     $primary-palette: map.get($color-config, 'primary');
     $accent-palette: map.get($color-config, 'accent');
     $warn-palette: map.get($color-config, 'warn');
     $is-dark-theme: map.get($color-config, 'is-dark');
     $background: map.get($theme, background);
 
-    --blui-primary-color: #{mat.get-color-from-palette($primary-palette, 500)};
-    --blui-accent-color: #{mat.get-color-from-palette($accent-palette, 500)};
-    --blui-warn-color: #{mat.get-color-from-palette($warn-palette, 500)};
-    --blui-background-color: #{mat.get-color-from-palette($background, card)};
+    --blui-primary-color: #{mat.m2-get-color-from-palette($primary-palette, 500)};
+    --blui-accent-color: #{mat.m2-get-color-from-palette($accent-palette, 500)};
+    --blui-warn-color: #{mat.m2-get-color-from-palette($warn-palette, 500)};
+    --blui-background-color: #{mat.m2-get-color-from-palette($background, card)};
 }
 
 $blui-blue-primary: theme-bases.$blui-blue-primary;
