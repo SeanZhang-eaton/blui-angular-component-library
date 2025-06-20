@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatIconModule } from '@angular/material/icon';
 import { By } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { count } from '../../utils/test-utils';
 
@@ -26,9 +26,9 @@ describe('ToolbarMenuComponent', () => {
   let fixture: ComponentFixture<ToolbarMenuComponent>;
 
   beforeEach(() => {
-    void TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
       declarations: [TestDropdownToolbarComponent],
-      imports: [ToolbarMenuModule, MatIconModule, BrowserAnimationsModule],
+      imports: [ToolbarMenuModule, MatIconModule, NoopAnimationsModule],
     }).compileComponents();
     fixture = TestBed.createComponent(ToolbarMenuComponent);
     component = fixture.componentInstance;
@@ -36,21 +36,21 @@ describe('ToolbarMenuComponent', () => {
 
   it('should create', () => {
     fixture.detectChanges();
-    void expect(component).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
   it('should render label', () => {
     component.label = 'test title';
     fixture.detectChanges();
     const title = fixture.debugElement.query(By.css('.blui-toolbar-menu-label'));
-    void expect(title.nativeElement.innerHTML.trim()).toBe('test title');
+    expect(title.nativeElement.innerHTML.trim()).toBe('test title');
   });
 
   it('should render icon', () => {
     const customFixture = TestBed.createComponent(TestDropdownToolbarComponent);
     customFixture.detectChanges();
     const icon: HTMLElement = customFixture.nativeElement.querySelector('#test-icon');
-    void expect(icon).toBeTruthy();
+    expect(icon).toBeTruthy();
   });
 
   const clickMenu = (customFixture): void => {
@@ -65,7 +65,7 @@ describe('ToolbarMenuComponent', () => {
     customFixture.detectChanges();
     clickMenu(customFixture);
     const menu = document.getElementById('test-menu');
-    void expect(menu.innerText).toBe('menu text');
+    expect(menu.textContent.trim()).toBe('menu text');
   });
 
   it('should enforce class naming conventions', () => {
@@ -86,6 +86,6 @@ describe('ToolbarMenuComponent', () => {
     }
 
     // Overlay classes
-    void expect(document.getElementsByClassName('blui-toolbar-menu-menu-wrapper').length).toBe(1);
+    expect(document.getElementsByClassName('blui-toolbar-menu-menu-wrapper').length).toBe(1);
   });
 });

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { count } from '../../utils/test-utils';
+import { count, mockVoidFunction } from '../../utils/test-utils';
 
 import { InfoListItemModule } from './info-list-item.module';
 
@@ -113,7 +113,7 @@ describe('InfoListItemComponent', () => {
 
   it('should throw a warning if a title is not provided', () => {
     const customFixture = TestBed.createComponent(TestMissingTitleComponent);
-    const warnSpy = spyOn(console, 'warn').and.stub();
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(mockVoidFunction);
     customFixture.detectChanges();
     void expect(warnSpy).toHaveBeenCalledTimes(1);
   });
@@ -136,17 +136,17 @@ describe('InfoListItemComponent', () => {
     void expect(customFixture.nativeElement.querySelector('.test-right').innerHTML).toBe('righty');
   });
 
-  it('should have a default height of 72px', () => {
+  it('should not have dense class by default', () => {
     fixture.detectChanges();
     const root = fixture.debugElement.query(By.css('.blui-info-list-item'));
-    void expect(root.nativeElement.offsetHeight).toBe(72);
+    void expect(root.nativeElement.classList.contains('blui-info-list-item-dense')).toBe(false);
   });
 
-  it('should have a dense height of 52px', () => {
+  it('should apply dense class when dense is true', () => {
     component.dense = true;
     fixture.detectChanges();
     const root = fixture.debugElement.query(By.css('.blui-info-list-item'));
-    void expect(root.nativeElement.offsetHeight).toBe(52);
+    void expect(root.nativeElement.classList.contains('blui-info-list-item-dense')).toBe(true);
   });
 
   it('should enforce class naming conventions', () => {

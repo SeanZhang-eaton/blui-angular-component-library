@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { count } from '../../../utils/test-utils';
+import { count, mockVoidFunction } from '../../../utils/test-utils';
 
 import { DrawerFooterComponent } from './drawer-footer.component';
 import { DrawerFooterModule } from './drawer-footer.module';
@@ -26,8 +26,8 @@ describe('DrawerFooterComponent', () => {
     }).compileComponents();
     fixture = TestBed.createComponent(DrawerFooterComponent);
     component = fixture.componentInstance;
-    spyOn(component, 'ngOnInit').and.stub();
-    spyOn(component, 'ngOnDestroy').and.stub();
+    vi.spyOn(component, 'ngOnInit').mockImplementation(mockVoidFunction);
+    vi.spyOn(component, 'ngOnDestroy').mockImplementation(mockVoidFunction);
   });
 
   it('should create', () => {

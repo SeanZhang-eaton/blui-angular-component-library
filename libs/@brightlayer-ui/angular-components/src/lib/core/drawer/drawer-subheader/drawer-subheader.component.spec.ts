@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { count } from '../../../utils/test-utils';
+import { count, mockVoidFunction } from '../../../utils/test-utils';
 
 import { DrawerSubheaderComponent } from './drawer-subheader.component';
 import { DrawerSubheaderModule } from './drawer-subheader.module';
@@ -26,8 +26,8 @@ describe('DrawerSubheaderComponent', () => {
     }).compileComponents();
     fixture = TestBed.createComponent(DrawerSubheaderComponent);
     component = fixture.componentInstance;
-    spyOn(component, 'ngOnInit').and.stub();
-    spyOn(component, 'ngOnDestroy').and.stub();
+    vi.spyOn(component, 'ngOnInit').mockImplementation(mockVoidFunction);
+    vi.spyOn(component, 'ngOnDestroy').mockImplementation(mockVoidFunction);
   });
 
   it('should create', () => {

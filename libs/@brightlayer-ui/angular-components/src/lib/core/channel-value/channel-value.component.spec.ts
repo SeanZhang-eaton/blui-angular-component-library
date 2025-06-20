@@ -40,14 +40,14 @@ describe('ChannelValueComponent', () => {
     component.value = 'Test Value';
     fixture.detectChanges();
     const value = fixture.nativeElement.querySelector('.blui-channel-value-value');
-    void expect(value.innerText).toBe('Test Value');
+    void expect(value.textContent.trim()).toBe('Test Value');
   });
 
   it('should render 0 integer value', () => {
     component.value = 0;
     fixture.detectChanges();
     const value = fixture.nativeElement.querySelector('.blui-channel-value-value');
-    void expect(value.innerText).toBe('0');
+    void expect(value.textContent.trim()).toBe('0');
   });
 
   it('should render units to the left', () => {
@@ -57,7 +57,7 @@ describe('ChannelValueComponent', () => {
     fixture.detectChanges();
     const container = fixture.nativeElement.querySelector('.blui-channel-value-content');
     const units = fixture.nativeElement.querySelector('.blui-channel-value-units');
-    void expect(units.innerText).toBe('hz');
+    void expect(units.textContent.trim()).toBe('hz');
     void expect(container.children[2]).toBe(units);
   });
 
@@ -68,7 +68,7 @@ describe('ChannelValueComponent', () => {
     fixture.detectChanges();
     const container = fixture.nativeElement.querySelector('.blui-channel-value-content');
     const units = fixture.nativeElement.querySelector('.blui-channel-value-units');
-    void expect(units.innerText).toBe('C');
+    void expect(units.textContent.trim()).toBe('C');
     void expect(container.children[1]).toBe(units);
   });
 

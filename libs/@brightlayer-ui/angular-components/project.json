@@ -6,16 +6,22 @@
   "prefix": "lib",
   "targets": {
     "build": {
-      "executor": "@nx/angular:package",
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "project": "libs/@brightlayer-ui/angular-components/ng-package.json"
+        "outputPath": "dist/libs/@brightlayer-ui/angular-components",
+        "main": "libs/@brightlayer-ui/angular-components/src/public-api.ts",
+        "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.json",
+        "configFile": "libs/@brightlayer-ui/angular-components/vite.config.mts"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.prod.json"
+          "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.prod.json",
+          "mode": "production"
         },
         "development": {
-          "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.json"
+          "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.lib.json",
+          "mode": "development"
         }
       },
       "defaultConfiguration": "production"
@@ -31,11 +37,7 @@
       }
     },
     "test": {
-      "executor": "@angular-devkit/build-angular:karma",
-      "options": {
-        "tsConfig": "libs/@brightlayer-ui/angular-components/tsconfig.spec.json",
-        "polyfills": ["zone.js", "zone.js/testing"]
-      }
+      "executor": "@analogjs/vitest-angular:test"
     }
   }
 }

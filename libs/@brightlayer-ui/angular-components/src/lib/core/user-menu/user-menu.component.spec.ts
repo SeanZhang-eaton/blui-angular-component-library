@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatListModule } from '@angular/material/list';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { count } from '../../utils/test-utils';
 
@@ -45,11 +45,11 @@ describe('UserMenuComponent', () => {
   beforeEach(() => {
     void TestBed.configureTestingModule({
       declarations: [UserMenuNavItemsTestComponent, UserMenuCustomHeaderTestComponent],
-      imports: [UserMenuModule, MatListModule, BrowserAnimationsModule],
+      imports: [UserMenuModule, MatListModule, NoopAnimationsModule],
     }).compileComponents();
     fixture = TestBed.createComponent(UserMenuComponent);
     component = fixture.componentInstance;
-    spyOn(component, 'checkScreenSize').and.stub();
+    vi.spyOn(component, 'checkScreenSize').mockImplementation(() => false);
   });
 
   it('should initialize', () => {
@@ -63,7 +63,7 @@ describe('UserMenuComponent', () => {
     component.avatarValue = 'HA';
     fixture.detectChanges();
     const avatar = fixture.nativeElement.querySelector('.blui-user-menu-avatar');
-    void expect(avatar.innerText).toBe('HA');
+    void expect(avatar.textContent.trim()).toBe('HA');
   });
 
   it('should render the menu open is true', () => {
@@ -86,7 +86,7 @@ describe('UserMenuComponent', () => {
     component.useBottomSheet = false;
     fixture.detectChanges();
     const title = document.getElementsByClassName('blui-user-menu-header-title')[0] as HTMLElement;
-    void expect(title.innerText).toBe('Sample Title');
+    void expect(title.textContent.trim()).toBe('Sample Title');
   });
 
   it('should render the subtitle', () => {
@@ -97,7 +97,7 @@ describe('UserMenuComponent', () => {
     component.useBottomSheet = false;
     fixture.detectChanges();
     const title = document.getElementsByClassName('blui-user-menu-header-subtitle')[0] as HTMLElement;
-    void expect(title.innerText).toBe('Sample Subtitle');
+    void expect(title.textContent.trim()).toBe('Sample Subtitle');
   });
 
   it('should render the custom header', () => {

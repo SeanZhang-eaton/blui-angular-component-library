@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatIconModule } from '@angular/material/icon';
 import { By } from '@angular/platform-browser';
 
-import { count } from '../../../utils/test-utils';
+import { count, mockVoidFunction } from '../../../utils/test-utils';
 
 import { DrawerHeaderComponent } from './drawer-header.component';
 import { DrawerHeaderModule } from './drawer-header.module';
@@ -48,8 +48,8 @@ describe('DrawerHeaderComponent', () => {
     }).compileComponents();
     fixture = TestBed.createComponent(DrawerHeaderComponent);
     component = fixture.componentInstance;
-    spyOn(component, 'ngOnInit').and.stub();
-    spyOn(component, 'ngOnDestroy').and.stub();
+    vi.spyOn(component, 'ngOnInit').mockImplementation(mockVoidFunction);
+    vi.spyOn(component, 'ngOnDestroy').mockImplementation(mockVoidFunction);
   });
 
   it('should create', () => {

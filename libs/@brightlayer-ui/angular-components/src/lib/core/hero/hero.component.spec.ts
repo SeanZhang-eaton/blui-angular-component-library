@@ -69,8 +69,8 @@ describe('HeroComponent', () => {
     fixture.detectChanges();
     const value = fixture.nativeElement.querySelector('.blui-channel-value-value');
     const units = fixture.nativeElement.querySelector('.blui-channel-value-units');
-    void expect(value.innerText).toBe('80');
-    void expect(units.innerText).toBe('C');
+    void expect(value.textContent.trim()).toBe('80');
+    void expect(units.textContent.trim()).toBe('C');
   });
 
   it('should accept and project a blui-channel-value', () => {
@@ -78,8 +78,8 @@ describe('HeroComponent', () => {
     channelValueFixture.detectChanges();
     const value = channelValueFixture.nativeElement.querySelector('.blui-channel-value-value');
     const units = channelValueFixture.nativeElement.querySelector('.blui-channel-value-units');
-    void expect(value.innerText).toBe('60');
-    void expect(units.innerText).toBe('hours');
+    void expect(value.textContent.trim()).toBe('60');
+    void expect(units.textContent.trim()).toBe('hours');
   });
 
   it('should render an icon', () => {

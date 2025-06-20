@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { count } from '../../../../utils/test-utils';
+import { count, mockVoidFunction } from '../../../../utils/test-utils';
 import { DrawerBodyModule } from '../drawer-body.module';
 
 import { DrawerNavGroupComponent } from './drawer-nav-group.component';
@@ -15,8 +15,8 @@ describe('DrawerNavGroupComponent', () => {
     }).compileComponents();
     fixture = TestBed.createComponent(DrawerNavGroupComponent);
     component = fixture.componentInstance;
-    spyOn(component, 'ngOnInit').and.stub();
-    spyOn(component, 'ngOnDestroy').and.stub();
+    vi.spyOn(component, 'ngOnInit').mockImplementation(mockVoidFunction);
+    vi.spyOn(component, 'ngOnDestroy').mockImplementation(mockVoidFunction);
   });
 
   it('should create', () => {
@@ -26,21 +26,21 @@ describe('DrawerNavGroupComponent', () => {
 
   it('should render the title if the drawer is open', () => {
     component.title = 'test';
-    spyOn(component, 'isOpen').and.returnValue(true);
+    vi.spyOn(component, 'isOpen').mockReturnValue(true);
     fixture.detectChanges();
     void expect(fixture.nativeElement.querySelector('.blui-drawer-nav-group-title').innerHTML).toContain('test');
   });
 
   it('should hide the group title if the drawer is not open', () => {
     component.title = 'test';
-    spyOn(component, 'isOpen').and.returnValue(false);
+    vi.spyOn(component, 'isOpen').mockReturnValue(false);
     fixture.detectChanges();
     void expect(fixture.nativeElement.querySelector('.blui-drawer-nav-group-title-closed')).toBeTruthy();
   });
 
   it('should enforce class naming conventions', () => {
     component.title = 'test';
-    spyOn(component, 'isOpen').and.returnValue(true);
+    vi.spyOn(component, 'isOpen').mockReturnValue(true);
     fixture.detectChanges();
     const classList = ['.blui-drawer-nav-group-content', '.blui-drawer-nav-group-title'];
     for (const className of classList) {
