@@ -42,7 +42,7 @@ import { ViewportService } from '../services/viewport.service';
         </blui-drawer-nav-group>
       </blui-drawer-body>
       <blui-drawer-footer>
-        <img src="../assets/EatonLogo.svg" width="170" style="align-self: center; padding: 16px" />
+        <img src="../assets/EatonLogo.svg" alt="Eaton logo" width="170" style="align-self: center; padding: 16px" />
       </blui-drawer-footer>
     </blui-drawer>
   `,

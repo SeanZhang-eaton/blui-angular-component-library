@@ -6,7 +6,7 @@ import { environment } from '../../../../../../environments/environment';
   selector: 'app-view-code-button',
   template: `
     <button blui-inline mat-stroked-button color="primary" style="width: 200px" (click)="viewCodeOnGitHub()">
-      <img src="assets/github-icon.svg" style="height: 1.125rem; margin-right: 8px" />
+      <img src="assets/github-icon.svg" alt="GitHub icon" style="height: 1.125rem; margin-right: 8px" />
       <span>Full Code on GitHub</span>
     </button>
   `,

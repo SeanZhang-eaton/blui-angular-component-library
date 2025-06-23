@@ -2,6 +2,13 @@
   "name": "demo",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
+  "cli": {
+    "cache": {
+      "enabled": false
+    }
+  },
+  "sourceRoot": "apps/demo/src",
+  "prefix": "app",
   "generators": {
     "@schematics/angular:component": {
       "style": "scss"
@@ -10,13 +17,6 @@
       "strict": true
     }
   },
-  "cli": {
-    "cache": {
-      "enabled": false
-    }
-  },
-  "sourceRoot": "apps/demo/src",
-  "prefix": "app",
   "targets": {
     "build": {
       "executor": "@nx/vite:build",

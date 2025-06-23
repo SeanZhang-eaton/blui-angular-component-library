@@ -59,7 +59,7 @@ type Group = {
     <blui-drawer-footer [hideContentOnCollapse]="true">
       <div style="padding: 16px">
         <div style="display: flex; justify-content: space-between; align-items: center">
-          <img src="assets/eaton-condensed.png" width="100" style="margin-left: -8px" />
+          <img src="assets/eaton-condensed.png" alt="Eaton logo" width="100" style="margin-left: -8px" />
           <div>
             <div class="mat-caption">Copyright © Eaton</div>
             <div class="mat-caption">All Rights Reserved</div>

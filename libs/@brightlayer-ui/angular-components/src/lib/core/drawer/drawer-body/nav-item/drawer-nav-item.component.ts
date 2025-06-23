@@ -106,7 +106,11 @@ export type ActiveItemBackgroundShape = 'round' | 'square';
         </blui-info-list-item>
         <div class="blui-drawer-nav-item-rail-container" *ngIf="isRail()">
           <div
-            (click)="selectItem()"
+            (click)="selectItem()"  
+            (keydown.enter)="selectItem()"
+            (keydown.space)="selectItem()"
+            [attr.tabindex]="0"
+            role="button"
             class="blui-drawer-nav-item-rail"
             [matTooltip]="showTooltipOnRailHover() ? title : ''"
             [matTooltipDisabled]="!isRailCondensed()"

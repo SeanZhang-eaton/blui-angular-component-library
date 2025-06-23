@@ -5,7 +5,9 @@
   "peerDependencies": {
     "@angular/material": "^18.0.0",
     "@fontsource/open-sans": "^5.2.5",
-    "@brightlayer-ui/colors": "^3.1.1"
+    "@brightlayer-ui/colors": "^3.1.1",
+    "vite": "*",
+    "vite-plugin-static-copy": "*"
   },
   "devDependencies": {
     "jsonc-eslint-parser": "~2.4.0"
