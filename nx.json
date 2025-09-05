@@ -32,7 +32,7 @@
     }
   },
   "useInferencePlugins": false,
-  "defaultBase": "master",
+  "defaultBase": "main",
   "generators": {
     "@nx/angular:application": {
       "e2eTestRunner": "none",
