@@ -43,8 +43,15 @@ module.exports = [
     },
   },
   {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
-    // Override or add rules here
-    rules: { '@typescript-eslint/ban-ts-comment': 'off' },
+    files: ['**/*.ts', '**/*.tsx', '**/*.html'],
+    // TypeScript specific rules
+    rules: {
+      '@typescript-eslint/ban-ts-comment': 'off',
+    },
+  },
+  {
+    files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
+    // JavaScript specific rules
+    rules: {},
   },
 ];

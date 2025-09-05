@@ -24,7 +24,8 @@
     "@analogjs/vitest-angular": "^1.7.0",
     "@analogjs/vite-plugin-angular": "^1.7.0",
     "@nx/vite": "^19.8.9",
-    "vite": "^5.0.0"
+    "vite": "*",
+    "vite-plugin-static-copy": "*"
   },
   "dependencies": {},
   "devDependencies": {
