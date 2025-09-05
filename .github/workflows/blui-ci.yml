@@ -15,10 +15,10 @@ jobs:
     if: ${{ ! startsWith(github.event.head_commit.message, 'release:') && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository) }}
     uses: ./.github/workflows/test.yml
 
-  build-and-test:
+  continuous-release:
     needs: [test]
-    runs-on: ubuntu-latest
     if: github.repository == 'etn-ccis/blui-angular'
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -38,45 +38,6 @@ jobs:
 
       - name: Build libraries
         run: pnpm run build:lib
-
-      - name: Test artifacts
-        run: pnpm run test:artifacts
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist-libraries
-          path: |
-            dist/libs/@brightlayer-ui/angular-components
-            dist/libs/@brightlayer-ui/angular-themes
-          retention-days: 7
-
-  continuous-release:
-    needs: [test, build-and-test]
-    if: github.repository == 'etn-ccis/blui-angular' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.node-version'
-          registry-url: 'https://registry.npmjs.org'
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: dist-libraries
-          path: dist/libs/@brightlayer-ui/
 
       - name: Release preview (Development)
         run: pnpx pkg-pr-new publish --compact --pnpm './libs/*'
