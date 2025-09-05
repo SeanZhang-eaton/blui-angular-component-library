@@ -1,0 +1,70 @@
+name: 'test'
+
+on: workflow_call
+
+permissions:
+  contents: read # to fetch code (actions/checkout)
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: 'pnpm'
+
+      - run: pnpm install
+
+      - name: Run unit tests
+        run: pnpm run test:ci
+
+  unit-test-windows:
+    runs-on: windows-latest
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: 'pnpm'
+
+      - run: pnpm install
+
+      - name: Run unit tests
+        run: pnpm run test:ci
+
+  lint:
+    runs-on: ubuntu-latest
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: 'pnpm'
+
+      - run: pnpm install
+
+      - name: Run eslint
+        run: pnpm run lint

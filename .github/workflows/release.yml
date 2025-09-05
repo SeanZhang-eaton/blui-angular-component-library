@@ -1,0 +1,79 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+
+  release:
+    # prevents this action from running on forks
+    if: github.repository == 'etn-ccis/blui-angular'
+    needs: [test]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    # Use Release environment for deployment protection
+    environment: Release
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
+
+      - name: Install deps
+        run: pnpm install
+
+      - name: Build and publish
+        id: publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          pnpm release --publishOnly
+
+      - name: Extract version from tag
+        id: extract_version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "tag_name=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub release
+        id: release_tag
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.extract_version.outputs.tag_name }}
+          name: 'Release v${{ steps.extract_version.outputs.version }}'
+          body: |
+            For stable releases, please refer to [CHANGELOG.md](https://github.com/etn-ccis/blui-angular/blob/main/CHANGELOG.md) for details.
+
+            ## 📦 Components Released
+            - `@brightlayer-ui/angular-components@${{ steps.extract_version.outputs.version }}`
+            - `@brightlayer-ui/angular-themes@${{ steps.extract_version.outputs.version }}`
+
+            ## 📦 Installation
+            ```bash
+            npm install @brightlayer-ui/angular-components@${{ steps.extract_version.outputs.version }}
+            npm install @brightlayer-ui/angular-themes@${{ steps.extract_version.outputs.version }}
+            ```
+
+            ## 🔗 Links
+            - [Documentation](https://brightlayer-ui-components.github.io/angular)
+            - [NPM - Components](https://www.npmjs.com/package/@brightlayer-ui/angular-components)
+            - [NPM - Themes](https://www.npmjs.com/package/@brightlayer-ui/angular-themes)
+          draft: false
+          prerelease: ${{ contains(steps.extract_version.outputs.version, '-') }}

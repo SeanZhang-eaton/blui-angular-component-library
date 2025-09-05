@@ -2,10 +2,27 @@
 import angular from '@analogjs/vite-plugin-angular';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { defineConfig } from 'vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {
-    plugins: [angular(), nxViteTsPaths()],
+    plugins: [
+      angular(),
+      nxViteTsPaths(),
+      viteStaticCopy({
+        targets: [
+          {
+            src: '../../../README.md',
+            dest: '',
+          },
+          {
+            src: '../../../LICENSE',
+            dest: '',
+          },
+        ],
+      }),
+    ],
     resolve: {
       mainFields: ['module'],
     },
@@ -36,6 +53,7 @@ export default defineConfig(({ mode }) => {
       environment: 'jsdom',
       setupFiles: ['src/test-setup.ts'],
       include: ['**/*.spec.ts'],
+      cacheDir: '../../../node_modules/.vitest',
       reporters: ['default'],
     },
     define: {

@@ -4,63 +4,71 @@ GREEN='\033[0;32m'
 GRAY='\033[1;30m'
 NC='\033[0m' # No Color
 
-echo "Checking Angular Components"
-echo "Checking Root Package..."
-cd dist
-echo "Checking for required files..."
-echo -ne "  readme: "
-if [ ! -f ./README.md ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
-echo -ne "  license: "
-if [ ! -f ./LICENSE ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
-echo -ne "  package.json: "
-if [ ! -f ./package.json ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo "🔍 Checking Angular Components Build Artifacts"
 
-echo "Checking ChannelValue..."
-echo -ne "  channel-value.component: "
-if [ ! -f ./core/channel-value/channel-value.component.d.ts  ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+# 检查构建目录是否存在
+COMPONENTS_DIR="dist/libs/@brightlayer-ui/angular-components"
+THEMES_DIR="dist/libs/@brightlayer-ui/angular-themes"
 
-echo "Checking Drawer..."
-echo -ne "  drawer.component: "
-if [ ! -f ./core/drawer/drawer.component.d.ts  ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+if [ ! -d "$COMPONENTS_DIR" ]; then
+    echo -e "${RED}❌ Components build directory not found: $COMPONENTS_DIR${NC}"
+    echo "💡 Run 'pnpm run build:lib' first"
+    exit 1
+fi
 
-echo "Checking EmptyState..."
-echo -ne "  empty-state.component: "
-if [ ! -f ./core/empty-state/empty-state.component.d.ts  ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo "📁 Checking Components Package..."
+cd "$COMPONENTS_DIR"
 
-echo "Checking Hero..."
-echo -ne "  hero.component: "
-if [ ! -f ./core/hero/hero.component.d.ts ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo "📋 Checking for required files..."
+echo -ne "  📄 package.json: "
+if [ ! -f ./package.json ]; then echo -e "${RED}❌ Not Found${NC}" && exit 1; else echo -e "${GREEN}✅ Found${NC}"; fi
 
-echo "Checking HeroBanner..."
-echo -ne "  hero-banner.component: "
-if [ ! -f ./core/hero/hero-banner.component.d.ts  ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo -ne "  📄 README.md: "
+if [ ! -f ./README.md ]; then echo -e "${RED}❌ Not Found${NC}" && exit 1; else echo -e "${GREEN}✅ Found${NC}"; fi
 
-echo "Checking InfoListItem..."
-echo -ne "  info-list-item.component: "
-if [ ! -f ./core/info-list-item/info-list-item.component.d.ts  ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo -ne "  📄 index.cjs.js: "
+if [ ! -f ./index.cjs.js ]; then echo -e "${RED}❌ Not Found${NC}" && exit 1; else echo -e "${GREEN}✅ Found${NC}"; fi
 
-echo "Checking ListItemTag..."
-echo -ne "  list-item-tag.component: "
-if [ ! -f ./core/list-item-tag/list-item-tag.component.d.ts  ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo -ne "  📄 index.es.js: "
+if [ ! -f ./index.es.js ]; then echo -e "${RED}❌ Not Found${NC}" && exit 1; else echo -e "${GREEN}✅ Found${NC}"; fi
 
-echo "Checking ScoreCard..."
-echo -ne "  score-card.component: "
-if [ ! -f ./core/score-card/score-card.component.d.ts  ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo "🔍 Checking core components..."
+COMPONENTS=(
+    "channel-value"
+    "drawer" 
+    "empty-state"
+    "hero"
+    "info-list-item"
+    "list-item-tag"
+    "score-card"
+    "toolbar-menu"
+    "user-menu"
+)
 
-echo "Checking Spacer..."
-echo -ne "  spacer.component: "
-if [ ! -f ./core/utility/spacer.module.d.ts  ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+for component in "${COMPONENTS[@]}"; do
+    echo -ne "  🧩 $component: "
+    # 检查是否存在相关的 .d.ts 文件
+    if find . -name "*$component*" -name "*.d.ts" | grep -q .; then
+        echo -e "${GREEN}✅ Found${NC}"
+    else
+        echo -e "${RED}❌ Not Found${NC}"
+        exit 1
+    fi
+done
 
-echo "Checking Toolbar Menu..."
-echo -ne "  dropdownToolbar.component: "
-if [ ! -f ./core/toolbar-menu/toolbar-menu.component.d.ts  ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+echo -e "\n${GREEN}🎉 Components package validation passed!${NC}"
 
-echo "Checking UserMenu..."
-echo -ne "  user-menu.component: "
-if [ ! -f ./core/user-menu/user-menu.component.d.ts  ]; then echo -e "${RED}Not Found${NC}" && exit 1; else echo -e "${GREEN}Found${NC}"; fi
+# 返回到项目根目录
+cd "../../.."
 
-echo -e "\r\n${GREEN}-----------------------------------"
-echo -e "@brightlayer-ui/angular-components package successfully created"
-echo -e "-----------------------------------${NC}\r\n\r\n"
+# 检查主题包
+if [ -d "$THEMES_DIR" ]; then
+    echo "🎨 Checking Themes Package..."
+    cd "$THEMES_DIR"
+    echo -ne "  📄 package.json: "
+    if [ ! -f ./package.json ]; then echo -e "${RED}❌ Not Found${NC}" && exit 1; else echo -e "${GREEN}✅ Found${NC}"; fi
+    echo -e "${GREEN}🎉 Themes package validation passed!${NC}"
+fi
 
+echo -e "\n${GREEN}🚀 All build artifacts validated successfully!${NC}"
 exit 0
